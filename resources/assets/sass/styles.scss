@@ -1,0 +1,58 @@
+.navbarlogo{
+	height: 1.8em;
+}
+
+.cover{
+	background: url("/images/cover.jpg");
+	height: 100vh;
+	width: 100%;
+	background-color: black;
+	background-size: cover;
+	background-position: center center;
+}
+.indexheader{
+	margin-top: 300px
+}
+
+.home-head{
+	padding-top: 350px;
+	font-size: 30px;
+	text-shadow: 1px 1px 1px #000000;
+}
+.txtsearch{
+	width: 30em;
+}
+
+.txtinput{
+	height: 50px;
+}
+
+.aboutcover{
+	height: 450px;
+	background: url("/images/aboutcover.jpg") no-repeat;
+	background-color: black;
+	background-size: cover;
+	background-position: center center;
+}
+
+.aboutheader{
+	padding-top: 30px;
+	font-size: 35px;
+	text-shadow: 1px 1px 1px #000000;
+}
+
+.stepshape{
+	width: 80px;
+	height: 80px;
+	color: white;
+	border-radius: 50%;
+	font-size: 30px;
+}
+
+.stepdesc{
+	text-shadow: 1px 1px 1px #000000;
+}
+
+.footertxt{
+	padding: 5px;
+}
