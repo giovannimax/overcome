@@ -20,6 +20,9 @@ Route::get('/about', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/appointments', function () {
+    return view('appointments');
+});
 
 Auth::routes();
 

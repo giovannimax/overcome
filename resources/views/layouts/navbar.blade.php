@@ -25,11 +25,11 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li class="active">
-                        <a href="#homeSubmenu" class="sidebaritem">Profile</a>
+                    <li class="{{ Request::is('profile') ? 'active' : '' }}">
+                        <a href="profile" class="sidebaritem">Profile</a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem">Appointments</a>
+                    <li class="{{ Request::is('appointments') ? 'active' : '' }}">
+                        <a href="appointments" class="sidebaritem">Appointments</a>
                     </li>
                     <li>
                         <a href="#homeSubmenu" class="sidebaritem">Availability</a>
@@ -100,13 +100,13 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li class="active">
-                        <a href="#homeSubmenu" class="sideicon" data-toggle="tooltip" data-placement="right" title="Profile">
+                    <li class="{{ Request::is('profile') ? 'active' : '' }}">
+                        <a href="profile" class="sideicon" data-toggle="tooltip" data-placement="right" title="Profile">
                           <i class="material-icons">person</i>
                         </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sideicon" data-toggle="tooltip" data-placement="right" title="Appointments">
+                    <li class="{{ Request::is('appointments') ? 'active' : '' }}">
+                        <a href="appointments" class="sideicon" data-toggle="tooltip" data-placement="right" title="Appointments">
                           <i class="material-icons">date_range</i>
                         </a>
                     </li>
