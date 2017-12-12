@@ -56,3 +56,45 @@
 .footertxt{
 	padding: 5px;
 }
+
+.dropdown-toggle::after {
+    display:none
+}
+
+.notif-item{
+
+}
+.notif-img{
+	border-radius: 50%;
+	height: 50px;
+}
+.notif-dropdown{
+	width: 300px;
+}
+.notif-cont{
+	display: inline-flex;
+	width: 100%;
+	border-radius: 5px;
+}
+.notif-detail{
+	white-space:normal !important;
+	padding: 10px;
+}
+.notif-imgcont{
+	padding: 10px;
+}
+
+.nav-link{
+	cursor: pointer;
+}
+.mynavbar{
+	z-index: 9999;
+}
+
+.sidebarwrapper{
+	display:inline-flex;
+}
+
+#mCSB_1:focus, .mCSB_container:focus{
+   outline:0 !important;
+}

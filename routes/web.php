@@ -17,6 +17,12 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/profile', function () {
+    return view('profile');
+});
+Route::get('/appointments', function () {
+    return view('appointments');
+});
 
 Auth::routes();
 

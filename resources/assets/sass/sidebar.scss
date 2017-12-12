@@ -1,0 +1,244 @@
+/*
+    DEMO STYLE
+*/
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+.sidebaritem, .sidebaritem:hover, .sidebaritem:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.sideicon, .sideicon:hover, .sideicon:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR ICON STYLE
+----------------------------------------------------- */
+#sidebaricon {
+    width: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #626262;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebaricon.active {
+    margin-left: -250px;
+}
+
+#sidebaricon .sidebar-header {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#sidebaricon ul.components {
+    padding: 20px 0;
+}
+
+#sidebaricon ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebaricon ul li .sidebaritem {
+    padding: 10px;
+    font-size: 0.5em;
+    display: block;
+}
+
+#sidebaricon ul li .sideicon {
+    padding: 10px;
+    font-size: 0.5em;
+    display: block;
+}
+
+#sidebaricon ul li .sidebaritem:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebaricon ul li .sideicon:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebaricon ul li.active > .sidebaritem, .sidebaritem[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+#sidebaricon ul li.active > .sideicon, .sideicon[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+
+ul ul .sidebaritem {
+    font-size: 0.5em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul ul .sideicon {
+    font-size: 0.5em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs .sidebaritem {
+    text-align: center;
+    font-size: 0.5em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+ul.CTAs .sideicon {
+    text-align: center;
+    font-size: 0.5em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.sidebaritem.download {
+    background: #fff;
+    color: #7386D5;
+}
+.sidebaritem.article, .sidebaritem.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: calc(100% - 235px);
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 47;
+    right: 0;
+}
+#content.active {
+   width: calc(100% - 50px);
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 235px);
+        margin-left: 50px;
+    }
+}
+
+/*Sidebar details*/
+
+#sidebar {
+    width: 180px;
+    position: fixed;
+    top: 0;
+    left: 50px;
+    height: 100vh;
+    z-index: 999;
+    background: #626262;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+.components:focus{
+   outline:0 !important;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li .sidebaritem {
+    padding: 12.5px;
+    font-size: 0.9em;
+    display: block;
+}
+#sidebar ul li .sidebaritem:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > .sidebaritem,.sidebaritem[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+
+.sidebaritem:hover + .sideicon {
+    color: #7386D5;
+    background: #fff;
+}
