@@ -90,6 +90,8 @@
         </ul>
       </div>
     </nav>
+
+      @yield('content')
         </div>
 
     <nav id="sidebaricon" class="mCustomScrollbar _mCS_1 mCS-autoHide" style="overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
@@ -147,8 +149,6 @@
                     </li>
                 </ul>
             </div></div><div style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; height: 215px; top: 0px; display: block; max-height: 328px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></nav>
-
-    @yield('content');
 
 
 
