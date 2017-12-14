@@ -9992,7 +9992,7 @@ span {
 }
 
 #sidebar ul.components {
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #47748b;
 }
 
@@ -10069,10 +10069,10 @@ a.article:hover {
 ----------------------------------------------------- */
 
 #content {
-  padding: 20px;
   min-height: 100vh;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  width: 100%;
 }
 
 /* ---------------------------------------------------
@@ -10139,8 +10139,130 @@ a.article:hover {
   }
 }
 
+#sidebarCollapse {
+  width: 50px;
+  height: 40px;
+  margin-left: 15px;
+}
+
+#sidebarCollapse span {
+  height: 2px;
+  margin: 0 auto;
+  display: block;
+  background: #fefefe;
+  -webkit-transition: all 0.8s cubic-bezier(0.81, -0.33, 0.345, 1.375);
+  transition: all 0.8s cubic-bezier(0.81, -0.33, 0.345, 1.375);
+}
+
+#sidebarCollapse:hover span {
+  background: #555;
+}
+
+#sidebarCollapse span:first-of-type {
+  -webkit-transform: rotate(45deg) translate(2px, 2px);
+          transform: rotate(45deg) translate(2px, 2px);
+}
+
+#sidebarCollapse span:nth-of-type(2) {
+  opacity: 0;
+}
+
+#sidebarCollapse span:last-of-type {
+  -webkit-transform: rotate(-45deg) translate(1px, -1px);
+          transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+  -webkit-transform: none;
+          transform: none;
+  opacity: 1;
+  margin: 5px auto;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+  }
+
+  #sidebar.active {
+    margin-left: 0;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  #sidebarCollapse span:first-of-type,
+  #sidebarCollapse span:nth-of-type(2),
+  #sidebarCollapse span:last-of-type {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+    margin: 5px auto;
+  }
+
+  #sidebarCollapse.active span {
+    margin: 0 auto;
+  }
+
+  #sidebarCollapse.active span:first-of-type {
+    -webkit-transform: rotate(45deg) translate(2px, 2px);
+            transform: rotate(45deg) translate(2px, 2px);
+  }
+
+  #sidebarCollapse.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  #sidebarCollapse.active span:last-of-type {
+    -webkit-transform: rotate(-45deg) translate(1px, -1px);
+            transform: rotate(-45deg) translate(1px, -1px);
+  }
+}
+
+i,
+.sidetext {
+  vertical-align: middle;
+}
+
 .hidetext {
   display: none !important;
+}
+
+.fadetext {
+  opacity: 1;
+  -webkit-animation-name: fadeInOpacity;
+          animation-name: fadeInOpacity;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+}
+
+@-webkit-keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /*******************************Calendar Top Navigation*********************************/

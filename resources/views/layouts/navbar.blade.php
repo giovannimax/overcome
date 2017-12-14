@@ -20,8 +20,11 @@
 
                 <ul class="list-unstyled components">
                   <li>
-                        <a href="#" id="sidebarCollapse" class="sidebaritem">
-                        <i class="material-icons">menu</i>
+                        <a href="#" id="sidebarCollapse" class="sidebaritem active">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
                       </a>
                     </li>
                     <li class="{{ Request::is('profile') ? 'active' : '' }}">
@@ -116,15 +119,6 @@
         </ul>
       </div>
     </nav>
-
-
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                <i class="glyphicon glyphicon-align-left"></i>
-                                <span>Toggle Sidebar</span>
-                            </button>
-      
-
-
              @yield('content')
         </div>
 
@@ -164,10 +158,12 @@
                         })*/
 
     $(document).ready(function () {
-
+    $('[data-toggle="tooltip"]').tooltip();
     $('#sidebarCollapse').on('click', function () {
         $(".sidetext").toggleClass('hidetext');
+        $(".sidetext").toggleClass('fadetext');
         $('#sidebar').toggleClass('active');
+        $(this).toggleClass('active');
 
         if(ind==0){
                         $(function () {
