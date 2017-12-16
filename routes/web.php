@@ -24,6 +24,10 @@ Route::get('/appointments', function () {
     return view('appointments');
 });
 
+Route::get('/account_settings', function (){
+    return view('accountsettings');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

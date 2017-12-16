@@ -146,10 +146,10 @@
                         </a>
                     </li>
                 </ul>
-            </div></div><div style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; height: 215px; top: 0px; display: block; max-height: 328px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></nav>
-
-    @yield('content');
-
+            </div></div><div style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; height: 215px; top: 0px; display: block; max-height: 328px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div>
+    </nav>
+    </div>
+   @yield('content');
 
 
     <!-- Scripts -->
