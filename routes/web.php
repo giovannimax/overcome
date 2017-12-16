@@ -24,8 +24,9 @@ Route::get('/appointments', function () {
     return view('appointments');
 });
 
-Route::get('/account_settings', function (){
-    return view('accountsettings');
+Route::get('/login', function () {
+    return view('login');
+    
 });
 
 Auth::routes();

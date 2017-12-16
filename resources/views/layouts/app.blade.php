@@ -41,7 +41,7 @@
             <a class="nav-link" href="#">FAQ</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="login">Login</a>
           </li>
           <li>
             <button class="btn btn-info">SIGN UP</button>
@@ -50,7 +50,7 @@
       </div>
     </nav>
 
-    @yield('content');
+    @yield('content')
 
     <footer class="footer text-center">
       <div class="container footertxt">
