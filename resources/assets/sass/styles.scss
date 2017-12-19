@@ -101,3 +101,42 @@ body{
 #mCSB_1:focus, .mCSB_container:focus{
    outline:0 !important;
 }
+
+.leftsidebar{
+	position: fixed;
+	right: 0;
+	height: 100vh;
+	background-color: #fefefe;
+	width: 300px;
+	-webkit-box-shadow: -4px 0px 37px -8px rgba(0,0,0,0.75);
+	-moz-box-shadow: -4px 0px 37px -8px rgba(0,0,0,0.75);
+	box-shadow: -4px 0px 37px -8px rgba(0,0,0,0.75);
+	padding: 20px;
+}
+
+.appcont{
+	display: inline-flex;
+}
+
+.apphead{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.legend{
+	font-size: 15px !important;
+	text-indent: 10px !important;
+}
+li.legend{
+	width:100%;
+}
+
+.close{
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.appic{
+	height: 30px;
+	border-radius: 50%;
+}

@@ -124,11 +124,11 @@ class Calendar {
  
             $cellContent=null;
         }
-             
-         
-        return '<a href="#"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+  
+        return '<a href="#" class="calday"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
                 ($cellContent==null?'mask':'').'">'.$cellContent.'</li></a>';
-    }
+
+}
      
     /**
     * create navigation

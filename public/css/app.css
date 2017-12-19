@@ -9831,6 +9831,47 @@ body {
   outline: 0 !important;
 }
 
+.leftsidebar {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  background-color: #fefefe;
+  width: 300px;
+  -webkit-box-shadow: -4px 0px 37px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 0px 37px -8px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+}
+
+.appcont {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.apphead {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.legend {
+  font-size: 15px !important;
+  text-indent: 10px !important;
+}
+
+li.legend {
+  width: 100%;
+}
+
+.close {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.appic {
+  height: 30px;
+  border-radius: 50%;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -9929,7 +9970,7 @@ span {
 }
 
 #sidebar {
-  min-width: 250px;
+  min-width: 170px;
   max-width: 250px;
   background: #626262;
   color: #fff;
@@ -9993,7 +10034,6 @@ span {
 
 #sidebar ul.components {
   padding: 10px 0;
-  border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul li a {
@@ -10263,6 +10303,137 @@ i,
   100% {
     opacity: 1;
   }
+}
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  position: fixed;
+}
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-right: 350px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  right: 250px;
+  width: 0;
+  height: 100%;
+  margin-right: -250px;
+  overflow-y: auto;
+  background: #fefefe;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media (min-width: 768px) {
+  #wrapper {
+    padding-right: 250px;
+  }
+
+  #wrapper.toggled {
+    padding-right: 0;
+  }
+
+  #sidebar-wrapper {
+    width: 300px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+
+#overlay {
+  width: 4000px;
+  height: 100vh;
+  background: #000;
+  opacity: 0.5;
+}
+
+#overlay.toggled {
+  display: none;
 }
 
 /*******************************Calendar Top Navigation*********************************/
