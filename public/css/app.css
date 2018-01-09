@@ -9717,6 +9717,10 @@ a.text-dark:hover {
   visibility: hidden !important;
 }
 
+html {
+  margin: 0xp !important;
+}
+
 body {
   height: 100vh;
 }
@@ -9872,6 +9876,31 @@ li.legend {
   border-radius: 50%;
 }
 
+.btnavail {
+  margin: 10px;
+}
+
+.daystrip {
+  width: 100%;
+  height: 3px;
+  background-color: green;
+  top: 0;
+}
+
+.daystripcont {
+  width: 100%;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  background-color: #ddd;
+  z-index: -5;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -9928,11 +9957,9 @@ a:focus {
 }
 
 .navbar {
-  padding: 15px 10px;
   background: #fff;
   border: none;
   border-radius: 0;
-  margin-bottom: 40px;
   -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -10436,10 +10463,14 @@ i,
   display: none;
 }
 
+.appwrapper {
+  margin-left: 10px;
+}
+
 /*******************************Calendar Top Navigation*********************************/
 
 div#calendar {
-  margin: 0px auto;
+  margin-top: 60px;
   padding: 0px;
   width: 100%;
   font-family: Helvetica, "Times New Roman", Times, serif;
@@ -10493,28 +10524,26 @@ div#calendar div.header a.next {
 /*******************************Calendar Content Cells*********************************/
 
 div#calendar div.box-content {
-  border: 1px solid #787878;
-  border-top: none;
+  display: table;
+  width: 100%;
 }
 
 div#calendar ul.label {
   float: left;
   margin: 0px;
   padding: 0px;
-  margin-top: 5px;
   margin-left: 15px;
   width: 100%;
 }
 
 div#calendar ul.label li {
   margin: 0px;
-  padding: 0px;
+  padding-top: 10px;
   margin-right: 5px;
   float: left;
   list-style-type: none;
   width: 13.5%;
-  height: 40px;
-  line-height: 40px;
+  line-height: 20px;
   vertical-align: middle;
   text-align: center;
   color: #000;
@@ -10526,6 +10555,7 @@ div#calendar ul.dates {
   float: left;
   margin: 0px;
   padding: 15px;
+  padding-top: 10px;
   text-align: center;
   width: 100%;
 }
@@ -10554,5 +10584,43 @@ div#calendar ul.dates li {
 
 div.clear {
   clear: both;
+}
+
+.daylabel {
+  text-align: left;
+  position: relative;
+  height: 72px;
+  padding-top: 5px;
+}
+
+.daylabell {
+  text-align: left;
+  position: relative;
+  height: 72px;
+  padding-top: 5px;
+}
+
+.weekcont {
+  display: table-row;
+}
+
+.daycont {
+  display: table-cell;
+  height: 95px;
+  padding: 3px;
+  width: 14%;
+}
+
+.daytext {
+  height: 30px !important;
+  padding: 10px;
+}
+
+.daylabel:hover .daystripcont {
+  background-color: #ccc !important;
+}
+
+.calimg {
+  height: 25px;
 }
 

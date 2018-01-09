@@ -14,19 +14,28 @@
 Route::get('/', function () {
     return view('index');
 });
+
 Route::get('/about', function () {
     return view('about');
 });
+
 Route::get('/profile', function () {
     return view('profile');
 });
-Route::get('/appointments', function () {
-    return view('appointments');
+
+Route::get('/calendar', function () {
+    return view('calendar');
 });
 
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::post('/availabilitytab', function () {
+    return view('comp.availabilitytab');
+});
+
+Route::post('/appointmentstab', 'EcounselingsController@viewspefecoun');
 
 Auth::routes();
 

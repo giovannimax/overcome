@@ -4,13 +4,18 @@
 *@email   thedilab@gmail.com
 *@website http://www.StarTutorial.com
 **/
+
+date_default_timezone_set('Asia/Hong_Kong');
+
+use App\Http\Controllers\EcounselingsController;
+
 class Calendar {  
      
     /**
      * Constructor
      */
     public function __construct(){     
-        $this->naviHref = htmlentities("/appointments");
+        $this->naviHref = htmlentities("/calendar");
     }
      
     /********************* PROPERTY ********************/  
@@ -69,21 +74,23 @@ class Calendar {
                         $this->_createNavi().
                         '</div>'.
                         '<div class="box-content">'.
-                                '<ul class="label">'.$this->_createLabels().'</ul>';   
-                                $content.='<div class="clear"></div>';     
-                                $content.='<ul class="dates">';    
+                                '<div class="label weekcont">'.$this->_createLabels().'</div>';
                                  
                                 $weeksInMonth = $this->_weeksInMonth($month,$year);
                                 // Create weeks in a month
-                                for( $i=0; $i<$weeksInMonth; $i++ ){
+                                for( $i=0; $i<5; $i++ ){
                                      
+                                    $content.="<div class='weekcont'>";
                                     //Create days in a week
                                     for($j=1;$j<=7;$j++){
+                                        $content.="<div class='daycont'>";
                                         $content.=$this->_showDay($i*7+$j);
+                                        $content.="</div>";
                                     }
+
+                                    $content.="</div>";
                                 }
                                  
-                                $content.='</ul>';
                                  
                                 $content.='<div class="clear"></div>';     
              
@@ -124,9 +131,55 @@ class Calendar {
  
             $cellContent=null;
         }
-  
-        return '<a href="#" class="calday"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
-                ($cellContent==null?'mask':'').'">'.$cellContent.'</li></a>';
+
+        $hdr = '';
+
+        if(date('Y-m-d')==$this->currentDate){
+            $hdr = '" class="bg-info text-light dday';
+        }
+
+        $daystrip = '<div class="daystripcont">';
+        $dayclass = 'class="daylabell"';
+        if(!empty($this->currentDate)){
+            $hdr = '" class="dday';
+            $dayclass = 'class="daylabel"';
+            if(date('Y-m-d')==$this->currentDate){
+                $daystrip = '<div class="daystripcont bg-info">';
+                $dayclass = 'class="daylabel text-light"';
+            }
+
+            
+
+          /*for($i=1;$i<=24;$i++){
+                $color='';
+                if($i<=9)
+                    $color=$i.$i.$i.$i.$i.$i;
+                else
+                    $color=$i.$i.$i;
+                    $daystrip=$daystrip."<div class='daystrip' style='background-color:#".$color.";'></div>";
+
+            }*/
+            $pps='';
+            $result = EcounselingsController::givepeople($this->currentDate);
+            if(count($result)>0){
+            foreach($result as $res){
+                $pps.='&nbsp;<img src="images/pp.jpg" class="rounded-circle calimg">';
+            }
+
+        }
+
+
+
+                    $daystrip.='</div>';
+            return '<a href="#" class="calday"><div '.$dayclass.' onclick=toggleleftsidebar("'.$this->currentDate.'"); id="li-'.$this->currentDate.$hdr.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+                ($cellContent==null?'mask':'').'">&nbsp;&nbsp;'.$cellContent.$pps.$daystrip.'</div></a>';
+         }
+
+        else {
+            $daystrip.='</div>';
+            return '<div href="#" class="calday"><div '.$dayclass.'"); id="li-'.$this->currentDate.$hdr.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+                ($cellContent==null?'mask':'').'">&nbsp;&nbsp;'.$cellContent.$daystrip.'</div></div>';
+        }
 
 }
      
@@ -160,7 +213,7 @@ class Calendar {
          
         foreach($this->dayLabels as $index=>$label){
              
-            $content.='<li class="'.($label==6?'end title':'start title').' title">'.$label.'</li>';
+            $content.='<div class="daycont daytext '.($label==6?'end title':'start title').' title">'.$label.'</div>';
  
         }
          
@@ -218,3 +271,4 @@ class Calendar {
 
  
 ?>
+

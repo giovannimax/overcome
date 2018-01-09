@@ -51,22 +51,36 @@
 
 @section('scripts')
 <script>
+
+var i = 0;
 	$('.calday').click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
     $("#overlay").toggleClass("toggled");
+    i=1;
 });
 
 	$('#overlay').click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
     $("#overlay").toggleClass("toggled");
+    i=0;
 });
 	$('.close').click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
     $("#overlay").toggleClass("toggled");
+    i=0;
 });
+
+	$(document).keyup(function(e) {
+  		if (e.keyCode == 27 && i == 1) {
+     $("#wrapper").toggleClass("toggled");
+    $("#overlay").toggleClass("toggled");
+    i=0;
+ 	 }   
+	});
+
 </script>
 
 @endsection

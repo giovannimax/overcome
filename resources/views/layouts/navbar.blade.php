@@ -32,16 +32,10 @@
                         <font class="sidetext">Profile</font>
                       </a>
                     </li>
-                    <li class="{{ Request::is('appointments') ? 'active' : '' }}">
-                        <a href="appointments" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
+                    <li class="{{ Request::is('calendar') ? 'active' : '' }}">
+                        <a href="calendar" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
                           <i class="material-icons">date_range</i>
-                        <font class="sidetext">Appointments</font>
-                      </a>
-                    </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Availablity">
-                          <i class="material-icons">av_timer</i>
-                        <font class="sidetext">Availability</font>
+                        <font class="sidetext">Calendar</font>
                       </a>
                     </li>
                     <li>
@@ -72,12 +66,6 @@
                         <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="My Wallet">
                         <i class="material-icons">account_balance_wallet</i>
                         <font class="sidetext">My Wallet</font>
-                      </a>
-                    </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Logout">
-                        <i class="material-icons">exit_to_app</i>
-                        <font class="sidetext">Logout</font>
                       </a>
                     </li>
                 </ul>
@@ -123,7 +111,6 @@
         @yield('leftsidebar')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript">
 
      var ind=0;
