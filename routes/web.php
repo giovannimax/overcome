@@ -21,7 +21,7 @@ Route::get('/about', function () {
 
 Route::get('/profile', function () {
     return view('profile');
-});
+})->name('profile');
 
 Route::get('/calendar', function () {
     return view('calendar');
@@ -35,8 +35,31 @@ Route::post('/availabilitytab', function () {
     return view('comp.availabilitytab');
 });
 
+Route::get('/register', function () {
+    return view('auth.registeroptions');
+});
+
+Route::get('/appointments', function () {
+    return view('appointments');
+});
+
 Route::post('/appointmentstab', 'EcounselingsController@viewspefecoun');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Authentication Routes...
+        //Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+        //Route::post('login', 'Auth\LoginController@login');
+        //Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+//
+        // Registration Routes...
+        Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+        Route::post('register', 'Auth\RegisterController@register');
+
+Route::get('signup/{user}', 'Auth\RegisterController@redusertype');
+Route::get('signup', 'Auth\RegisterController@showRegistrationOptions');
+
+Route::post('RegisterControllerPsych','Auth\RegisterController@registerpsych');
+Route::post('RegisterControllerPat','Auth\RegisterController@registerpat');

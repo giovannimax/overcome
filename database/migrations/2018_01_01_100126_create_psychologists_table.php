@@ -14,7 +14,8 @@ class CreatePsychologistsTable extends Migration
     public function up()
     {
         Schema::create('psychologists', function (Blueprint $table) {
-            $table->increments('psych_id');
+            $table->unsignedInteger('psych_id');
+            $table->primary('psych_id');
             $table->string('psych_fname',100)->nullable();
             $table->string('psych_mname',30)->nullable();
             $table->string('psych_lname',100)->nullable();

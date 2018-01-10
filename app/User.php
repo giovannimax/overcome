@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function addpsych($data){
+        DB::table('psychologists')->insert($data);
+        DB::table('users')->where('id', $data['psych_id'])->update(['usertype' => 'psych']);
+    }
+    public function addpat($data){
+        DB::table('patients')->insert($data);
+        DB::table('users')->where('id', $data['pat_id'])->update(['usertype' => 'pat']);
+    }
 }

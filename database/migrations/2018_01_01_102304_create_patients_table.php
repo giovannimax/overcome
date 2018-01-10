@@ -14,7 +14,8 @@ class CreatePatientsTable extends Migration
     public function up()
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->increments('pat_id');
+            $table->unsignedInteger('pat_id');
+            $table->primary('pat_id');
             $table->string('pat_fname',100)->nullable();
             $table->string('pat_mname',30)->nullable();
             $table->string('pat_lname',100)->nullable();
@@ -33,8 +34,8 @@ class CreatePatientsTable extends Migration
             $table->integer('card_no')->nullable();
             $table->string('sec_code',100)->nullable();
             $table->date('exp_date')->nullable();
-            $table->mediumtext('diagnosis',100);
-            $table->integer('psych_id')->unsigned();
+            $table->mediumtext('diagnosis',100)->nullable();
+            $table->integer('psych_id')->unsigned()->nullable();
             $table->foreign('psych_id')->references('psych_id')->on('psychologists');
             $table->timestamps();
         });

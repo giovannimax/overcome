@@ -6,6 +6,10 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use Session;
+use App\Register;
 
 class RegisterController extends Controller
 {
@@ -27,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/signup';
 
     /**
      * Create a new controller instance.
@@ -48,7 +52,6 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -63,9 +66,48 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+        ]);
+    }
+
+    protected function redusertype($user)
+    {
+        if($user=='psychologist'){
+            return view('auth.psychregister');
+        } else{
+            return view('auth.patregister');
+        }
+    }
+
+    protected function showRegistrationForm(){
+        return view('auth.register');
+    }
+
+    protected function showRegistrationOptions(){
+        return view('auth.registeroptions');
+    }
+
+    protected function registerpsych(Request $request){
+        $userreg = new User();
+        $userreg->addpsych($request->except('_token'));
+        Session::put('usertype', 'psych');
+        return redirect()->route('profile');
+    }
+
+    protected function registerpat(Request $request){
+        return $request->except('_token');
+        $userreg = new User();
+        $userreg->addpat($request->except('_token'));
+        Session::put('usertype', 'pat');
+        return redirect()->route('profile');
+    }
+
+    protected function validatepsych(array $data){
+        return Validator::make($data, [
+            'fname' => 'required|max:255',
+            'mname' => 'required|max:255',
+            'lname' => 'required|max:255',
         ]);
     }
 }

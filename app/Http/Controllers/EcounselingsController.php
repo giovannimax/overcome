@@ -23,4 +23,8 @@ class EcounselingsController extends Controller
     	$appoints = new Ecounseling();
     	return $result=$appoints->getspefapp($date);
 	}
+
+	public function addapp(Request $request){
+		
+	}
 }
