@@ -34,7 +34,7 @@
                		<img class="appic" src="images/pp.jpg">
                		<font>John Doe</font><br>
                		{{ date('h:i A', strtotime($appoints->counsel_time)) }} 
-                  -
+                  - 
                   {{ date('h:i A', strtotime($appoints->counsel_time)+ 60*60*$appoints->session_length) }}
                 </div>
             </li>
@@ -44,7 +44,7 @@
         @else
         <li>
                <div class="appwrapper">
-               		No appointments on this day.
+               		No appointment on this day.
             </li>
 
 

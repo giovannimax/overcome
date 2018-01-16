@@ -25,6 +25,22 @@ class EcounselingsController extends Controller
 	}
 
 	public function addapp(Request $request){
-		
+    	$appoints = new Ecounseling();
+		$result=$appoints->createapp($request->except('_token'));
+		return redirect()->route('appointments');
+	}
+
+	public static function retapppsych($id){
+		$patid=Array();
+		array_push($patid, $id);
+    	$appoints = new Ecounseling();
+		$result=$appoints->getapppsych($patid);
+		return $result;
+	}
+
+	public function cancelapp(Request $request){
+    	$appoints = new Ecounseling();
+		$result=$appoints->cancelappnt($request->except('_token'));
+		return redirect()->route('appointments');
 	}
 }

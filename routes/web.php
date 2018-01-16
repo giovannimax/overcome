@@ -31,6 +31,10 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/video', function () {
+    return view('video');
+});
+
 Route::post('/availabilitytab', function () {
     return view('comp.availabilitytab');
 });
@@ -41,7 +45,7 @@ Route::get('/register', function () {
 
 Route::get('/appointments', function () {
     return view('appointments');
-});
+})->name('appointments');
 
 Route::post('/appointmentstab', 'EcounselingsController@viewspefecoun');
 
@@ -63,3 +67,6 @@ Route::get('signup', 'Auth\RegisterController@showRegistrationOptions');
 
 Route::post('RegisterControllerPsych','Auth\RegisterController@registerpsych');
 Route::post('RegisterControllerPat','Auth\RegisterController@registerpat');
+Route::post('AddAppointment','EcounselingsController@addapp');
+Route::post('DeleteAppointment','EcounselingsController@cancelapp');
+Route::get('/retapp','EcounselingsController@retapppsych');

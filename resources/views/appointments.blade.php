@@ -1,5 +1,8 @@
 @extends ('layouts.pnavbar')
 
+<?php
+  use App\Http\Controllers\EcounselingsController;
+?>
 @section ('content')
     <div>
          <span class="mesbtn float-right"><button class="btn btn-info btn-md" data-toggle="modal" data-target="#sendmsgModal" ><i class="contact material-icons">contact_mail</i>Send a Message</button>
@@ -46,25 +49,44 @@
                 <div class="card">
                     
                   <div class='tab table'>  
-                  <div class='patapptr tablerow'>
+        <?php 
+          $result = EcounselingsController::retapppsych(Auth::user()->id);
+          //print_r($result);
+        ?>
+        @if(count($result)>0)
+          <?php
+            $i=1;
+          ?>
+          @foreach($result as $result)
+        <div class='patapptr tablerow'>
                   <div class='patapptc tablecell'>
                 <div class="stepshapepatient bg-info">
 		      	<div class="container d-flex h-100">
 				    <div class="row justify-content-center text-center align-self-center mx-auto">
-				   1
+				   {{$i}}
 				    </div>
 				</div>
             </div> <!-- End of stepshapepatient -->
-           </div>         
-                      <div class='patapptc tablecell'>04/29/17</div>
+           </div>        
+                      <div class='patapptc tablecell'>{{ date('M d, Y ', strtotime($result->counsel_date)) }}</div>
                       
-                      <div class='patapptc tablecell'>10:00 am - 11:00 am</div>
+                      <div class='patapptc tablecell'>{{ date('h:i A', strtotime($result->counsel_time)) }} 
+                  - 
+                  {{ date('h:i A', strtotime($result->counsel_time)+ 60*60*$result->session_length) }}</div>
                       
-                      <div class='patapptc tablecell'> <span data-toggle="tooltip" data-placement="top" title="Cancel Bookings"><button class="hvr-buzz btn btn-outline-danger btn-md"><i class="material-icons">cancel</i></button>
+                  {!! Form::open(['action' => 'EcounselingsController@cancelapp', 'method' => 'POST']) !!}
+                  {!! Form::hidden('counsel_id',$result->counsel_id) !!}
+                      <div class='patapptc tablecell'> <span data-toggle="tooltip" data-placement="top" title="Cancel Bookings">
+                      <button type="submit" class="hvr-buzz btn btn-outline-danger btn-md"><i class="material-icons">cancel</i></button>
                         </span></div>
-                     
+                  {!! Form::close() !!}
                </div> <!-- End of table row -->
-           
+               <?php $i++; ?>
+               @endforeach
+           @else
+            No appointment yet.
+
+           @endif
                       
              </div> <!-- End of table -->
             </div> <!-- End of Card -->
@@ -72,8 +94,12 @@
         </div>
         </div>
       </div>  <!-- End of Card-Deck -->
-        
-        
+        <?php 
+          $time;
+          for($i=1;$i<=24;$i++){
+            $time[date('H:i:s', strtotime('00:00:00')+60*60*$i)] = date('h:i A', strtotime('00:00:00')+60*60*$i);
+          }
+        ?>
 
 <!-- Modal for Add Bookings -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -89,16 +115,19 @@
           <div class='tab table'>  
                   <div class='patapptr tablerow'>
                   <div class='addbooktc tablecell'>
+       {!! Form::open(['action' => 'EcounselingsController@addapp', 'method' => 'POST']) !!}
+       {!! Form::hidden('counsel_status', 'active') !!}
+       {!! Form::hidden('pat_id', Auth::user()->id) !!}
                     {{Form::label('bookingdate', 'Booking Date')}}
 				</div>
-             <div class='addbooktc tablecell'>{{Form::date('name','',['class' => 'form-control'])}}</div>
+             <div class='addbooktc tablecell'>{{Form::date('counsel_date','',['class' => 'form-control'])}}</div>
            </div>      
                 
                 <div class='patapptr tablerow'>
                   <div class='addbooktc tablecell'>
                     {{Form::label('bookingtime', 'Booking Time')}}
 				</div>
-             <div class='addbooktc tablecell'>{{Form::select('time', ['T' => 'Time', '1' => '6:30 am - 7:30 am', '2' => '7:30 am - 8:30 am' , '3' => '8:30 am - 9:30 am', '4' => '9:30 am - 10:30 am'], 'T', ['class' => 'form-control'])}}</div>
+             <div class='addbooktc tablecell'>{{Form::select('counsel_time', $time, 'T', ['class' => 'form-control'])}}</div>
            </div>      
                 
             
@@ -106,14 +135,14 @@
                   <div class='addbooktc tablecell'>
                     {{Form::label('bookingduration', 'Booking Duration')}}
 				</div>
-             <div class='addbooktc tablecell'>{{Form::select('duration', ['D' => 'Duration', '1' => '30 Minutes' , '2' => '1 Hour' , '3' => '1 Hour 30 Minutes', '4' => '2 Hours'], 'T',['class' => 'form-control'])}}</div>
+             <div class='addbooktc tablecell'>{{Form::number('session_length','', ['class' => 'form-control', 'placeholder' => '01'])}} hr</div>
            </div>      
                 
                 <div class='patapptr tablerow'>
                   <div class='addbooktc tablecell'>
                     {{Form::label('bookingtype', 'Booking Type')}}
 				</div>
-             <div class='addbooktc tablecell'>{{Form::select('BT', ['BT' => 'Type', '1' => 'On-Site', '2' => 'E-Counseling'], 'T',['class' => 'form-control'])}}</div>
+             <div class='addbooktc tablecell'>{{Form::select('counsel_type', ['BT' => 'Type', 'offsite' => 'On-Site', 'ecounseling' => 'E-Counseling'], 'T',['class' => 'form-control'])}}</div>
            </div>  
                  
                                           
