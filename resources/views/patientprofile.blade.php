@@ -1,8 +1,8 @@
-@extends('layouts.navbar')
+@extends('layouts.pnavbar')
 
 @section('content')
 
-{!! Form::open(['url' => 'accountsettings/submit']) !!}
+{!! Form::open(['url' => 'userprofile/submit']) !!}
 <div class="container">
     
    <div class="profile-pic">
@@ -106,16 +106,16 @@
 </div> <!-- end of container-->
 {!! Form::close() !!}
 
+
 @endsection
 
 @section ('scripts')
 <script>
-            
+
 $(".propic").click(function(e) {
     $("#changeprofpic").click();
 });
    
-
 
 </script>
 @endsection
