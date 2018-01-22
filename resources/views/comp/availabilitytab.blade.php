@@ -4,87 +4,79 @@
             <li class="text-info">
               Blocked Dates
             </li>
+           @if(!empty($_POST))
+              <?php
+                  $dates=$_POST['dates'];
 
+                  function date_sort($a, $b) {
+                    return strtotime($a) - strtotime($b);
+                }
+                
+                usort($dates, "date_sort");
+
+                  foreach($dates as $d){
+                    echo date('F d, Y',strtotime($d)).'</br>';
+                    echo '<input type="hidden" name="dates[]" value="'.$d.'">';
+                  }
+              ?>
+            @else
+                  No selected date.
+           @endif
            <li>
                <a href="#" class="card-link">ADD</a>
-
-               <div class='tab table'>  
-                  <div class='tablerow'>
-                    <div class='tablecell'>
-                      {!! Form::open(['action' => 'EcounselingsController@addapp', 'method' => 'POST']) !!}
-                      {{Form::label('bookingdate', 'Week:')}}
-			  	          </div>
-                   <div class="tablecell">
-                      {!! Form::text('Week','',['id'=>'weekpicker', 'class'=>'form-control'])!!}
-                   </div>
-                  </div>
-                  <div class='tablerow'>
-                    <div class='tablecell'>
-                      {!! Form::checkbox('Week','')!!}
-                      Sun
-                      {!! Form::checkbox('Week','')!!}
-                      Mon
-                      {!! Form::checkbox('Week','')!!}
-                      Tue
-                      {!! Form::checkbox('Week','')!!}
-                      Wed
-                      {!! Form::checkbox('Week','')!!}
-                      Thu
-                      {!! Form::checkbox('Week','')!!}
-                      Fri
-                      {!! Form::checkbox('Week','')!!}
-                      Sat
-			  	          </div>
-                  </div>
-              </div>
             </li>
             <li class="sidebar-brand text-info">
               <br>
-              <br>
-                   Availability <a class="close">Show all</a>
+                   Time <a class="close" id="addtime">Add</a>
+
+
+                <!--<ol id="selectable">
+                  <li class="ui-widget-content">Item 1</li>
+                  <li class="ui-widget-content">Item 2</li>
+                  <li class="ui-widget-content">Item 3</li>
+                  <li class="ui-widget-content">Item 4</li>
+                  <li class="ui-widget-content">Item 5</li>
+                  <li class="ui-widget-content">Item 6</li>
+                  <li class="ui-widget-content">Item 7</li>
+                </ol>-->
+
             </li>
 
-
-            
-<script src="js/weekPicker.js"></script>
-<script>var startDate,
-        endDate;
-        
-      $('#weekpicker').datepicker({
-        autoclose: true,
-        format :'mm/dd/yyyy',
-        forceParse :false
-    }).on("changeDate", function(e) {
-        //console.log(e.date);
-        var date = e.date;
-        startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay());
-        endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay()+6);
-        //$('#weekpicker').datepicker("setDate", startDate);
-        $('#weekpicker').datepicker('update', startDate);
-        $('#weekpicker').val((startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' +  startDate.getFullYear() + ' - ' + (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' +  endDate.getFullYear());
+<script>
+  var timeflag=false;
+  var selectedtime= new Array();
+   var _selectRange = false, _deselectQueue = [];
+$(function() {
+    $( "#selectable" ).selectable({
+        selecting: function (event, ui) {
+            if (event.detail == 0) {
+                _selectRange = true;
+                return true;
+            }
+            if ($(ui.selecting).hasClass('ui-selected')) {
+                _deselectQueue.push(ui.selecting);
+            }
+        },
+        unselecting: function (event, ui) {
+            $(ui.unselecting).addClass('ui-selected');
+        },
+        stop: function () {
+            if (!_selectRange) {
+                $.each(_deselectQueue, function (ix, de) {
+                    $(de)
+                        .removeClass('ui-selecting')
+                        .removeClass('ui-selected');
+                });
+            }
+            _selectRange = false;
+            _deselectQueue = [];
+        },
     });
-        
-        
-        //new
-        $('#prevWeek').click(function(e){
-          var date = $('#weekpicker').datepicker('getDate');
-          //dateFormat = "mm/dd/yy"; //$.datepicker._defaults.dateFormat;
-          startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay()- 7);
-          endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() - 1);
-          $('#weekpicker').datepicker("setDate", new Date(startDate));
-          $('#weekpicker').val((startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' +  startDate.getFullYear() + ' - ' + (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' +  endDate.getFullYear());
-                 
-          return false;
-        });
-        $('#nextWeek').click(function(){
-          var date = $('#weekpicker').datepicker('getDate');
-          //dateFormat = "mm/dd/yy"; // $.datepicker._defaults.dateFormat;
-          startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay()+ 7);
-          endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 13);
-          $('#weekpicker').datepicker("setDate", new Date(startDate));
-          $('#weekpicker').val((startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' +  startDate.getFullYear() + ' - ' + (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' +  endDate.getFullYear());
-            
-          return false;
-        });
-//# sourceURL=pen.js
+});
+
+$('#addtime').click(function(e) {
+    e.preventDefault();
+    timeflag=true;
+    $("#wrapper2").toggleClass("toggled");
+});
 </script>

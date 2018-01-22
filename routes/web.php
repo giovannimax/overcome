@@ -25,7 +25,7 @@ Route::get('/profile', function () {
 
 Route::get('/calendar', function () {
     return view('calendar');
-});
+})->name('calendar');
 
 Route::get('/login', function () {
     return view('login');
@@ -35,8 +35,16 @@ Route::get('/video', function () {
     return view('video');
 });
 
+Route::post('/availcal', function () {
+    return view('comp.availcal');
+});
+
 Route::post('/availabilitytab', function () {
     return view('comp.availabilitytab');
+});
+
+Route::post('/timecalc', function () {
+    return view('comp.timecalc');
 });
 
 Route::get('/register', function () {
@@ -69,4 +77,6 @@ Route::post('RegisterControllerPsych','Auth\RegisterController@registerpsych');
 Route::post('RegisterControllerPat','Auth\RegisterController@registerpat');
 Route::post('AddAppointment','EcounselingsController@addapp');
 Route::post('DeleteAppointment','EcounselingsController@cancelapp');
+Route::post('AddAvailability','AvailabilityController@addavail');
+Route::get('GetAvailabilitySpefDate','AvailabilityController@getavailspefdate');
 Route::get('/retapp','EcounselingsController@retapppsych');

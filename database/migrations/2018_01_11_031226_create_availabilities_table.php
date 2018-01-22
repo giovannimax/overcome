@@ -18,7 +18,7 @@ class CreateAvailabilitiesTable extends Migration
             $table->date('blocked_date');
             $table->time('start_time');
             $table->time('end_time');
-            $table->string('repeat_type',20);
+            $table->string('repeat_type',20)->nullable();
             $table->timestamps();
         });
     }

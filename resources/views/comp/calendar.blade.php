@@ -4,10 +4,11 @@
 *@email   thedilab@gmail.com
 *@website http://www.StarTutorial.com
 **/
-
+//ini_set('memory_limit', '-1');
 date_default_timezone_set('Asia/Hong_Kong');
 
 use App\Http\Controllers\EcounselingsController;
+use App\Http\Controllers\AvailabilityController;
 
 class Calendar {  
      
@@ -149,21 +150,26 @@ class Calendar {
             }
 
             
-
+        $availl = AvailabilityController::getavailspefdate($this->currentDate);
+        //print_r($availl);
           /*for($i=1;$i<=24;$i++){
-                $color='';
-                if($i<=9)
-                    $color=$i.$i.$i.$i.$i.$i;
-                else
-                    $color=$i.$i.$i;
-                    $daystrip=$daystrip."<div class='daystrip' style='background-color:#".$color.";'></div>";
+
+                $color= substr(str_shuffle('AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899'), 0, 6);
+               
+                $daystrip=$daystrip."<div class='daystrip' style='background-color:#".$color.";'></div>";
 
             }*/
+            if($availl!=0){
+                if($availl>1)
+                    $daystrip=$daystrip."<div class='daystrip' style='color: red;'>".$availl." <i class='material-icons' style='font-size: 17px;'>alarm_off</i></div>";
+                else
+                    $daystrip=$daystrip."<div class='daystrip' style='color: red;'> ".$availl." <i class='material-icons' style='font-size: 17px;'>alarm_off</i></div>";
+            }
             $pps='';
             $result = EcounselingsController::givepeople($this->currentDate);
             if(count($result)>0){
             foreach($result as $res){
-                $pps.='&nbsp;<img src="images/pp.jpg" class="rounded-circle calimg">';
+                $pps.='&nbsp;<img src="images/pp.jpg" class="rounded-circle calimg" id="calimg">';
             }
 
         }
@@ -171,8 +177,7 @@ class Calendar {
 
 
                     $daystrip.='</div>';
-            return '<a href="#" class="calday"><div '.$dayclass.' onclick=toggleleftsidebar("'.$this->currentDate.'"); id="li-'.$this->currentDate.$hdr.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
-                ($cellContent==null?'mask':'').'">&nbsp;&nbsp;'.$cellContent.$pps.$daystrip.'</div></a>';
+            return '<a href="#" class="calday"><div '.$dayclass.' onclick=toggleleftsidebar("'.$this->currentDate.'",this);>&nbsp;&nbsp;'.$cellContent.$pps.$daystrip.'</div></a>';
          }
 
         else {

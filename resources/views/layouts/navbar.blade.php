@@ -109,8 +109,10 @@
              @yield('content')
         </div>
         @yield('leftsidebar')
+        @yield('leftsidebar2')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script type="text/javascript">
 
      var ind=0;

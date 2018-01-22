@@ -120,14 +120,16 @@
        {!! Form::hidden('pat_id', Auth::user()->id) !!}
                     {{Form::label('bookingdate', 'Booking Date')}}
 				</div>
-             <div class='addbooktc tablecell'>{{Form::date('counsel_date','',['class' => 'form-control'])}}</div>
+             <div class='addbooktc tablecell'>
+             <input class="form-control" id="counseldate" name="counsel_date" type="date" value="{{date('Y-m-d')}}" onChange="getavail(this);">
+              </div>
            </div>      
                 
                 <div class='patapptr tablerow'>
                   <div class='addbooktc tablecell'>
                     {{Form::label('bookingtime', 'Booking Time')}}
 				</div>
-             <div class='addbooktc tablecell'>{{Form::select('counsel_time', $time, 'T', ['class' => 'form-control'])}}</div>
+             <div class='addbooktc tablecell' id="addbooktc"></div>
            </div>      
                 
             
@@ -210,4 +212,25 @@
         
         
 </div>
+@endsection
+
+@section('scripts')
+<script>
+
+$(document).ready(function(){ 
+ getavail($("#counseldate"));
+})
+
+  function getavail(date){
+    $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+     }
+  });
+  var date = $(date).val();
+  $.post('./availcal',{date:date},function(data){
+       $('#addbooktc').html(data);
+        });
+  }
+</script>
 @endsection
