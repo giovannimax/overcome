@@ -1,4 +1,10 @@
-@extends('layouts.navbar')
+<?php 
+    use Illuminate\Support\Facades\Session;
+    $navbar='layouts.pnavbar';
+    if(Session::get('usertype')=='psych'||Auth::user()->usertype=='psych')
+        $navbar='layouts.navbar';
+        
+?>
 
 @section ('content')
 

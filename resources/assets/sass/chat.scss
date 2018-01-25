@@ -163,6 +163,10 @@ css */
 /* start of psychology side patient css*/
 
 
+.currentcontainer{
+    margin-left: 50px;
+    float:left;
+}
 
 #curimg{
     width: 100px;
@@ -184,7 +188,7 @@ css */
 }
 
 .anothernav{
-    margin-top: 50px;
+    margin-top: 180px;
     height: 35px;
 }
 
@@ -310,6 +314,9 @@ css */
     margin-left: 50px;
 }
 
+.patapprow{
+    margin-bottom: -25px;
+}
 
 .mesbtn{
     margin-right:50px;
@@ -1017,3 +1024,35 @@ css */
 }
 
 /* End of patient ecounseling's css*/
+.wowo{
+    float: left;
+    display: block;
+    margin-right: 10px;
+    border-bottom:0;
+    border-right: 1px solid #ddd;
+}
+
+.forlink{
+    margin-bottom: 15px;
+    padding-right: 50px;
+    padding-left: 10px;
+}
+
+.diarybtn{
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.forlink:hover{
+    background: #01acbe;
+}
+
+.forlink:active{
+    background: gray;
+}
+/* End of patient diary's css*/
+
+
+
+
+

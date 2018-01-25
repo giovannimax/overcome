@@ -44,7 +44,7 @@
             <a class="nav-link" href="login">Login</a>
           </li>
           <li>
-            <button class="btn btn-info">SIGN UP</button>
+            <button id="signupbtn" class="btn btn-info">SIGN UP</button>
           </li>
         </ul>
       </div>
@@ -61,5 +61,12 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript" src='public/js/bootstrap'></script>
+    <script>
+      $('#signupbtn').click(function(e) {
+            e.preventDefault();
+            window.location.href = 'register';
+        });
+    </script>
+    @yield('scripts')
 </body>
 </html>

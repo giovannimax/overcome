@@ -1,3 +1,7 @@
+html{
+	margin: 0xp !important;
+}
+
 body{
 	height: 100vh;
 }
@@ -61,7 +65,7 @@ body{
 }
 
 .dropdown-toggle::after {
-    display:none
+    display:none;
 }
 
 .notif-item{
@@ -100,4 +104,88 @@ body{
 
 #mCSB_1:focus, .mCSB_container:focus{
    outline:0 !important;
+}
+
+.leftsidebar{
+	position: fixed;
+	right: 0;
+	height: 100vh;
+	background-color: #fefefe;
+	width: 300px;
+	-webkit-box-shadow: -4px 0px 37px -8px rgba(0,0,0,0.75);
+	-moz-box-shadow: -4px 0px 37px -8px rgba(0,0,0,0.75);
+	box-shadow: -4px 0px 37px -8px rgba(0,0,0,0.75);
+	padding: 20px;
+}
+
+.appcont{
+	display: inline-flex;
+}
+
+.apphead{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.legend{
+	font-size: 15px !important;
+	text-indent: 10px !important;
+}
+li.legend{
+	width:100%;
+}
+
+.close{
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.appic{
+	height: 30px;
+	border-radius: 50%;
+}
+
+.btnavail{
+	margin: 10px;
+}
+
+.daystrip{
+	width: 100%;
+	height: 3.75px;
+	margin-top: 60px;
+}
+
+.daystripcont{
+	width: 100%;
+	height: 90px;
+	position: absolute;
+	top: 0;
+	background-color: #ddd;
+	z-index: -5;
+}
+
+ul,li{
+	list-style-type: none;
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+.hide{
+	display: none !important;
+}
+
+.table{
+	display: table;
+	width: 100%;
+}
+
+.tablerow{
+	display: table-row;
+	width: 100%;
+}
+
+.tablecell{
+	display: table-cell;
 }

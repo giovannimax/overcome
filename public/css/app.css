@@ -9717,6 +9717,10 @@ a.text-dark:hover {
   visibility: hidden !important;
 }
 
+html {
+  margin: 0xp !important;
+}
+
 body {
   height: 100vh;
 }
@@ -9831,6 +9835,93 @@ body {
   outline: 0 !important;
 }
 
+.leftsidebar {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  background-color: #fefefe;
+  width: 300px;
+  -webkit-box-shadow: -4px 0px 37px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 0px 37px -8px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+}
+
+.appcont {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.apphead {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.legend {
+  font-size: 15px !important;
+  text-indent: 10px !important;
+}
+
+li.legend {
+  width: 100%;
+}
+
+.close {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.appic {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.btnavail {
+  margin: 10px;
+}
+
+.daystrip {
+  width: 100%;
+  height: 3.75px;
+  margin-top: 60px;
+}
+
+.daystripcont {
+  width: 100%;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  background-color: #ddd;
+  z-index: -5;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hide {
+  display: none !important;
+}
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.tablerow {
+  display: table-row;
+  width: 100%;
+}
+
+.tablecell {
+  display: table-cell;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -9887,11 +9978,9 @@ a:focus {
 }
 
 .navbar {
-  padding: 15px 10px;
   background: #fff;
   border: none;
   border-radius: 0;
-  margin-bottom: 40px;
   -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -9929,7 +10018,7 @@ span {
 }
 
 #sidebar {
-  min-width: 250px;
+  min-width: 170px;
   max-width: 250px;
   background: #626262;
   color: #fff;
@@ -9993,7 +10082,6 @@ span {
 
 #sidebar ul.components {
   padding: 10px 0;
-  border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul li a {
@@ -10265,10 +10353,269 @@ i,
   }
 }
 
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  position: fixed;
+}
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-right: 350px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  right: 250px;
+  width: 0;
+  height: 100%;
+  margin-right: -250px;
+  overflow-y: auto;
+  background: #fefefe;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  width: 280px;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media (min-width: 768px) {
+  #wrapper {
+    padding-right: 250px;
+  }
+
+  #wrapper.toggled {
+    padding-right: 0;
+  }
+
+  #sidebar-wrapper {
+    width: 330px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+
+#overlay {
+  width: 4000px;
+  height: 100vh;
+  background: #000;
+  opacity: 0.5;
+  position: fixed;
+  left: 0;
+}
+
+#overlay.toggled {
+  display: none;
+}
+
+.appwrapper {
+  margin-left: 10px;
+}
+
+/**/
+
+#wrapper2 {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  position: fixed;
+}
+
+#wrapper2 {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper2.toggled {
+  padding-right: 350px;
+}
+
+#sidebar2-wrapper {
+  z-index: 1000;
+  position: fixed;
+  right: 500px;
+  width: 0;
+  height: 100%;
+  margin-right: -170px;
+  overflow-y: auto;
+  background: #fefefe;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper2.toggled #sidebar2-wrapper {
+  width: 250px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper2.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar2-nav {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  width: 280px;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar2-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+.sidebar2-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar2-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar2-nav li a:active,
+.sidebar2-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar2-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar2-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar2-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media (min-width: 768px) {
+  #wrapper2 {
+    padding-right: 250px;
+  }
+
+  #wrapper2.toggled {
+    padding-right: 0;
+  }
+
+  #sidebar2-wrapper {
+    width: 330px;
+  }
+
+  #wrapper2.toggled #sidebar2-wrapper {
+    width: 0;
+  }
+
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+
+  #wrapper2.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+
 /*******************************Calendar Top Navigation*********************************/
 
 div#calendar {
-  margin: 0px auto;
+  margin-top: 60px;
   padding: 0px;
   width: 100%;
   font-family: Helvetica, "Times New Roman", Times, serif;
@@ -10322,28 +10669,26 @@ div#calendar div.header a.next {
 /*******************************Calendar Content Cells*********************************/
 
 div#calendar div.box-content {
-  border: 1px solid #787878;
-  border-top: none;
+  display: table;
+  width: 100%;
 }
 
 div#calendar ul.label {
   float: left;
   margin: 0px;
   padding: 0px;
-  margin-top: 5px;
   margin-left: 15px;
   width: 100%;
 }
 
 div#calendar ul.label li {
   margin: 0px;
-  padding: 0px;
+  padding-top: 10px;
   margin-right: 5px;
   float: left;
   list-style-type: none;
   width: 13.5%;
-  height: 40px;
-  line-height: 40px;
+  line-height: 20px;
   vertical-align: middle;
   text-align: center;
   color: #000;
@@ -10355,6 +10700,7 @@ div#calendar ul.dates {
   float: left;
   margin: 0px;
   padding: 15px;
+  padding-top: 10px;
   text-align: center;
   width: 100%;
 }
@@ -10383,6 +10729,101 @@ div#calendar ul.dates li {
 
 div.clear {
   clear: both;
+}
+
+.daylabel {
+  text-align: left;
+  position: relative;
+  height: 72px;
+  padding-top: 5px;
+}
+
+.availlabel {
+  text-align: left;
+  position: relative;
+  height: 72px;
+  padding-top: 5px;
+}
+
+.daylabell {
+  text-align: left;
+  position: relative;
+  height: 72px;
+  padding-top: 5px;
+}
+
+.weekcont {
+  display: table-row;
+}
+
+.daycont {
+  display: table-cell;
+  height: 95px;
+  padding: 3px;
+  width: 14%;
+}
+
+.daytext {
+  height: 30px !important;
+  padding: 10px;
+}
+
+.daylabel:hover .daystripcont {
+  background-color: #ccc !important;
+}
+
+.availlabel:hover .daystripcont {
+  background-color: #ff7d7d !important;
+}
+
+.calimg {
+  height: 25px;
+}
+
+.calhide {
+  display: none;
+}
+
+#feedback {
+  font-size: 1.4em;
+}
+
+#selectable .ui-selecting {
+  background: #fc5050;
+}
+
+#selectable .ui-selected {
+  background: #ff4f4f;
+  color: white;
+}
+
+#selectable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  height: 0px;
+  margin-top: 3px;
+}
+
+#selectable li {
+  height: 35px;
+  font-size: 1.4em;
+  background-color: #ddd;
+  border-bottom: rgba(0, 0, 0, 0.521) 1px solid;
+}
+
+#selectpass li {
+  height: 35px;
+}
+
+.timecont {
+  height: 100px !important;
+  overflow-y: scroll;
+}
+
+.timeret {
+  margin-top: 280px;
 }
 
 /* css for psychologist account settings */
@@ -10537,6 +10978,11 @@ css */
 
 /* start of psychology side patient css*/
 
+.currentcontainer {
+  margin-left: 50px;
+  float: left;
+}
+
 #curimg {
   width: 100px;
   height: 100px;
@@ -10556,6 +11002,7 @@ css */
 
 .anothernav {
   margin-top: 50px;
+  margin-top: 180px;
   height: 35px;
 }
 
@@ -10666,6 +11113,10 @@ css */
   width: 100px;
   height: 100px;
   margin-left: 50px;
+}
+
+.patapprow {
+  margin-bottom: -25px;
 }
 
 .mesbtn {
@@ -11007,328 +11458,24 @@ css */
   border-right: 1px solid #ddd;
 }
 
-.diarytr {
-  display: table-row;
-  padding: 5px;
+.forlink {
+  margin-bottom: 15px;
+  padding-right: 50px;
+  padding-left: 10px;
 }
 
-.diarytc {
-  display: table-cell;
-  padding: 10px;
-}
-
-.sendcontent {
-  display: table-cell;
-}
-
-/* End of patient diary's css*/
-
-/* Start of patient wallet's css */
-
-#summary {
-  margin-right: 25px;
-}
-
-.sumrow {
-  margin-bottom: 50px;
-}
-
-.btnsummary {
-  width: 150px;
-}
-
-.sumtable {
-  border-bottom: 1px solid;
-  border-bottom-color: #edeeef;
-  margin-bottom: 25px;
-}
-
-.summarythead {
-  color: #f58c37;
-}
-
-.summarytbody {
-  color: #212834;
-}
-
-.txtdiary {
-  margin-top: 25px;
-  font-size: 16px;
-  text-indent: 50px;
-  margin-right: 25px;
-}
-
-.doccomment {
-  max-width: 50rem;
-  margin-top: 100px;
-  margin-left: 250px;
-}
-
-.chead {
-  font-size: 16px;
-}
-
-.cbody {
-  font-size: 14px;
-}
-
-.printing {
-  float: right;
-}
-
-.charchar {
-  float: right;
+.diarybtn {
+  margin-bottom: 10px;
   margin-left: 10px;
 }
 
-/* End of patient wallet's css*/
-
-/* Start of psychologist ecounseling's css*/
-
-#wrapper {
-  padding-left: 0;
-  margin-top: -390px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.forlink:hover {
+  background: #01acbe;
 }
 
-#wrapper.toggled {
-  padding-right: 250px;
+.forlink:active {
+  background: gray;
 }
 
-#sidebar-wrapper {
-  z-index: 1000;
-  position: fixed;
-  right: 250px;
-  width: 0;
-  height: 100%;
-  margin-right: -250px;
-  overflow-y: auto;
-  background: #edeeef;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-  width: 250px;
-}
-
-#page-content-wrapper {
-  width: 100%;
-  position: absolute;
-  padding: 15px;
-}
-
-#wrapper.toggled #page-content-wrapper {
-  position: absolute;
-  margin-right: -250px;
-}
-
-/* Sidebar Styles */
-
-.sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.sidebar-nav li a:hover {
-  text-decoration: none;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-  text-decoration: none;
-}
-
-#h6 {
-  color: #212834;
-  margin-top: 20px;
-  margin-left: 15px;
-  margin-bottom: 25px;
-}
-
-.name {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 25px;
-  font-size: 14px;
-  color: #212834;
-}
-
-.time {
-  font-size: 14px;
-  margin-bottom: 25px;
-  color: #f58c37;
-}
-
-#duration {
-  margin-left: 25px;
-  margin-top: 25px;
-}
-
-@media (min-width: 768px) {
-  #wrapper {
-    padding-right: 250px;
-  }
-
-  #wrapper.toggled {
-    padding-right: 0;
-  }
-
-  #sidebar-wrapper {
-    width: 250px;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    width: 0;
-  }
-
-  #page-content-wrapper {
-    padding: 20px;
-    position: relative;
-  }
-
-  #wrapper.toggled #page-content-wrapper {
-    position: relative;
-    margin-right: 0;
-  }
-}
-
-.ecounseling {
-  height: 250px;
-  width: 250px;
-  margin-right: 100px;
-  margin-bottom: 15px;
-  margin-top: 30px;
-}
-
-.txtsuc {
-  font-size: 20px;
-  margin-right: 98px;
-}
-
-.btnec {
-  margin-top: 15px;
-  margin-right: 95px;
-}
-
-#forpat {
-  text-decoration: underline;
-  margin-left: 25px;
-  color: #808080;
-  margin-bottom: 50px;
-}
-
-.forformpsych {
-  margin-left: 380px;
-  margin-right: 350px;
-  margin-bottom: 25px;
-}
-
-#forsearchpsych {
-  width: 600px;
-  margin-right: 15px;
-  margin-top: 500px;
-}
-
-.boxpsych {
-  margin-top: 50px;
-  width: 590px;
-  height: 400px;
-  background: #85898c;
-  margin-bottom: 25px;
-  margin-left: 15px;
-}
-
-.videocardpsych {
-  background: #edeeef;
-  margin-left: 15px;
-  max-width: 92%;
-}
-
-.modalvideo {
-  max-width: 70%;
-  max-height: 60%;
-}
-
-.forvidnotes {
-  float: left;
-  margin-top: 50px;
-  width: 280px;
-  height: 700px;
-  margin-right: 15px;
-}
-
-.vidcontainer {
-  overflow: hidden;
-}
-
-.savesnotes {
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-/* End of psychologist ecounseling's css */
-
-/* Start of patient ecounseling's css*/
-
-.ecounselingp {
-  height: 250px;
-  width: 250px;
-  margin-bottom: 5px;
-  margin-top: 30px;
-}
-
-.txtsucp {
-  font-size: 20px;
-}
-
-.btnecp {
-  margin-top: 15px;
-}
-
-.m {
-  max-width: 65%;
-  max-height: 80%;
-}
-
-.box {
-  margin-top: 50px;
-  width: 775px;
-  height: 450px;
-  background: #85898c;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 25px;
-}
-
-.videocard {
-  background: #edeeef;
-}
-
-#psychologists {
-  text-decoration: underline;
-  margin-left: 25px;
-  color: #808080;
-  margin-bottom: 50px;
-}
-
-.contforpsych {
-  margin-left: 180px;
-  margin-right: 200px;
-  margin-bottom: 25px;
-}
-
-#durationpat {
-  margin-left: 25px;
-  margin-top: 25px;
-}
-
-/* End of patient ecounseling's css*/
+/* End of patient diary's css*/
 

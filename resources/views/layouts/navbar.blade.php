@@ -16,8 +16,7 @@
 
  <div class="wrapper">
             <!-- Sidebar Holder -->
-            <nav id="sidebar" class="active">
-
+            <nav id="sidebar">
                 <ul class="list-unstyled components">
                   <li>
                         <a href="#" id="sidebarCollapse" class="sidebaritem active">
@@ -30,31 +29,25 @@
                     <li class="{{ Request::is('profile') ? 'active' : '' }}">
                         <a href="profile" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Profile">
                         <i class="material-icons">person</i>
-                        <font class="sidetext hidetext">Profile</font>
+                        <font class="sidetext">Profile</font>
                       </a>
                     </li>
-                    <li class="{{ Request::is('appointments') ? 'active' : '' }}">
-                        <a href="appointments" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
+                    <li class="{{ Request::is('calendar') ? 'active' : '' }}">
+                        <a href="calendar" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
                           <i class="material-icons">date_range</i>
-                        <font class="sidetext hidetext">Appointments</font>
-                      </a>
-                    </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Availablity">
-                          <i class="material-icons">av_timer</i>
-                        <font class="sidetext hidetext">Availability</font>
+                        <font class="sidetext">Calendar</font>
                       </a>
                     </li>
                     <li class="{{ Request::is('patients') ? 'active' : '' }}">
                         <a href="patients" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
                         <i class="material-icons">person_outline</i>
-                        <font class="sidetext hidetext">Patients</font>
+                        <font class="sidetext">Patients</font>
                       </a>
                     </li>
                     <li class="{{ Request::is('psychmessage') ? 'active' : '' }}">
                         <a href="messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
                         <i class="material-icons">mail_outline</i>
-                        <font class="sidetext hidetext">Messages</font>
+                        <font class="sidetext">Messages</font>
                       </a>
                     </li>
                     <li class="{{ Request::is('psychcounseling') ? 'active' : '' }}">
@@ -66,19 +59,13 @@
                     <li>
                         <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Podcast">
                         <i class="material-icons">wifi_tethering</i>
-                        <font class="sidetext hidetext">Podcast</font>
+                        <font class="sidetext">Podcast</font>
                       </a>
                     </li>
                     <li class="{{ Request::is('psychwallet') ? 'active' : '' }}">
                         <a href="mywallet" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="My Wallet">
                         <i class="material-icons">account_balance_wallet</i>
-                        <font class="sidetext hidetext">My Wallet</font>
-                      </a>
-                    </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Logout">
-                        <i class="material-icons">exit_to_app</i>
-                        <font class="sidetext hidetext">Logout</font>
+                        <font class="sidetext">My Wallet</font>
                       </a>
                     </li>
                 </ul>
@@ -123,17 +110,14 @@
                 
            
         </div>
-
- 
-     
+        @yield('leftsidebar')
+        @yield('leftsidebar2')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-  
-  
+    <script src="js/jquery-ui.min.js"></script>
     <script type="text/javascript">
 
-     var ind=1;
+     var ind=0;
      /*
             $(document).ready(function () {
                 $("#sidebar").mCustomScrollbar({
@@ -164,10 +148,9 @@
                         })*/
 
     $(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
     $('#sidebarCollapse').on('click', function () {
         $(".sidetext").toggleClass('hidetext');
-        $(".sidetext").toggleClass('fadetext');
+
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
 
@@ -191,7 +174,7 @@
   
 
         </script>
-     
-     @yield('scripts')
+
+      @yield('scripts')
 </body>
 </html>

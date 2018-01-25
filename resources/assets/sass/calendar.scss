@@ -1,6 +1,6 @@
 /*******************************Calendar Top Navigation*********************************/
 div#calendar{
-  margin:0px auto;
+  margin-top: 60px;
   padding:0px;
   width: 100%;
   font-family:Helvetica, "Times New Roman", Times, serif;
@@ -56,8 +56,8 @@ div#calendar div.header a.next{
  
 /*******************************Calendar Content Cells*********************************/
 div#calendar div.box-content{
-    border:1px solid #787878 ;
-    border-top:none;
+  display: table;
+  width: 100%;
 }
  
  
@@ -66,20 +66,18 @@ div#calendar ul.label{
     float:left;
     margin: 0px;
     padding: 0px;
-    margin-top:5px;
     margin-left: 15px;
     width:100%;
 }
  
 div#calendar ul.label li{
     margin:0px;
-    padding:0px;
+    padding-top:10px;
     margin-right:5px;  
     float:left;
     list-style-type:none;
     width:13.5%;
-    height:40px;
-    line-height:40px;
+    line-height:20px;
     vertical-align:middle;
     text-align:center;
     color:#000;
@@ -92,6 +90,7 @@ div#calendar ul.dates{
     float:left;
     margin: 0px;
     padding: 15px;
+    padding-top: 10px;
     text-align: center;
     width:100%;
 }
@@ -119,4 +118,76 @@ div#calendar ul.dates li{
  
 div.clear{
     clear:both;
-}  
+}
+
+.daylabel{
+     text-align: left;
+     position: relative;
+     height: 72px;
+     padding-top: 5px;
+}
+
+.availlabel{
+    text-align: left;
+    position: relative;
+    height: 72px;
+    padding-top: 5px;
+}
+
+.daylabell{
+     text-align: left;
+     position: relative;
+     height: 72px;
+     padding-top: 5px;
+}
+
+.weekcont{
+    display: table-row;
+}
+
+.daycont{
+    display: table-cell;
+    height: 95px;
+    padding: 3px;
+    width: 14%;
+}
+
+.daytext{
+    height: 30px !important;
+    padding: 10px;
+}
+
+.daylabel:hover .daystripcont {
+   background-color: #ccc !important;
+}
+
+.availlabel:hover .daystripcont {
+    background-color: rgb(255, 125, 125) !important;
+ }
+
+.calimg{
+    height: 25px;
+}
+
+.calhide{
+    display: none;
+}
+
+#feedback { font-size: 1.4em; }
+  #selectable .ui-selecting { background: rgb(252, 80, 80); }
+  #selectable .ui-selected { background: rgb(255, 79, 79); color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 150px; height: 0px; margin-top: 3px;}
+  #selectable li { height: 35px; font-size: 1.4em; background-color: #ddd; 
+    border-bottom: rgba(0, 0, 0, 0.521) 1px solid;
+}
+
+  #selectpass li { height: 35px;}
+  
+  .timecont{
+      height: 100px !important;
+      overflow-y: scroll;
+  }
+
+  .timeret{
+      margin-top: 280px;
+  }
