@@ -41,38 +41,9 @@
                 </ol>-->
 
             </li>
+            {{Form::submit('Save', ['class' => 'btn btn-info'])}}
 
 <script>
-  var timeflag=false;
-  var selectedtime= new Array();
-   var _selectRange = false, _deselectQueue = [];
-$(function() {
-    $( "#selectable" ).selectable({
-        selecting: function (event, ui) {
-            if (event.detail == 0) {
-                _selectRange = true;
-                return true;
-            }
-            if ($(ui.selecting).hasClass('ui-selected')) {
-                _deselectQueue.push(ui.selecting);
-            }
-        },
-        unselecting: function (event, ui) {
-            $(ui.unselecting).addClass('ui-selected');
-        },
-        stop: function () {
-            if (!_selectRange) {
-                $.each(_deselectQueue, function (ix, de) {
-                    $(de)
-                        .removeClass('ui-selecting')
-                        .removeClass('ui-selected');
-                });
-            }
-            _selectRange = false;
-            _deselectQueue = [];
-        },
-    });
-});
 
 $('#addtime').click(function(e) {
     e.preventDefault();

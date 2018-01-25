@@ -29,7 +29,6 @@
         <ul class="timeret">
 
         </ul>
-        {{Form::submit('Save', ['class' => 'btn btn-info'])}}
     </div>
     <div id="overlay" class="toggled">
 
@@ -42,50 +41,6 @@
 <div id="wrapper2" class="toggled">
 	<div id="sidebar2-wrapper">
         <ul class="sidebar2-nav">
-          Pick time.
-        <?php 
-          $time;
-          $time[date('H:i:s', strtotime('00:00:00')+60*60*24)] = date('h:i A', strtotime('00:00:00')+60*60*24);
-          for($i=1;$i<24;$i++){
-            $time[date('H:i:s', strtotime('00:00:00')+60*60*$i)] = date('h:i A', strtotime('00:00:00')+60*60*$i);
-          }
-          $time[date('H:i:s', strtotime('00:59:00')+60*60*23)] = date('h:i A', strtotime('00:59:00')+60*60*23);
-        ?>
-                  <!--<form method="post" action="">
-                    Start time
-                    {{Form::select('counsel_time', $time, 'T', ['class' => 'form-control'])}}
-                    End time
-                    {{Form::select('counsel_time', $time, 'T', ['class' => 'form-control'])}}
-
-                  <button class="btn btn-primary">Add</button>
-
-                </form>-->
-
-
-        <div class="table">
-          <div class="tablerow" style="height: 20px;">
-            <div class="tablecell">
-            <ol id="selectpass">
-            <?php foreach($time as $t){
-        
-                   echo '<li style="width: 100px;">'.$t.'</li>';
-          } ?>
-          </ol>
-            </div>  
-            <div class="tablecell">
-            <ol id="selectable">
-            <?php for($i=0;$i<24;$i++){
-                   echo '<li value="'.$i.'"></li>';
-          } ?>
-          </ol>
-            </div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">
-              <button class="btn btn-primary" id="timedone">Done</button>
-            </div>
-          </div>
-        </div>
 
         </ul>
     </div>
@@ -101,6 +56,12 @@ var avail=0;
 var avails= new Array();
 var time = false;
 var timeflag=false;
+
+window.onload = function (){
+  $.get('./timepick',{},function(data){
+       $('.sidebar2-nav').html(data);
+        });
+}
 
 function displayleftsidebar(){
     $("#wrapper").toggleClass("toggled");
@@ -237,24 +198,6 @@ $('.availreset').click(function(e) {
         displayleftsidebar();
  	 }   
 	});
-
-  $('#timedone').click(function(e) {
-    var selectedtime = [];
-    $('.ui-selected').each(function(k,v) {
-        selectedtime.push($(v).val());
-        $("#wrapper2").toggleClass("toggled");
-    });
-
-    $.ajaxSetup({
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-     }
-  });
-
-  $.post('./timecalc',{time:selectedtime},function(data){
-       $('.timeret').html(data);
-        });
-});
   
 
 </script>

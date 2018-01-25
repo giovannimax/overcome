@@ -14,4 +14,8 @@ class Availability extends Model
     public function getavailspefdate($date){
     	return DB::select("SELECT * FROM availabilities WHERE blocked_date = ?", $date);
     }
+
+    public function deleteavail($date){
+    	return DB::select("DELETE FROM availabilities WHERE blocked_date = ?", $date);
+    }
 }

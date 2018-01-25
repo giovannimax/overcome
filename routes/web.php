@@ -47,6 +47,18 @@ Route::post('/timecalc', function () {
     return view('comp.timecalc');
 });
 
+Route::post('/timepick', function () {
+    return view('comp.timepick');
+});
+
+Route::post('/edittime', function () {
+    return view('comp.edittime');
+});
+
+Route::get('/timepick', function () {
+    return view('comp.timepick');
+});
+
 Route::get('/register', function () {
     return view('auth.registeroptions');
 });
