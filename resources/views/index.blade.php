@@ -39,15 +39,15 @@
                     <div class="header-nav">
                         <nav>
                             <ul class="primary-nav">
-                                <li><a class="navlinkss" href="#features">About</a></li>
-                                <li><a class="navlinkss" href="#assets">Psychologists</a></li>
-                                <li><a class="navlinkss" href="#blog">Reviews</a></li>
-                                <li><a class="navlinkss" href="#download">Contact</a></li>
-                                <li><a class="navlinkss" href="#download">FAQ</a></li>
+                                <li><a class="navlinkss" href="#about">About</a></li>
+                                <li><a class="navlinkss" href="#psychologist">Psychologists</a></li>
+                                <li><a class="navlinkss" href="#">Reviews</a></li>
+                                <li><a class="navlinkss" href="#faq">FAQ</a></li>
+                                <li><a class="navlinkss" href="#contact">CONTACT</a></li>
                             </ul>
                             <ul class="member-actions">
-                                <li><a href="#download" class="login navlinkss">Log in</a></li>
-                                <li><a href="#download" class="btn-white btn-small navlinkss">Sign up</a></li>
+                                <li><a href="#login" class="login navlinkss">Log in</a></li>
+                                <li><a href="#signup" class="btn-white btn-small navlinkss">Sign up</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -64,44 +64,26 @@
                         <h1>Search. Book. Interact!</h1>
                         <p class="intro">It's about making peace with 
 by listening to and understanding your symptoms.</p>
-                        <a href="#" class="btn btn-fill btn-large btn-margin-right">Get started</a> <a href="#" class="btn btn-accent btn-large">Learn more</a>
+                        <a href="#signup" class="btn btn-fill btn-large btn-margin-right">Get started</a> <a href="#about" class="btn btn-accent btn-large">Learn more</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="down-arrow floating-arrow"><a href="#"><i class="fa fa-angle-down"></i></a></div>
+        <div class="down-arrow floating-arrow"><a href="#about"><i class="fa fa-angle-down"></i></a></div>
     </section>
-    <section class="intro section-padding">
+    <section class="intro section-padding" id="about">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 intro-feature">
-                    <div class="intro-icon">
-                        <span data-icon="&#xe033;" class="icon"></span>
-                    </div>
-                    <div class="intro-content">
-                        <h5>Easily Customised</h5>
-                        <p>Easily customise Sedna to suit your start up, portfolio or product. Take advantage of the layered Sketch file and bring your product to life.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 intro-feature">
-                    <div class="intro-icon">
-                        <span data-icon="&#xe030;" class="icon"></span>
-                    </div>
-                    <div class="intro-content">
-                        <h5>Modern Design</h5>
-                        <p>Designed with modern trends and techniques in mind, Sedna will help your product stand out in an already saturated market.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 intro-feature">
-                    <div class="intro-icon">
-                        <span data-icon="&#xe046;" class="icon"></span>
-                    </div>
-                    <div class="intro-content last">
-                        <h5>Responsive Development</h5>
-                        <p>Built using the latest web technologies like html5, css3, and jQuery, rest assured Sedna will look smashing on every device under the sun.</p>
-                    </div>
-                </div>
-            </div>
+            <h2  class="text-center" style="margin-bottom:20px;">Insert About Overcome</h2>
+            
+            <p style="margin-bottom:30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             Vestibulum tincidunt ultricies pulvinar. 
+             Donec dapibus quam elit, posuere venenatis ex
+              congue eu. Duis interdum metus ac orci mattis,
+               ut hendrerit nibh tempor. Mauris convallis sem risus, 
+               sit amet pharetra turpis tempus vitae. Vestibulum et nunc at orci volutpat dictum. In id magna eu mi dapibus hendrerit. Nunc at neque condimentum, porta lacus quis, tincidunt enim. Mauris in vulputate enim. Donec odio turpis, volutpat scelerisque arcu vel, suscipit placerat sem. Ut vitae est fermentum, aliquet purus ac, malesuada orci. Quisque a dapibus arcu, ac pharetra erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis ornare est in felis congue semper. Cras sed dolor sed dui semper cursus.</p>
+             <h5 class="text-center">Mission</h5> 
+             <p class="text-center">To remove stigma of mental illness that hindering people on seeking help <br> and give an accessible place that is convenience for everyone.</p>  
+            
         </div>
     </section>
     <section class="features section-padding" id="features">
@@ -109,34 +91,34 @@ by listening to and understanding your symptoms.</p>
             <div class="row">
                 <div class="col-md-5 col-md-offset-7">
                     <div class="feature-list">
-                        <h3>Sedna will drive your product forward</h3>
-                        <p>Present your product, start up, or portfolio in a beautifully modern way. Turn your visitors in to clients.</p>
+                        <h3>Why Use Overcome?</h3>
+                        <p><q>Healing is hard, staying wounded is harder.</q></p>
                         <ul class="features-stack">
                             <li class="feature-item">
                                 <div class="feature-icon">
-                                    <span data-icon="&#xe03e;" class="icon"></span>
+                                    <span data-icon="&#xe001;" class="icon" style="color:#17a2b8;"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h5>Universal & Responsive</h5>
-                                    <p>Sedna is universal and will look smashing on any device.</p>
+                                    <h5>User Friendly</h5>
+                                    <p>It's easy to use with understandable text and directions that help guides the users.</p>
                                 </div>
                             </li>
                             <li class="feature-item">
                                 <div class="feature-icon">
-                                    <span data-icon="&#xe040;" class="icon"></span>
+                                    <span data-icon="&#xe040;" class="icon" style="color:#17a2b8;"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h5>User Centric Design</h5>
-                                    <p>Sedna takes advantage of common design patterns, allowing for a seamless experience for users of all levels.</p>
+                                    <h5>Professionals</h5>
+                                    <p>All are licensed psychologists with their respective specialities.</p>
                                 </div>
                             </li>
                             <li class="feature-item">
                                 <div class="feature-icon">
-                                    <span data-icon="&#xe03c;" class="icon"></span>
+                                    <span data-icon="&#xe00D;" class="icon" style="color:#17a2b8;"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h5>Clean reusable code</h5>
-                                    <p>Download and re-use the Sedna open source code for any other project you like.</p>
+                                    <h5>Availability</h5>
+                                    <p>Decide together with your pyschologist for your session dates availability.</p>
                                 </div>
                             </li>
                         </ul>
@@ -150,58 +132,138 @@ by listening to and understanding your symptoms.</p>
                 <div class="iphone-wrap wp2"></div>
             </div>
         </div>
-        <div class="responsive-feature-img"><img src="img/devices.png" alt="responsive devices"></div>
+        <div class="responsive-feature-img"><img src="img/dd.png" alt="responsive devices"></div>
     </section>
-    <section class="features-extra section-padding" id="assets">
+    <section class="features-extra section-padding" id="psychologist">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
                     <div class="feature-list">
-                        <h3>Designed with Sketch!</h3>
-                        <p>Easily change/switch/swap every placeholder inside every image on Sedna with the included Sketch files. You’ll have this template customised to suit your business in no time! </p>
-                        <p>Nam vehicula malesuada lectus, interdum fringilla nibh. Duis aliquam vitae metus a pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum augue quis augue ornare, eget faucibus felis pharetra. Proin condimentum et leo quis fringilla.
-                        </p>
-                        <a href="#" class="btn btn-ghost btn-accent btn-small">What's Sketch?</a>
+                        <h3>Requirements to join as a Psychologist</h3>
+                        <ul class="features-stack">
+                            <li class="feature-item">
+                                <div class="feature-icon">
+                                    <span data-icon="&#xe005;" class="icon" style="color:#17a2b8;font-size:18px;"> &nbsp;License</span>
+                                </div>
+                                <div class="feature-content" style="margin-bottom:40px;">
+                                <h5>Must be a PRC Psychology Board Exam Passer</h5>
+                                </div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon">
+                                    <span data-icon="&#xe041;" class="icon" style="color:#17a2b8;font-size:18px;"> &nbsp;Experience</span>
+                                </div>
+                                <div class="feature-content" style="margin-bottom:40px;">
+                                    <h5>In individual counseling for adults</h5>
+                                </div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon">
+                                    <span data-icon="&#xe060;" class="icon" style="color:#17a2b8;font-size:18px;">&nbsp;Good Internet Connection</span>
+                                </div>
+                                <div class="feature-content" style="margin-bottom:40px;">
+                                    <h5>For communication and e-counseling purposes</h5>
+                                  
+                                </div>
+                            </li>
+
+                            <li class="feature-item">
+                                <div class="feature-icon">
+                                    <span data-icon="&#xe025;" class="icon" style="color:#17a2b8;font-size:18px;">&nbsp;Filipino Resident</span>
+                                </div>
+                                <div class="feature-content" style="margin-bottom:20px;">
+                                    <h5>For culture understanding </h5>
+                                  
+                                </div>
+                            </li>
+
+                            <small style="color:#FF5274;">Note: Pyschologist are not Overcome employees but independent providers. </small>
+                            <li>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="macbook-wrap wp3"></div>
-        <div class="responsive-feature-img"><img src="img/macbook-pro.png" alt="responsive devices"></div>
+        <div class="responsive-feature-img"><img src="img/doctors.png" alt="responsive devices"></div>
     </section>
-    <section class="hero-strip section-padding">
+    <section class="blog-intro section-padding" id="signup">
+        <div class="containerforsignup">
+           
+           <div class="signup1">
+           <h3 style="margin-left:15px;margin-bottom:25px;">Why Join as a Patient?</h3>
+           <div class="signupcontent">
+           <big class="blogh">Easy to use</big>
+                <p class="signupp">Overcome is a userfriendly web application with understandable text and navigations.</p>   
+
+                <big class="blogh">Saves Time</big>
+                <p class="signupp">Book your first session depending on your availabilty and then psychologist will book your next sessions with the date you both agreed on.</p>                
+                
+                <big class="blogh">Hassle Free</big>
+                <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
+                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Patient</a>
+                </div>
+           </div>
+           <div class="signup2">
+           <h3 style="margin-left:15px;margin-bottom:25px;">Why work as a Psychologist</h3>
+           <div class="signupcontent">
+           <big class="blogh">Additional Income</big>
+                <p class="signupp">Aside from your regular patients, you can get other patients from different cities using this web application.</p>   
+
+                <big class="blogh">Convenience</big>
+                <p class="signupp">You can work from your home if your bookings on that day are all e-counseling. Messages and diaries are also provided for easy communication with your patient.</p>                
+                
+                <big class="blogh">Hassle Free</big>
+                <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
+                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;margin-top:15px;">Sign Up as Pyschologist</a>
+                
+                </div>
+           </div>
+        </div>
+    </section>
+   
+<section class="faq section-padding text-center" id="faq">
+<div class="container">
+    <p>for faq</p>
+</div>
+</section>
+
+    <section class="sign-up section-padding text-center" id="contact">
         <div class="container">
-            <div class="col-md-12 text-center">
-                <h2>
-                Customise Sedna with the included <span class="sketch">Sketch <i class="version">3</i></span> file
-                </h2>
-                <p>Change/swap/edit every aspect of Sedna before you hit development with the included Sketch file.</p>
-                <a href="#" class="btn btn-ghost btn-accent btn-large">Download now!</a>
-                <div class="logo-placeholder floating-logo"><img src="img/sketch-logo.png" alt="Sketch Logo"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Get in Touch</h3>
+                    <p>For some quick answers, <a href="#" class="faq">visit our frequent asked questions</a>.If you still need assistance,
+                please fill-up the form below. Happy to serve you :)</p>
+                    <form class="signup-form" action="#" method="POST" role="form">
+                    <div class="form-input-group">
+                            <i class="fa fa-user"></i><input type="text" class="" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-input-group">
+                            <i class="fa fa-envelope"></i><input type="text" class="" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-input-textarea"> 
+                            <textarea class="textarea" rows="5" placeholder="Enter message inquiry" required></textarea>
+                        </div> 
+                        <button type="submit" class="btn-fill sign-up-btn">Submit Inquiry</button>
+                    </form>
+                </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 rightcol text-justify" style="padding-left:250px;">
+                       <h3> Connect with us</h3>
+                        <p style="margin-bottom:25px;">For support or any questions:<br>Email us at <a href="#"class="faq">support@overcome.com<a/></p>
+                        <h5 style="margin-bottom:-1px;">Overcome</h5>
+                        <p>1234 Street Road,<br>Cebu City, Philippines<br>6000</p>
+                        
+                     </div>              
             </div>
         </div>
     </section>
-    <section class="blog-intro section-padding" id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Showcase your smashing product with Sedna</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
-                    <h5>EXCLUSIVE TO CODROPS</h5>
-                    <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
-                    <h5>SPREADING PIXELS AROUND THE WORLD</h5>
-                    <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <section class="blog text-center">
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-top:50px;">
+            <h3><span class="spann">OUR TEAM</span></h3>
+            
             <div class="row">
                 <div class="col-md-4">
                     <article class="blog-post">
@@ -215,8 +277,8 @@ by listening to and understanding your symptoms.</p>
                                 </div>
                             </a>
                             <figcaption>
-                            <h2><a href="#" class="blog-category" data-toggle="tooltip" data-placement="top" data-original-title="See more posts">Product</a></h2>
-                            <p><a href="#" class="blog-post-title">Getting started with Sedna <i class="fa fa-angle-right"></i></a></p>
+                            <h5 style="color: #01acbe;">Hanna Kris S. Ko</h5>
+                            <p>HUSTLER</p>
                             </figcaption>
                         </figure>
                     </article>
@@ -233,8 +295,8 @@ by listening to and understanding your symptoms.</p>
                                 </div>
                             </a>
                             <figcaption>
-                            <h2><a href="#" class="blog-category" data-toggle="tooltip" data-placement="top" data-original-title="See more posts">Technology</a></h2>
-                            <p><a href="#" class="blog-post-title">Why IE8 support is deminishing <i class="fa fa-angle-right"></i></a></p>
+                            <h5 style="color: #01acbe;">Josephine Lizl C. Marquez</h5>
+                            <p>HIPSTER</p>
                             </figcaption>
                         </figure>
                     </article>
@@ -251,62 +313,17 @@ by listening to and understanding your symptoms.</p>
                                 </div>
                             </a>
                             <figcaption>
-                            <h2><a href="#" class="blog-category" data-toggle="tooltip" data-placement="top" data-original-title="See more posts">Product</a></h2>
-                            <p><a href="#" class="blog-post-title">Sedna tutorial: How to begin your <i class="fa fa-angle-right"></i></a></p>
+                            <h5 style="color: #01acbe;">Giovanni Max R. Bulabos</h5>
+                            <p>HACKER</p>
                             </figcaption>
                         </figure>
                     </article>
                 </div>
-                <a href="#" class="btn btn-ghost btn-accent btn-small">More news</a>
             </div>
         </div>
     </section>
-    <section class="testimonial-slider section-padding text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="flexslider">
-                        <ul class="slides">
-                            <li>
-                                <div class="avatar"><img src="img/avatar.jpg" alt="Sedna Testimonial Avatar"></div>
-                                <h2>"Lorem ipsum dolor sit amet, nullam lucia nisi."</h2>
-                                <p class="author">Peter Finlan, Product Designer.</p>
-                            </li>
-                            <li>
-                                <div class="avatar"><img src="img/mani.jpg" alt="Sedna Testimonial Avatar"></div>
-                                <h2>"Nunc vel maximus purus. Nullam ac urna ornare."</h2>
-                                <p class="author">Manoela Ilic, Founder @ Codrops.</p>
-                            </li>
-                            <li>
-                                <div class="avatar"><img src="img/130.jpg" alt="Sedna Testimonial Avatar"></div>
-                                <h2>"Nullam ac urna ornare, ultrices nisl ut, lacinia nisi."</h2>
-                                <p class="author">Blaz Robar, Pixel Guru</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="sign-up section-padding text-center" id="download">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <h3>Get started with Sedna, absolutely free</h3>
-                    <p>Grab your copy today, exclusively from Codrops</p>
-                    <form class="signup-form" action="#" method="POST" role="form">
-                        <div class="form-input-group">
-                            <i class="fa fa-envelope"></i><input type="text" class="" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-input-group">
-                            <i class="fa fa-lock"></i><input type="text" class="" placeholder="Enter your password" required>
-                        </div>
-                        <button type="submit" class="btn-fill sign-up-btn">Sign up for free</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+  
+
     <section class="to-top">
         <div class="container">
             <div class="row">
@@ -334,7 +351,7 @@ by listening to and understanding your symptoms.</p>
                     </div>
                 </div>
                 <div class="social-share">
-                    <p>Share Sedna with your friends</p>
+                    <p>Share Overcome with your friends</p>
                     <a href="#" class="twitter-share"><i class="fa fa-twitter"></i></a> <a href="#" class="facebook-share"><i class="fa fa-facebook"></i></a>
                 </div>
             </div>
@@ -357,6 +374,7 @@ by listening to and understanding your symptoms.</p>
     e.src='//www.google-analytics.com/analytics.js';
     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
     ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+
     </script>
 </body>
 </html>
