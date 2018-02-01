@@ -1,6 +1,7 @@
 @extends ('layouts.pnavbar')
 @section ('content')
 
+<?php use App\Http\Controllers\DiariesController; ?>
 <span class="float-left"><button class="diarybtn btn btn-info btn-lg" data-toggle="modal" data-target="#adddiaryModal" >Add Note<i class="material-icons">note_add</i></button>
 
 <nav class="anothernavdiary">
@@ -17,63 +18,38 @@
   </div>
 </nav>
     
- <div class="tab-content">
-         <div class="tab-pane fade show active" id="nav-1">
-             <h4>January 4, 2018</h4>
-             <h6>9:30 PM</h6>
-           <p class="txtdiary text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-             
-         <div class="doccomment card bg-light mb-3">
-            <div class="chead card-header">Psychologist's Comment</div>
-                <div class="cbody card-body">
-                        <p class="card-text text-info">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-        </div> 
-             
-     </div>
+
+<?php 
+  $result = DiariesController::retdiaries(Auth::user()->id);
+?>
+
+
+@if(count($result)>0)
+  <?php $i=1;?>
+  @foreach($result as $res)
+  <div class="tab-content">
+          <div class="tab-pane fade <?php if($i==1) echo 'show active';?>" id="nav-<?php echo $i;?>">
+              <h4><?php echo $res->dia_date;?></h4>
+              <h6><?php echo date("g:i A", strtotime($res->dia_time));?></h6>
+            <p class="txtdiary text-justify"><?php echo $res->dia_content;?></p>
+              
+          <div class="doccomment card bg-light mb-3">
+              <div class="chead card-header">Psychologist's Comment</div>
+                  <div class="cbody card-body">
+                          <p class="card-text text-info">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+          </div> 
+              
+      </div>
+      <?php $i++;?>
+    @endforeach
+
+@else
+
+  Empty
+
+@endif
      
-  <div class="tab-pane fade" id="nav-2">
-             <h4>January 3, 2018</h4>
-             <h6>9:30 PM</h6>
-           <p class="txtdiary text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-             
-         <div class="doccomment card bg-light mb-3">
-            <div class="chead card-header">Psychologist's Comment</div>
-                <div class="cbody card-body">
-                        <p class="card-text text-info">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-        </div> 
-             
-     </div>
-     
-  <div class="tab-pane fade" id="nav-3">
-             <h4>January 2, 2018</h4>
-             <h6>9:30 PM</h6>
-           <p class="txtdiary text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-             
-         <div class="doccomment card bg-light mb-3">
-            <div class="chead card-header">Psychologist's Comment</div>
-                <div class="cbody card-body">
-                        <p class="card-text text-info">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-        </div> 
-             
-     </div>
-     
-      
-     <div class="tab-pane fade" id="nav-4">
-             <h4>January 1, 2018</h4>
-             <h6>9:30 PM</h6>
-           <p class="txtdiary text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-             
-         <div class="doccomment card bg-light mb-3">
-            <div class="chead card-header">Psychologist's Comment</div>
-                <div class="cbody card-body">
-                        <p class="card-text text-info">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-        </div> 
-             
-     </div>
     
 </div> <!-- End of Tab Content -->
      
@@ -92,31 +68,23 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-       {!! Form::open(['url' => 'userdiary/submit']) !!}
+       {!! Form::open(['method' => 'POST','action' => 'DiariesController@creatediary']) !!}
       <div class="modal-body">
           <div class='tab table'>  
                   <div class='diarytr tablerow'>
                   <div class='diarytc tablecell'>
                     {{Form::label('notesdate', 'Note Date')}}
 				</div>
-             <div class='diarytc tablecell'>{{Form::date('name')}}</div>
+        <?php $today = date("Y-m-d");?>
+             <div class='diarytc tablecell'> <?php echo date("F d, Y");?> {{Form::hidden('dia_date',$today)}}</div>
            </div>      
-                
-                <div class='diarytr tablerow'>
-                  <div class='diarytc tablecell'>
-                    {{Form::label('notestime', 'Note Time')}}
-				</div>
-             <div class='diarytc tablecell'>{{Form::time('name')}}</div>
-           </div>      
-                
-
-                
                 <div class='diarytr tablerow'>
                      <div class='diarytc tablecell'>
                     {{Form::label('notescontent', 'Note Content')}}
 				</div>
                    <div class='diarycontent tablecell'>
-                   {{Form::textarea('msg', '',['class' => 'form-control'])}}
+                   {{Form::textarea('dia_content', '',['class' => 'form-control'])}}
+                   {{Form::hidden('pat_id', Auth::user()->id)}}
 				</div>
            </div>  
                  

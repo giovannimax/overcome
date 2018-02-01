@@ -39,7 +39,7 @@
                       </a>
                     </li>
                     <li class="{{ Request::is('calendar') ? 'active' : '' }}">
-                        <a href="calendar" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Diary">
+                        <a href="diary" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Diary">
                           <i class="material-icons">content_paste</i>
                         <font class="sidetext">Diary</font>
                       </a>
@@ -50,8 +50,8 @@
                         <font class="sidetext">Patients</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
+                    <li class="{{ Request::is('messages') ? 'active' : '' }}">
+                        <a href="/messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
                         <i class="material-icons">mail_outline</i>
                         <font class="sidetext">Messages</font>
                       </a>

@@ -219,9 +219,8 @@
 
 $(document).ready(function(){ 
  getavail($("#counseldate"));
-})
 
-  function getavail(date){
+})
     $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

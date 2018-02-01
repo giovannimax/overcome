@@ -11,6 +11,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="css/sweetalert2.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
 </head>
 <body>
 
@@ -114,6 +116,7 @@
         @yield('leftsidebar2')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="js/sweetalert2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script type="text/javascript">
 

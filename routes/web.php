@@ -41,8 +41,10 @@ Route::get('/patient_details', function () {
 
 
 Route::get('/messages', function () {
+    if(Auth::user()->usertype == "pat")
+    return view('usernewmessage');
+    else 
     return view('psychmessage');
-    
 });
 
 Route::get('/mywallet', function () {
@@ -55,6 +57,11 @@ Route::get('/ecounseling', function () {
     
 });
 
+Route::get('/diary', function () {
+    return view('patientdiary');
+    
+})->name("diary");
+
 Route::get('/ecounseling_start', function () {
     return view('psychstartcounseling');
     
@@ -66,8 +73,12 @@ Route::get('/user_messages', function () {
     
 });
 
-Route::get('/usermessages_openmessage', function () {
-    return view('usernewmessage');
+Route::get('/checksession', function () {
+    return view('checksession');
+});
+
+Route::get('/checkavail', function () {
+    return view('comp.availchecker');
     
 });
 
@@ -100,10 +111,6 @@ Route::get('/user_startecounseling', function () {
 Route::get('/user_wallet', function () {
     return view('patientwallet');
 });
-
-
-
-
 
 Route::get('/login', function () {
     return view('login');
@@ -170,5 +177,9 @@ Route::post('RegisterControllerPat','Auth\RegisterController@registerpat');
 Route::post('AddAppointment','EcounselingsController@addapp');
 Route::post('DeleteAppointment','EcounselingsController@cancelapp');
 Route::post('AddAvailability','AvailabilityController@addavail');
+Route::post('CheckAvail','AvailabilityController@checkavail');
 Route::get('GetAvailabilitySpefDate','AvailabilityController@getavailspefdate');
 Route::get('/retapp','EcounselingsController@retapppsych');
+Route::post('CreateDiary','DiariesController@creatediary');
+Route::get('RetDiary','DiariesController@retdiaries');
+Route::get('sendmsg','MessagesController@sendmsg');

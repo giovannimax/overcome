@@ -10630,19 +10630,19 @@ i,
   }
 }
 
-#wrapper {
+#wrapperr {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   position: fixed;
 }
 
-#wrapper {
+#wrapperr {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
+#wrapperr.toggled {
   padding-right: 350px;
 }
 
@@ -10659,7 +10659,7 @@ i,
   transition: all 0.5s ease;
 }
 
-#wrapper.toggled #sidebar-wrapper {
+#wrapperr.toggled #sidebar-wrapper {
   width: 250px;
 }
 
@@ -10669,7 +10669,7 @@ i,
   padding: 15px;
 }
 
-#wrapper.toggled #page-content-wrapper {
+#wrapperr.toggled #page-content-wrapper {
   position: absolute;
   margin-right: -250px;
 }
@@ -10723,11 +10723,11 @@ i,
 }
 
 @media (min-width: 768px) {
-  #wrapper {
+  #wrapperr {
     padding-right: 250px;
   }
 
-  #wrapper.toggled {
+  #wrapperr.toggled {
     padding-right: 0;
   }
 
@@ -10735,7 +10735,7 @@ i,
     width: 330px;
   }
 
-  #wrapper.toggled #sidebar-wrapper {
+  #wrapperr.toggled #sidebar-wrapper {
     width: 0;
   }
 
@@ -10744,7 +10744,7 @@ i,
     position: relative;
   }
 
-  #wrapper.toggled #page-content-wrapper {
+  #wrapperr.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0;
   }
@@ -11363,7 +11363,7 @@ css */
 
 .card-block {
   overflow-y: scroll;
-  height: 250px;
+  height: 400px;
 }
 
 ::-webkit-scrollbar-track {
