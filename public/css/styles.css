@@ -492,13 +492,13 @@ Features-stack
     padding-bottom: 0px;
     border-bottom: none; }
   .features .ipad-wrap {
-    width: 650px;
-    height: 900px;
+    width: 700px;
+    height: 1200px;
     background: url("../img/ipad.png") no-repeat center center;
     z-index: 1; }
   .features .iphone-wrap {
-    width: 280px;
-    height: 600px;
+    width: 320px;
+    height: 720px;
     background: url("../img/iphone6edit.png") no-repeat center center;
     position: absolute;
     left: 530px;
@@ -594,10 +594,12 @@ Features-stack
 .signupp {
   font-size: 14px;
   line-height: 18px;
-  color: rgba(19, 40, 61, 0.6);
+  color: #000;
   padding-bottom: 20px;
   margin-top: 10px;
+  
  }
+
 
  .btn-signup {
   font-size: 13px;
@@ -1242,28 +1244,48 @@ you can use the generic selector below, but it's slower:
 }
 
 .signup1{
-  background: #fff;
-  border: solid #01acbe 1px;
+  background: url("../img/counselling.png") no-repeat center center;
   margin-left:15px;
-  border-radius: 1rem;
   width:50%;
+ 
 }
+
+
+
+.signup11{
+  margin: 30px;
+  background-color: #f3f4f8;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+ 
+}
+
 
 .signup2{
-  background: #fff;
-  border: solid #01acbe 1px;
+
   margin-right:15px;
-  margin-left:15px;
-  border-radius: 1rem;
   width:50%;
+  background: url("../img/signupdoc.png") no-repeat center center;
 }
 
+.signup11:hover{
+  background: #cecece;
+  -moz-transition: all 1s ease-in;
+  /* WebKit */
+  -webkit-transition: all 1s ease-in;
+  /* Opera */
+  -o-transition: all 1s ease-in;
+  /* Standard */
+  transition: all 1s ease-in;
+  
+}
 .signupcontent{
-  margin-left:25px;
+  padding: 20px;
+
 }
 
 .blogh{
-  color:#17a2b8;
+  color:#0293a3;
   text-decoration: underline;
   font-size: 18px;
 
@@ -1271,7 +1293,7 @@ you can use the generic selector below, but it's slower:
 
 .spann{
     display:inline-block;
-    border-bottom:2px solid #01acbe;
+    border-bottom:2px solid #0293a3;
     padding-bottom:10px;
     align-items: center;
 }

@@ -26,24 +26,30 @@
 
                       </a>
                     </li>
-                    <li class="{{ Request::is('profile') ? 'active' : '' }}">
-                        <a href="profile" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Profile">
+                    <li class="{{ Request::is('patientprofile') ? 'active' : '' }}">
+                        <a href="user_profile" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Profile">
                         <i class="material-icons">person</i>
                         <font class="sidetext">Profile</font>
                       </a>
                     </li>
-                    <li class="{{ Request::is('appointments') ? 'active' : '' }}">
-                        <a href="appointments" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
+                    <li class="{{ Request::is('patientappointment') ? 'active' : '' }}">
+                        <a href="user_appointments" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
                           <i class="material-icons">date_range</i>
                         <font class="sidetext">Appointments</font>
                       </a>
                     </li>
+<<<<<<< HEAD
                     <li class="{{ Request::is('calendar') ? 'active' : '' }}">
                         <a href="diary" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Diary">
+=======
+                    <li class="{{ Request::is('patientdiary') ? 'active' : '' }}">
+                        <a href="user_diary" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Diary">
+>>>>>>> 48b132e1a34d45e2f86adb263f5924bad2be2776
                           <i class="material-icons">content_paste</i>
                         <font class="sidetext">Diary</font>
                       </a>
                     </li>
+<<<<<<< HEAD
                     <li>
                         <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
                         <i class="material-icons">person_outline</i>
@@ -52,12 +58,17 @@
                     </li>
                     <li class="{{ Request::is('messages') ? 'active' : '' }}">
                         <a href="/messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
+=======
+                
+                    <li  class="{{ Request::is('usermessage') ? 'active' : '' }}">
+                        <a href="user_messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
+>>>>>>> 48b132e1a34d45e2f86adb263f5924bad2be2776
                         <i class="material-icons">mail_outline</i>
                         <font class="sidetext">Messages</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="e-Counseling">
+                    <li  class="{{ Request::is('patientdoctors') ? 'active' : '' }}">
+                        <a href="user_ecounseling" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="e-Counseling">
                         <i class="material-icons">people_outline</i>
                         <font class="sidetext">e-Counseling</font>
                       </a>
@@ -68,8 +79,8 @@
                         <font class="sidetext">Podcast</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="My Wallet">
+                    <li  class="{{ Request::is('patientwallet') ? 'active' : '' }}">
+                        <a href="user_wallet" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="My Wallet">
                         <i class="material-icons">account_balance_wallet</i>
                         <font class="sidetext">My Wallet</font>
                       </a>

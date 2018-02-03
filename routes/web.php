@@ -83,7 +83,7 @@ Route::get('/checkavail', function () {
 });
 
 
-Route::get('/messages_openmessage', function () {
+Route::get('/conversation', function () {
     return view('psychnewmessage');
 });
 

@@ -192,6 +192,7 @@ by listening to and understanding your symptoms.</p>
         <div class="containerforsignup">
            
            <div class="signup1">
+               <div class="signup11">
            <h3 style="margin-left:15px;margin-bottom:25px;">Why Join as a Patient?</h3>
            <div class="signupcontent">
            <big class="blogh">Easy to use</big>
@@ -204,8 +205,10 @@ by listening to and understanding your symptoms.</p>
                 <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
                 <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Patient</a>
                 </div>
+</div>
            </div>
            <div class="signup2">
+               <div class="signup11">
            <h3 style="margin-left:15px;margin-bottom:25px;">Why work as a Psychologist</h3>
            <div class="signupcontent">
            <big class="blogh">Additional Income</big>
@@ -216,16 +219,17 @@ by listening to and understanding your symptoms.</p>
                 
                 <big class="blogh">Hassle Free</big>
                 <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
-                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;margin-top:15px;">Sign Up as Pyschologist</a>
-                
+                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Pyschologist</a>
+</div>
                 </div>
            </div>
+         
         </div>
     </section>
    
 <section class="faq section-padding text-center" id="faq">
 <div class="container">
-    <p>for faq</p>
+    <p>for faqy</p>
 </div>
 </section>
 

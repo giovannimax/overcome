@@ -1,6 +1,7 @@
 @extends ('layouts.pnavbar')
 @section ('content')
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <div class="container">
         <span class="charchar"><button class="btnPrint btn btn-outline-info btn-md"><i class="material-icons">print</i></button></span>
         <span class="charchar"><button class="btnDownload btn btn-outline-info btn-md"><i class="material-icons">file_download</i></button></span>
@@ -74,5 +75,9 @@ $('.btnPrint').on('click',function(){
 	printData();
 })  
 
+
+$(document).ready(function(){
+  $('#printsumTable').DataTable();
+});
 </script>
 @endsection

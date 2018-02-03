@@ -105,16 +105,21 @@ var steps = [
 ]
 
 swal.queue(steps).then((result) => {
-  var start = [];
- 
-$('select[name="starttime[]"] option:selected').each(function() {
-  start.push($(this).val());
-});
-
-
-  alert(start);
+  getselectedtime();
   //alert(end);
 })
+}
+
+function getselectedtime(element){
+  var start = [];
+ 
+ $('input[name="starttime[]"]').each(function() {
+   start.push($(this).val());
+ });
+ 
+ start = $(element).val();
+ 
+   alert(start);
 }
 
 function displayleftsidebar(){
@@ -189,8 +194,9 @@ function addfirsttime(){
         echo "<option value='".$t."'>".$t."</option>";
       }
     ?>";
-    $(".addtime").append("<br> start time: &nbsp;"+ "<select name='starttime[]'>" + qwer + "</select>" );
-    $(".addtime").append("&nbsp;&nbsp;end time: &nbsp;" + "<select name='endtime[]'>" + qwer + "</select>" );
+
+    $(".addtime").append("<br> start time: &nbsp;"+ "<select onchange='getselectedtime(this);'>" + qwer + "</select>" );
+    $(".addtime").append("&nbsp;&nbsp;end time: &nbsp;" + "<input name='endtime[]'>" + "</select>" );
 }
 
 //
