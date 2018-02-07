@@ -193,7 +193,7 @@ by listening to and understanding your symptoms.</p>
            
            <div class="signup1">
                <div class="signup11">
-           <h3 style="margin-left:15px;margin-bottom:25px;">Why Join as a Patient?</h3>
+           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Why Join as a Patient?</h3>
            <div class="signupcontent">
            <big class="blogh">Easy to use</big>
                 <p class="signupp">Overcome is a userfriendly web application with understandable text and navigations.</p>   
@@ -209,7 +209,7 @@ by listening to and understanding your symptoms.</p>
            </div>
            <div class="signup2">
                <div class="signup11">
-           <h3 style="margin-left:15px;margin-bottom:25px;">Why work as a Psychologist</h3>
+           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Why work as a Psychologist</h3>
            <div class="signupcontent">
            <big class="blogh">Additional Income</big>
                 <p class="signupp">Aside from your regular patients, you can get other patients from different cities using this web application.</p>   

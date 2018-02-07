@@ -101,6 +101,11 @@ Route::get('/user_wallet', function () {
     return view('patientwallet');
 });
 
+Route::get('/regcontent', function () {
+    return view('registerquestion');
+});
+
+
 
 
 

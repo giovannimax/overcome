@@ -1247,6 +1247,7 @@ you can use the generic selector below, but it's slower:
   background: url("../img/counselling.png") no-repeat center center;
   margin-left:15px;
   width:50%;
+
  
 }
 
@@ -1257,6 +1258,8 @@ you can use the generic selector below, but it's slower:
   background-color: #f3f4f8;
   opacity: 0.6;
   filter: alpha(opacity=60);
+  margin-top: -20px;
+
  
 }
 
