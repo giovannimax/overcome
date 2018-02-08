@@ -16,8 +16,9 @@
              </div>
           
     </div> <!-- end of cont1 -->
+    </a>
         </div>
-</a>
+
 
 <hr>
  <div class="newtext2 card">

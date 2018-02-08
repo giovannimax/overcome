@@ -11,6 +11,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @stack('css')
 </head>
 <body>
 
@@ -166,14 +167,7 @@
     });
      
   
-
-var doc = new jsPDF();
-var specialElementHandlers = {
-    '#editor': function (element, renderer) {
-        return true;
-    }
-};
-        
+ 
 
 
          
@@ -184,6 +178,5 @@ var specialElementHandlers = {
 </html>
         </script>
 
-      @yield('scripts')
 </body>
 </html>

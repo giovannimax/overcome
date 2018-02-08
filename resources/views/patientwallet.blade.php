@@ -1,27 +1,23 @@
 @extends ('layouts.pnavbar')
+@push('css')
+  <link rel="stylesheet" href="{{ asset('css/datatable.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/datatable-button.css') }}">
+@endpush
 @section ('content')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <div class="container">
-        <span class="charchar"><button class="btnPrint btn btn-outline-info btn-md"><i class="material-icons">print</i></button></span>
-        <span class="charchar"><button class="btnDownload btn btn-outline-info btn-md"><i class="material-icons">file_download</i></button></span>
-        <div class="sumrow row">
-          <h4 id="summary">Payment Summary</h4>
-          {!! Form::open(['url' => 'paymentsummary/submit']) !!}
-                  
-            {{Form::select('sortby',[ 'T' => 'Today', 'W' => 'This Week' , 'M' => 'This Month', 'Y' => 'This Year', 'LY' =>'Last Year', 'A' =>'Show All'], 'T')}}
-            
-         {!! Form::close() !!}
-        </div> <!-- End of row -->
+      
+        <div class="sumrow row"></div>
+         
         
-        
-     <table class="sumtable table table-hover" id="printsumTable">
+     <table class="" id="printsumTable">
         <thead class="summarythead text-center">
+          <tr>
              <th>Date</th>
              <th>Psychologist</th>
              <th>Service</th>
              <th>Total Amount</th>
-        </thead>
+             </tr>
+            </thead>
         <tbody class="text-center summarytbody">
         <tr>
              <td>12/28/17</td>
@@ -43,7 +39,7 @@
     </table>
 <div id="editor"></div>
 
-    <nav aria-label="Page navigation example">
+    <!-- <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-end">
     <li class="page-item disabled">
       <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -55,29 +51,31 @@
       <a class="page-link" href="#">Next</a>
     </li>
   </ul>
-</nav>
+</nav> -->
  
     </div> <!-- End of container -->
 @endsection
 
 @section ('scripts')
+<script src="{{ asset('js/datatable.js') }}"></script>
+<script src="{{ asset('js/dataTables.buttons.min.js') }}"></script>
+<!-- <script src="{{ asset('js/buttons.flash.min.js') }}"></script> -->
+<script src="{{ asset('js/jszip.min.js') }}"></script>
+<script src="{{ asset('js/pdfmake.min.js') }}"></script>
+<script src="{{ asset('js/vfs_fonts.js') }}"></script>
+<script src="{{ asset('js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('js/buttons.print.min.js') }}"></script>
 <script>
-    function printData()
-{
-  var dataToPrint = document.getElementById("printsumTable");
-  newWin = window.open("");
-  newWin.document.write(dataToPrint.outerHTML);
-  newWin.print();
-  newWin.close();
-}
-
-$('.btnPrint').on('click',function(){
-	printData();
-})  
-
-
-$(document).ready(function(){
-  $('#printsumTable').DataTable();
+ 
+$('#printsumTable').DataTable({
+  dom: 'Blfrtip',
+  buttons: [
+     'pdf', 'print'
+  ]
 });
+
+
+
+
 </script>
 @endsection
