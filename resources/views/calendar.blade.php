@@ -17,7 +17,6 @@
 ?>
 @endsection
 
-
 @section('leftsidebar')
 {!! Form::open(['action' => 'AvailabilityController@addavail', 'method' => 'POST']) !!}
 <div id="wrapperr" class="toggled">
@@ -26,9 +25,13 @@
           
         
         </ul>
+        
         <ul class="timeret">
-
         </ul>
+        <ul>
+         {{Form::submit('Save', ['class' => 'btn btn-info', 'style'=>'margin-top: 300px;'])}}
+        </ul>
+        
     </div>
     <div id="overlay" class="toggled">
 

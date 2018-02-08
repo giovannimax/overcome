@@ -41,7 +41,7 @@
                 </ol>-->
 
             </li>
-            {{Form::submit('Save', ['class' => 'btn btn-info'])}}
+            
 
 <script>
 

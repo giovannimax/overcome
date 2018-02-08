@@ -189,3 +189,12 @@ ul,li{
 .tablecell{
 	display: table-cell;
 }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+
+    background-color: #17a2b8;
+}
+
+.diacont{
+	padding: 20px;
+}

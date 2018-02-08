@@ -1,47 +1,61 @@
 @extends ('layouts.pnavbar')
 @section ('content')
 
-<?php use App\Http\Controllers\DiariesController; ?>
-<span class="float-left"><button class="diarybtn btn btn-info btn-lg" data-toggle="modal" data-target="#adddiaryModal" >Add Note<i class="material-icons">note_add</i></button>
-
-<nav class="anothernavdiary">
-  <div class="navdiary nav nav-tabs justify-content-end" id="nav-tab" role="tablist">
-      
-    <a class="nav-item nav-link active" id="nav-appointments-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">January 4, 2018<br>9:30 PM</a>
-      
-    <a class="nav-item nav-link" id="nav-sesnotes-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">January 3, 2018<br>9:30 PM</a>
-      
-    <a class="nav-item nav-link" id="nav-diary-tab" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">January 2, 2018<br>9:30 PM</a>
-      
-    <a class="nav-item nav-link" id="nav-history-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-4" aria-selected="false">January 1, 2018<br>9:30 PM</a>
-
-  </div>
-</nav>
-    
-
 <?php 
+  use App\Http\Controllers\DiariesController;
   $result = DiariesController::retdiaries(Auth::user()->id);
 ?>
 
+<div class="diacont">
 
-@if(count($result)>0)
-  <?php $i=1;?>
+<span class="float-left"><button class="diarybtn btn btn-info btn-lg" data-toggle="modal" data-target="#adddiaryModal" >Add Note<i class="material-icons">note_add</i></button>
+
+<div class="bd-example bd-example-tabs">
+  <div class="row">
+    <div class="col-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <?php $i=1; ?>
+@if(count($result))
   @foreach($result as $res)
-  <div class="tab-content">
-          <div class="tab-pane fade <?php if($i==1) echo 'show active';?>" id="nav-<?php echo $i;?>">
-              <h4><?php echo $res->dia_date;?></h4>
+  <a class="nav-link bginfo<?php if($i==1&&empty(Session::get('id'))) echo ' active'; else if(Session::get('id')==$res->dia_id) echo " active";?> show" id="v-pills-<?php echo $i;?>-tab" data-toggle="pill" href="#v-pills-<?php echo $i;?>" role="tab" aria-controls="v-pills-<?php echo $i;?>" aria-selected="true"><?php echo date("F d, Y", strtotime($res->dia_date));?></a>
+    <?php $i++; ?>
+  @endforeach
+@endif
+      </div>
+    </div>
+
+<div class="col-9">
+      <div class="tab-content" id="v-pills-tabContent">
+
+ @if(count($result)>0)
+  <?php $j=1;?>
+  @foreach($result as $res)
+
+  <div class="tab-pane fade <?php if($j==1&&empty(Session::get('id'))) echo 'active'; else if(Session::get('id')==$res->dia_id) echo "active";?> show" id="v-pills-<?php echo $j;?>" role="tabpanel" aria-labelledby="v-pills-<?php echo $j;?>-tab">
+  <h4><?php echo $res->dia_date;?></h4>
               <h6><?php echo date("g:i A", strtotime($res->dia_time));?></h6>
+              <a href="#" class="edittrig <?php if($res->dia_date!=date('Y-m-d')) echo "hidetext";?>">EDIT</a>
             <p class="txtdiary text-justify"><?php echo $res->dia_content;?></p>
-              
+        <div class="editcont">
+            <form method="GET" action="editdiary">
+            <input name="dia_id" type="hidden" value="<?php echo $res->dia_id;?>">
+            <textarea class="editcontent" name="dia_content"></textarea><br>
+            <input type="submit"  class="btn btn-info" value="Save">
+            <a class="canceledit btn btn-info text-light">Cancel</a>
+            </form>
+            
+            
+        </div>
           <div class="doccomment card bg-light mb-3">
               <div class="chead card-header">Psychologist's Comment</div>
                   <div class="cbody card-body">
                           <p class="card-text text-info">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
-          </div> 
-              
-      </div>
-      <?php $i++;?>
+  
+  </div>
+
+  </div>
+  <?php $j++;?>
     @endforeach
 
 @else
@@ -49,12 +63,12 @@
   Empty
 
 @endif
-     
-    
-</div> <!-- End of Tab Content -->
-     
 
-    
+</div>
+
+</div>
+
+</div>
 
 
 <!-- Modal for Add Diary -->
@@ -104,5 +118,27 @@
  </div> <!-- End of modal-dialog -->
 </div> <!-- End of modal fade -->
 
+
+@endsection
+
+@section('scripts')
+<script>
+     $(".editcont").hide();
+    $('.edittrig').click(function(e) {
+    e.preventDefault();
+    $('.edittrig').hide();
+    var content = $('.active .txtdiary').text();
+    $('.active .txtdiary').hide();
+    $(".editcontent").val(content);
+    $(".editcont").show();
+});
+
+$('.canceledit').click(function(e) {
+    e.preventDefault();
+    $('.edittrig').show();
+    $('.active .txtdiary').show();
+    $(".editcont").hide();
+});
+</script>
 
 @endsection

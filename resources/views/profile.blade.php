@@ -1,3 +1,6 @@
+@extends ('layouts.navbar')
+@section ('content')
+
 <?php 
     use Illuminate\Support\Facades\Session;
     $navbar='layouts.pnavbar';

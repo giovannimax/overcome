@@ -12,6 +12,10 @@ class Diary extends Model
     }
 
     function getdiaries($id){
-        return DB::table('diaries')->get()->where('pat_id','=',$id);
+        return DB::table('diaries')->orderBy('dia_date','desc')->get()->where('pat_id','=',$id);
+    }
+
+    function updatediary($data){
+            return DB::select("UPDATE diaries SET dia_content = ? , dia_time = ? WHERE dia_id = ?", $data);
     }
 }

@@ -22,4 +22,16 @@ class DiariesController extends Controller
         $diary = new Diary();
        return $diary->getdiaries($id);
     }
+
+    function updatediary(Request $request){
+        $appoints = new Diary();
+        $data=Array();
+        $time = date("G:i");
+        array_push($data, $request->dia_content);
+        array_push($data, $time);
+        array_push($data, $request->dia_id);
+        $appoints->updatediary($data);
+        $id=$request->dia_id;
+        return redirect()->route('diary')->with(['id' => $id]);
+    }
 }

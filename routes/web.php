@@ -21,7 +21,7 @@ Route::get('/about', function () {
 
 Route::get('/profile', function () {
     return view('profile');
-})->name('profile');
+});
 
 Route::get('/calendar', function () {
     return view('calendar');
@@ -89,11 +89,6 @@ Route::get('/conversation', function () {
 
 Route::get('/user_profile', function () {
     return view('patientprofile');
-});
-
-
-Route::get('/user_appointments', function () {
-    return view('patientappointment');
 });
 
 Route::get('/user_diary', function () {
@@ -174,9 +169,10 @@ Route::get('signup', 'Auth\RegisterController@showRegistrationOptions');
 
 Route::post('RegisterControllerPsych','Auth\RegisterController@registerpsych');
 Route::post('RegisterControllerPat','Auth\RegisterController@registerpat');
-Route::post('AddAppointment','EcounselingsController@addapp');
+Route::get('AddAppointment','EcounselingsController@addapp');
 Route::post('DeleteAppointment','EcounselingsController@cancelapp');
 Route::post('AddAvailability','AvailabilityController@addavail');
+Route::get('editdiary','DiariesController@updatediary');
 Route::post('CheckAvail','AvailabilityController@checkavail');
 Route::get('GetAvailabilitySpefDate','AvailabilityController@getavailspefdate');
 Route::get('/retapp','EcounselingsController@retapppsych');
