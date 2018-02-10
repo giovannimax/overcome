@@ -11,6 +11,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery-ui.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui-smooth.css') }}">
     @stack('css')
 </head>
 <body>
@@ -113,6 +115,7 @@
         @yield('leftsidebar')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.js') }}"></script>
     <script type="text/javascript">
 
      var ind=0;

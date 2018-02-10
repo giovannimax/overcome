@@ -110,6 +110,8 @@ Route::get('/regcontent', function () {
 
 
 
+
+
 Route::get('/login', function () {
     return view('login');
     
