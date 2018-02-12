@@ -18,9 +18,6 @@
     </div>
 
 <div class="forpsychcounsel"> 
-      
- 
-<div class="containerfor2div">
 
 <div class="newtxtmsg">
   
@@ -81,7 +78,6 @@
  </div>
 
 </div> <!-- End of upcomingcounseling -->
-</div> <!-- Enf of containerfor2div -->
 </div> <!-- End of forpsychcounsel -->
 @endsection
         

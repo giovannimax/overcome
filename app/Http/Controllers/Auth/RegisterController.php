@@ -99,7 +99,7 @@ class RegisterController extends Controller
         $userreg = new User();
         $userreg->addpat($request->except('_token'));
         Session::put('usertype', 'pat');
-        return redirect()->route('profile');
+        return redirect()->route('registerquestion');
     }
 
     protected function validatepsych(array $data){

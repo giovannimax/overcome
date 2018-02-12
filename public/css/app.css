@@ -10004,6 +10004,7 @@ body {
 
 .navbarlogo {
   height: 1.8em;
+  margin-left: 160px;
 }
 
 .cover {
@@ -10197,6 +10198,54 @@ li {
 
 .tablecell {
   display: table-cell;
+}
+
+.signup {
+  margin-top: 2em;
+  font-size: 13px;
+}
+
+input[type="radio"] {
+  margin-left: 2em;
+}
+
+.register-form input {
+  border-radius: 0px;
+}
+
+.signup-notes {
+  color: #ffffff;
+  padding: 30px;
+  font-size: 14px;
+}
+
+.register-css {
+  background-color: #ffffff;
+  padding: 30px;
+}
+
+.btn-admin {
+  margin: 1em;
+}
+
+.adduser input {
+  border-radius: 0px;
+}
+
+.nav-psych {
+  margin: 2em;
+}
+
+thead {
+  color: #ffffff;
+}
+
+.adminpatient {
+  margin-top: 2em;
+}
+
+h5 {
+  margin-top: 1em;
 }
 
 @font-face {

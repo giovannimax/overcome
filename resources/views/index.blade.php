@@ -46,7 +46,7 @@
                                 <li><a class="navlinkss" href="#contact">CONTACT</a></li>
                             </ul>
                             <ul class="member-actions">
-                                <li><a href="#login" class="login navlinkss">Log in</a></li>
+                                <li><a href="login" class="login navlinkss">Log in</a></li>
                                 <li><a href="#signup" class="btn-white btn-small navlinkss">Sign up</a></li>
                             </ul>
                         </nav>
@@ -203,7 +203,7 @@ by listening to and understanding your symptoms.</p>
                 
                 <big class="blogh">Hassle Free</big>
                 <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
-                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Patient</a>
+                <a href="registeraspatient" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Patient</a>
                 </div>
 </div>
            </div>
@@ -219,7 +219,7 @@ by listening to and understanding your symptoms.</p>
                 
                 <big class="blogh">Hassle Free</big>
                 <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
-                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Pyschologist</a>
+                <a href="registeraspsychologist" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Pyschologist</a>
 </div>
                 </div>
            </div>

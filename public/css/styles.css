@@ -49,7 +49,8 @@ h5 {
   border: solid 2px;
   border-radius: 40px;
   display: inline-block;
-  border-color: #fff; }
+  border-color: #fff;
+ }
 
 .btn-white:hover, .btn-white:focus {
   color: #c7c7c7;
@@ -1235,7 +1236,8 @@ you can use the generic selector below, but it's slower:
 }
 
 .overcomelogo{
-  height:   35px;
+  height:   50px;
+  margin-top: 15px;
 }
 
 .containerforsignup{
@@ -1301,3 +1303,98 @@ you can use the generic selector below, but it's slower:
     align-items: center;
 }
 
+.panellogin{
+  margin: auto;
+  width: 500px;
+  margin-top: 170px !important;
+  background: rgba(27, 37, 47, 0.5);
+}
+
+
+.btnforlogin {
+  font-size: 13px;
+  border: solid 0px !important;
+  border-radius: 0px !important;
+  display: inline-block;
+  text-transform: uppercase; 
+  background: #01acbe;
+}
+
+
+  .btnforlogin:hover, .btnforlogin:focus {
+    color: #fff;
+    border-color: #1592a5;
+    background-color: #1592a5; }
+  
+
+    .forgotlink{
+      color: #fefefe;
+    }
+
+    .forgotlink:hover{
+      text-decoration:underline;
+    }
+
+    .hero2 {
+      min-height: 750px;
+      background: url("../img/hero.jpg") center center;
+      background-size: cover;
+      position: relative; }
+      .hero2 .down-arrow a {
+        color: #fff; }
+      .hero2 h1 {
+        color: #fff;
+        margin-bottom: 40px; }
+      .hero2 p.intro {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 80px; }
+      .hero2 .hero-content {
+        padding-top: 26%; }
+    
+    .containerforreg{
+      display: inline-flex;
+      margin-top:130px;
+      margin-left: 220px;
+ 
+    }
+
+    .container1{
+        background:#fefefe;
+        width: 650px;
+        margin-right: 50px;
+        padding-bottom: 35px;
+        margin-bottom: 50px;
+        
+    }
+
+    .container2{
+        width: 400px;
+   
+    }
+
+    .rowreg{
+      margin-left: 25px;
+      margin-right: 25px;
+    
+    }
+
+    .snotes2{   
+     padding-left: 15px;
+     padding-top:15px;
+     padding-right: 15px;
+     padding-bottom: 15px;
+    
+    }
+
+    .btnsub{
+      float:right !important;
+      border-radius: 0px !important;
+    }
+
+    .btnsub:hover, .btnsub:focus {
+      color: #fff;
+      border-color: #2d6ba0;
+      background-color: #2d6ba0; }
+    

@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -103,15 +105,23 @@ Route::get('/user_wallet', function () {
 
 Route::get('/regcontent', function () {
     return view('registerquestion');
+})->name('registerquestions');
+
+Route::get('/registeraspatient', function () {
+    return view('auth.patregister');
 });
 
+Route::get('/registeraspsychologist', function () {
+    return view('auth.psychregister');
+});
 
+Route::get('/adminlogin', function () {
+    return view('auth.adminlogin');
+});
 
-
-
-
-
-
+Route::get('/admin', function () {
+    return view('adminverifypsych');
+});
 Route::get('/login', function () {
     return view('login');
     
@@ -124,6 +134,13 @@ Route::get('/video', function () {
 
 Route::post('/availcal', function () {
     return view('comp.availcal');
+});
+
+Route::get('/adminset', function () {
+    return view('adminset');
+});
+Route::get('/adminpatient', function () {
+    return view('adminpatient');
 });
 
 Route::post('/availabilitytab', function () {

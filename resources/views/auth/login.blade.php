@@ -1,18 +1,15 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
+@extends ('layouts.anothernavbar')
+@section ('content')
+        <div class="containerlog">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+        <div class="col-md-12 ">
+            <div class="panel  panellogin">
+               
+                    <form class="form-horizontal register-form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}" style="margin-top:50px;margin-bottom:25px;">
+                            <label for="email" class="col-md-4 control-label" style="color:#dcdbdb;">E-Mail Address</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -26,7 +23,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label" style="color:#dcdbdb;">Password</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -42,7 +39,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
-                                    <label>
+                                    <label style="color:#dcdbdb;">
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                     </label>
                                 </div>
@@ -51,11 +48,11 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btnforlogin" style="width:220px;">
                                     Login
-                                </button>
+                                </button><br><br>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="forgotlink" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
                             </div>
@@ -64,6 +61,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+
 @endsection
+   
