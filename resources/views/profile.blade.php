@@ -1,4 +1,8 @@
-<?php
+
+@extends ('layouts.navbar')
+@section ('content')
+
+<?php 
     use Illuminate\Support\Facades\Session;
     $navbar='layouts.pnavbar';
     if(Session::get('usertype')=='psych'||Auth::user()->usertype=='psych')
@@ -6,19 +10,17 @@
 
 ?>
 
-@extends($navbar)
-
 @section ('content')
 
-    {!! Form::open(['url' => 'profileabout/submit']) !!}
-
     <div class="container">
+     {!! Form::open(['url' => 'profileabout/submit']) !!}
        <div class="about form-group">
            {{Form::label('about', 'About')}}
-           {{Form::textarea('about', '',['class' => 'form-control', 'disabled'])}}
-              <button type="button"  class="savebtn btn btn-primary btn-sm">Save</button>
-           <button type="button" class="editlink btn btn-primary btn-sm" >Edit</button>
-        </div>
+           <h6 class="txtprof text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+           {{Form::textarea('about', '',['class' => 'form-control'])}}
+              <button type="button"  class="savebtn btn btn-info btn-sm">Save</button> 
+           <a class="editlink" href="#">Edit</a>
+        </div> 
      {!! Form::close() !!}
         <hr id="line">
         {!! Form::open(['url' => 'profilelicense/submit']) !!}
@@ -106,19 +108,28 @@
     {!! Form::close() !!}
     </div> <!-- end of container -->
 
- {!! Form::close() !!}
 
+@endsection
+
+@section ('scripts')
 <script>
-$(document).ready(function() {
+      
+  $(document).ready(function() {
   $(".editlink").click(function () {
    $(".savebtn").show()
    $(".editlink").hide()
+   $(".txtprof").hide()
+   $("#about").show()
   });
   $(".savebtn").click(function () {
    $(".editlink").show()
    $(".savebtn").hide()
+ $(".txtprof").show()
+   $("#about").hide()
   });
  });
-</script>
+        
 
+</script>
 @endsection
+

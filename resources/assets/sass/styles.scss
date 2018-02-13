@@ -151,9 +151,8 @@ li.legend{
 
 .daystrip{
 	width: 100%;
-	height: 3px;
-	background-color: green;
-	top: 0;
+	height: 3.75px;
+	margin-top: 60px;
 }
 
 .daystripcont{
@@ -205,4 +204,34 @@ thead{
 }
 h5{
 	margin-top: 1em;
+}
+.pointer{
+	cursor: pointer;
+}
+
+.hide{
+	display: none !important;
+}
+
+.table{
+	display: table;
+	width: 100%;
+}
+
+.tablerow{
+	display: table-row;
+	width: 100%;
+}
+
+.tablecell{
+	display: table-cell;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+
+    background-color: #17a2b8;
+}
+
+.diacont{
+	padding: 20px;
 }

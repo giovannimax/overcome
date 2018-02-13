@@ -342,12 +342,12 @@ i, .sidetext{
     }
 }
 
-#wrapper {
+#wrapperr {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     position:fixed;
 }
-#wrapper {
+#wrapperr {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -358,7 +358,7 @@ i, .sidetext{
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
+#wrapperr.toggled {
     padding-right: 350px;
 }
 
@@ -377,8 +377,8 @@ i, .sidetext{
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+#wrapperr.toggled #sidebar-wrapper {
+    width: 300px;
 }
 
 #page-content-wrapper {
@@ -387,7 +387,7 @@ i, .sidetext{
     padding: 15px;
 }
 
-#wrapper.toggled #page-content-wrapper {
+#wrapperr.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
 }
@@ -397,8 +397,8 @@ i, .sidetext{
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
     margin: 0;
+    width: 280px;
     padding: 0;
     list-style: none;
 }
@@ -441,19 +441,19 @@ i, .sidetext{
 }
 
 @media(min-width:768px) {
-    #wrapper {
+    #wrapperr {
         padding-right: 250px;
     }
 
-    #wrapper.toggled {
+    #wrapperr.toggled {
         padding-right: 0;
     }
 
     #sidebar-wrapper {
-        width: 300px;
+        width: 330px;
     }
 
-    #wrapper.toggled #sidebar-wrapper {
+    #wrapperr.toggled #sidebar-wrapper {
         width: 0;
     }
 
@@ -462,7 +462,7 @@ i, .sidetext{
         position: relative;
     }
 
-    #wrapper.toggled #page-content-wrapper {
+    #wrapperr.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
     }
@@ -473,6 +473,8 @@ i, .sidetext{
     height: 100vh;
     background:#000;
     opacity: 0.5;
+    position: fixed;
+    left: 0;
 }
 
 #overlay.toggled{
@@ -481,4 +483,132 @@ i, .sidetext{
 
 .appwrapper{
     margin-left: 10px;
+}
+
+/**/
+
+#wrapper2 {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    position:fixed;
+}
+#wrapper2 {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper2.toggled {
+    padding-right: 350px;
+}
+
+#sidebar2-wrapper {
+    z-index: 1000;
+    position: fixed;
+    right: 500px;
+    width: 0;
+    height: 100%;
+    margin-right: -170px;
+    overflow-y: auto;
+    background: #fefefe;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper2.toggled #sidebar2-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper2.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar2-nav {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 280px;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar2-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar2-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar2-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar2-nav li a:active,
+.sidebar2-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar2-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar2-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar2-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper2 {
+        padding-right: 250px;
+    }
+
+    #wrapper2.toggled {
+        padding-right: 0;
+    }
+
+    #sidebar2-wrapper {
+        width: 330px;
+    }
+
+    #wrapper2.toggled #sidebar2-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper2.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
 }

@@ -96,7 +96,6 @@ class RegisterController extends Controller
     }
 
     protected function registerpat(Request $request){
-        return $request->except('_token');
         $userreg = new User();
         $userreg->addpat($request->except('_token'));
         Session::put('usertype', 'pat');

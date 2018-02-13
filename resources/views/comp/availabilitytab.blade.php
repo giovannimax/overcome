@@ -2,23 +2,52 @@
                   Manage Availability <a href="#" class="close">X</a>
             </li>
             <li class="text-info">
-              Appointments
+              Blocked Dates
             </li>
+           @if(!empty($_POST))
+              <?php
+                  $dates=$_POST['dates'];
 
-            <li class="legend">
-               	<i class="material-icons text-info">people_outline</i> e-Counseling
-               	<i class="material-icons text-info">person_pin_circle</i> Off-site
-            </li>
+                  function date_sort($a, $b) {
+                    return strtotime($a) - strtotime($b);
+                }
+                
+                usort($dates, "date_sort");
+
+                  foreach($dates as $d){
+                    echo date('F d, Y',strtotime($d)).'</br>';
+                    echo '<input type="hidden" name="dates[]" value="'.$d.'">';
+                  }
+              ?>
+            @else
+                  No selected date.
+           @endif
            <li>
-               <div class="appwrapper">
-               		<i class="material-icons text-info">people_outline</i>
-               		<img class="appic" src="images/pp.jpg">
-               		<font>John Doe</font><br>
-               		9:00AM - 10:00PM
-                </div>
+               <a href="#" class="card-link">ADD</a>
             </li>
             <li class="sidebar-brand text-info">
               <br>
-              <br>
-                   Availability <a class="close">Show all</a>
+                   Time <a class="close" id="addtime">Add</a>
+
+
+                <!--<ol id="selectable">
+                  <li class="ui-widget-content">Item 1</li>
+                  <li class="ui-widget-content">Item 2</li>
+                  <li class="ui-widget-content">Item 3</li>
+                  <li class="ui-widget-content">Item 4</li>
+                  <li class="ui-widget-content">Item 5</li>
+                  <li class="ui-widget-content">Item 6</li>
+                  <li class="ui-widget-content">Item 7</li>
+                </ol>-->
+
             </li>
+            
+
+<script>
+
+$('#addtime').click(function(e) {
+    e.preventDefault();
+    timeflag=true;
+    $("#wrapper2").toggleClass("toggled");
+});
+</script>

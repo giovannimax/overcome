@@ -127,6 +127,13 @@ div.clear{
      padding-top: 5px;
 }
 
+.availlabel{
+    text-align: left;
+    position: relative;
+    height: 72px;
+    padding-top: 5px;
+}
+
 .daylabell{
      text-align: left;
      position: relative;
@@ -145,10 +152,6 @@ div.clear{
     width: 14%;
 }
 
-.calday{
-
-}
-
 .daytext{
     height: 30px !important;
     padding: 10px;
@@ -158,6 +161,33 @@ div.clear{
    background-color: #ccc !important;
 }
 
+.availlabel:hover .daystripcont {
+    background-color: rgb(255, 125, 125) !important;
+ }
+
 .calimg{
     height: 25px;
 }
+
+.calhide{
+    display: none;
+}
+
+#feedback { font-size: 1.4em; }
+  #selectable .ui-selecting { background: rgb(252, 80, 80); }
+  #selectable .ui-selected { background: rgb(255, 79, 79); color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 150px; height: 0px; margin-top: 3px;}
+  #selectable li { height: 35px; font-size: 1.4em; background-color: #ddd; 
+    border-bottom: rgba(0, 0, 0, 0.521) 1px solid;
+}
+
+  #selectpass li { height: 35px;}
+  
+  .timecont{
+      height: 100px !important;
+      overflow-y: scroll;
+  }
+
+  .timeret{
+      margin-top: 280px;
+  }

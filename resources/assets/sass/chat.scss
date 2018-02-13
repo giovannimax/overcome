@@ -162,6 +162,7 @@ css */
 
 /* start of psychology side patient css*/
 
+
 .currentcontainer{
     margin-left: 50px;
     float:left;
@@ -275,7 +276,7 @@ css */
 .card-block
 {
     overflow-y: scroll;
-    height: 250px;
+    height: 400px;
 }
 
 
@@ -608,6 +609,11 @@ css */
 
 /*(Psychologist side) Start of patients' css*/
 
+.forform{
+    margin-left:380px;
+    margin-right:350px;
+    margin-bottom:25px;
+}
 .char{
     padding-top: 18px;
     -webkit-transform: scale(1);
@@ -656,6 +662,368 @@ css */
 
 /* Start of patient diary's css */
 
+.diarybtn{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 125px;
+
+}
+
+ .navdiary{
+    float: left;
+    display: block;
+    margin-right: 20px;
+    border-bottom:0;
+    border-right: 1px solid #ddd;
+     
+}
+
+.diarytr{
+		display: table-row;
+		padding: 5px;
+        
+		
+}
+.diarytc{
+    display: table-cell;
+    padding: 10px;
+}
+
+.sendcontent{
+    display: table-cell;
+}
+
+
+
+/* End of patient diary's css*/
+
+
+/* Start of patient wallet's css */
+
+#summary{
+    margin-right: 25px;
+}
+
+.sumrow{
+    margin-bottom: 50px;
+}
+
+.btnsummary{
+    width: 150px;
+}
+
+.sumtable{
+   border-bottom: 1px solid; 
+   border-bottom-color: #edeeef;
+   margin-bottom: 25px;
+}
+
+.summarythead{
+   color:#f58c37; 
+}
+
+.summarytbody{
+    color:#212834;
+}
+
+.txtdiary{
+     margin-top: 25px;
+     font-size: 16px;
+     text-indent: 50px;
+     margin-right: 25px;
+}
+
+.doccomment{
+    max-width: 50rem;
+    margin-top: 100px;
+    margin-left: 250px;
+}
+
+.chead{
+    font-size: 16px;
+}
+
+.cbody{
+    font-size: 14px;
+}
+
+.printing{
+    float: right;
+}
+
+.charchar{
+    float: right;
+    margin-left: 10px;
+}
+
+
+
+/* End of patient wallet's css*/
+
+
+
+/* Start of psychologist ecounseling's css*/
+
+#wrapper {
+    padding-left: 0;
+    margin-top: -390px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-right: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    right: 250px;
+    width: 0;
+    height: 100%;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: #edeeef;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+#h6{
+    color: #212834;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 25px;
+}
+.name{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #212834;
+}
+
+.time{
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #f58c37;
+}
+
+#duration{
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-right: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-right: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+          
+    
+}
+
+.ecounseling{
+    height: 250px;
+    width: 250px;
+    margin-right: 100px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+ .txtsuc{
+    font-size: 20px;
+    margin-right: 98px; 
+    }
+
+.btnec{
+    margin-top: 15px;
+    margin-right: 95px;
+}
+
+#forpat{
+    text-decoration: underline;
+    margin-left: 25px;
+    color: #808080;
+    margin-bottom: 50px;
+    
+}
+
+.forformpsych{
+    margin-left:380px;
+    margin-right:350px;
+    margin-bottom:25px;
+}
+
+#forsearchpsych{
+    width: 600px;
+    margin-right: 15px;
+    margin-top: 500px;
+}
+
+.boxpsych{
+    margin-top: 50px;
+    width: 590px;
+    height: 400px;
+    background: #85898c;
+    margin-bottom: 25px;
+    margin-left: 15px;
+}
+
+.videocardpsych{
+    background: #edeeef;
+    margin-left: 15px;
+    max-width: 92%;
+}
+
+.modalvideo {
+    max-width: 70%;
+    max-height: 60%;
+    
+}
+
+.forvidnotes{
+    float:left;
+    margin-top: 50px;
+    width: 280px;
+    height: 700px;
+    margin-right: 15px;
+}
+
+.vidcontainer{
+    overflow: hidden;
+}
+
+.savesnotes{
+    margin-top: 10px;
+    cursor: pointer; 
+}
+
+/* End of psychologist ecounseling's css */
+
+
+
+
+/* Start of patient ecounseling's css*/
+
+.ecounselingp{
+    height: 250px;
+    width: 250px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+}
+
+ .txtsucp{
+    font-size: 20px;
+    }
+
+.btnecp{
+    margin-top: 15px;
+}
+
+.m {
+    max-width: 65%;
+    max-height: 80%;
+}
+
+.box{
+    margin-top: 50px;
+    width: 775px;
+    height: 450px;
+    background: #85898c;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.videocard{
+    background: #edeeef;
+}
+
+#psychologists{
+    text-decoration: underline;
+    margin-left: 25px;
+    color: #808080;
+    margin-bottom: 50px;
+}
+
+.contforpsych{
+    margin-left: 180px;
+    margin-right: 200px;
+    margin-bottom: 25px;
+}
+
+#durationpat{
+    margin-left: 25px;
+    margin-top: 25px;
+
+}
+
+/* End of patient ecounseling's css*/
 .wowo{
     float: left;
     display: block;
@@ -683,8 +1051,5 @@ css */
     background: gray;
 }
 /* End of patient diary's css*/
-
-
-
 
 

@@ -11,6 +11,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="css/sweetalert2.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
 </head>
 <body>
 
@@ -38,22 +40,22 @@
                         <font class="sidetext">Calendar</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
+                    <li class="{{ Request::is('patients') ? 'active' : '' }}">
+                        <a href="patients" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
                         <i class="material-icons">person_outline</i>
                         <font class="sidetext">Patients</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
+                    <li class="{{ Request::is('psychmessage') ? 'active' : '' }}">
+                        <a href="messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
                         <i class="material-icons">mail_outline</i>
                         <font class="sidetext">Messages</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="e-Counseling">
+                    <li class="{{ Request::is('psychcounseling') ? 'active' : '' }}">
+                        <a href="ecounseling" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="E-Counseling">
                         <i class="material-icons">people_outline</i>
-                        <font class="sidetext">e-Counseling</font>
+                        <font class="sidetext">E-Counseling</font>
                       </a>
                     </li>
                     <li>
@@ -62,8 +64,8 @@
                         <font class="sidetext">Podcast</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="My Wallet">
+                    <li class="{{ Request::is('psychwallet') ? 'active' : '' }}">
+                        <a href="mywallet" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="My Wallet">
                         <i class="material-icons">account_balance_wallet</i>
                         <font class="sidetext">My Wallet</font>
                       </a>
@@ -97,8 +99,8 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">face</i></a>
             <div class="dropdown-menu dropdown-menu-right" style="left: auto !important;right: 20px;">
               <span class="dropdown-header" href="#">Hanna Kris Ko</span>
-              <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Account Settings</a>
+              <a class="dropdown-item {{ Request::is('profile') ? 'active' : '' }}" href="profile">Profile</a>
+              <a class="dropdown-item {{ Request::is('accountsettings') ? 'active' : '' }}" href="accountsettings">Account Settings</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Logout</a>
             </div>
@@ -107,10 +109,15 @@
       </div>
     </nav>
              @yield('content')
+                
+           
         </div>
         @yield('leftsidebar')
+        @yield('leftsidebar2')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script type="text/javascript">
 
      var ind=0;
@@ -164,6 +171,11 @@
 
 });
     });
+ 
+  
+
+  
+
         </script>
 
       @yield('scripts')
