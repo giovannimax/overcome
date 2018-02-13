@@ -10177,37 +10177,6 @@ li {
   list-style-type: none;
 }
 
-.pointer {
-  cursor: pointer;
-}
-
-.hide {
-  display: none !important;
-}
-
-.table {
-  display: table;
-  width: 100%;
-}
-
-.tablerow {
-  display: table-row;
-  width: 100%;
-}
-
-.tablecell {
-  display: table-cell;
-}
-
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  background-color: #17a2b8;
-}
-
-.diacont {
-  padding: 20px;
-}
-
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;

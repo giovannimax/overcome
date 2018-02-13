@@ -86,7 +86,9 @@ Route::get('/checkavail', function () {
 Route::get('/conversation', function () {
     return view('psychnewmessage');
 });
-
+Route::get('/admin', function () {
+    return view('adminverifypsych');
+});
 Route::get('/user_profile', function () {
     return view('patientprofile');
 });
@@ -111,7 +113,6 @@ Route::get('/regcontent', function () {
     return view('registerquestion');
 });
 
-
 Route::get('/login', function () {
     return view('login');
     
@@ -124,6 +125,13 @@ Route::get('/video', function () {
 
 Route::post('/availcal', function () {
     return view('comp.availcal');
+});
+
+Route::get('/adminset', function () {
+    return view('adminset');
+});
+Route::get('/adminpatient', function () {
+    return view('adminpatient');
 });
 
 Route::post('/availabilitytab', function () {
