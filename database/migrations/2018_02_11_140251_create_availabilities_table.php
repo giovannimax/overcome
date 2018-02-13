@@ -14,12 +14,12 @@ class CreateAvailabilitiesTable extends Migration
     public function up()
     {
         Schema::create('availabilities', function (Blueprint $table) {
-            $table->increments('blocked_id');
-            $table->date('blocked_date');
+            $table->increments('avail_id');
+            $table->string('day',20);
             $table->time('start_time');
             $table->time('end_time');
-            $table->string('repeat_type',20)->nullable();
-            $table->timestamps();
+            $table->integer('psych_id')->unsigned()->nullable();
+            $table->foreign('psych_id')->references('psych_id')->on('psychologists');
         });
     }
 

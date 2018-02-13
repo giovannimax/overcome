@@ -15,6 +15,10 @@ class CreateConversationsTable extends Migration
     {
         Schema::create('conversations', function (Blueprint $table) {
             $table->increments('convo_id');
+            $table->integer('psych_id')->unsigned()->nullable();
+            $table->foreign('psych_id')->references('psych_id')->on('psychologists');
+            $table->integer('pat_id')->unsigned()->nullable();
+            $table->foreign('pat_id')->references('pat_id')->on('patients');
             $table->timestamps();
             
         });
