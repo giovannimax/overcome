@@ -124,8 +124,6 @@ Route::get('/admin', function () {
 });
 Route::get('/login', function () {
     return view('login');
-    
-    
 });
 
 Route::get('/video', function () {

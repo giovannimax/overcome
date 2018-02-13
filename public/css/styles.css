@@ -587,10 +587,6 @@ Features-stack
    }
 
 
-.faq:hover{
-  color:#17a2b8;
-  text-decoration:underline;
-}
 
 .signupp {
   font-size: 14px;
@@ -1236,8 +1232,8 @@ you can use the generic selector below, but it's slower:
 }
 
 .overcomelogo{
-  height:   50px;
-  margin-top: 15px;
+  height:   40px;
+ 
 }
 
 .containerforsignup{
@@ -1337,8 +1333,8 @@ you can use the generic selector below, but it's slower:
 
     .hero2 {
       min-height: 750px;
-      background: url("../img/hero.jpg") center center;
-      background-size: cover;
+      background: url("../img/hero.jpg") repeat-x center fixed;
+      background-size: 
       position: relative; }
       .hero2 .down-arrow a {
         color: #fff; }
@@ -1397,4 +1393,49 @@ you can use the generic selector below, but it's slower:
       color: #fff;
       border-color: #2d6ba0;
       background-color: #2d6ba0; }
+
+      .accordion {
+        background-color: #eee;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
     
+    .active, .accordion:hover {
+        background-color: #ccc;
+    }
+    
+    .accordion:after {
+        content: '\21E3';
+        color: #01acbe;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+    
+    .active:after {
+        content: "\21E1";
+        color: #01acbe;
+    }
+    
+    .panelfaq {
+        padding: 0 18px;
+        background-color: white;
+        border: 1px solid #cecece;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .containerfaq{
+      margin-left: 150px;
+      margin-top: -15px;
+      margin-right: 150px;
+    }
+
+   

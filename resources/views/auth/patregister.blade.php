@@ -6,58 +6,57 @@
     {!! Form::open(['action' => 'Auth\RegisterController@registerpat', 'method' => 'POST', 'class' => 'register-form']) !!}
 
 <div class="row rowreg">
-<div class="col-md-12 register-css">
 <h3>Personal Information</h3>
 <div class="form-group">
-    {!! Form::label('First Name'); !!}
-    {!! Form::text('pat_fname','', ['class' => 'form-control', 'placeholder' => 'John', 'required']); !!}
+    {{ Form::label('First Name') }}
+    {{ Form::text('pat_fname','', ['class' => 'form-control', 'placeholder' => 'John', 'required'])}}
 </div>
 <div class="form-group">
-    {!! Form::label('Middle Name'); !!}
-    {!! Form::text('pat_mname','', ['class' => 'form-control', 'placeholder' => 'Middle', 'required']); !!}
+    {{ Form::label('Middle Name') }}
+    {{ Form::text('pat_mname','', ['class' => 'form-control', 'placeholder' => 'Middle', 'required'])}}
 </div>
 <div class="form-group">
-    {!! Form::label('Last Name'); !!}
-    {!! Form::text('pat_lname','', ['class' => 'form-control', 'placeholder' => 'Doe', 'required']); !!}
+    {{ Form::label('Last Name')}}
+    {{ Form::text('pat_lname','', ['class' => 'form-control', 'placeholder' => 'Doe', 'required'])}}
 </div>
 <div class="form-group">
     <div class="row">
-   <div class="col-md-4"> {!! Form::label('Gender'); !!}</div>
+   <div class="col-md-4"> {{ Form::label('Gender') }}</div>
    <div class="col-md-4"> {{ Form::radio('sex', 'male'),  'required' }} Male </div>
    <div class="col-md-4">{{ Form::radio('sex', 'female') }} Female </div>
     </div>
     </div>
 <div class="form-group">
-    {!! Form::label('Birthday'); !!}
-    {!! Form::date('pat_dob', \Carbon\Carbon::now(), ['class' => 'form-control']) ; !!}
+    {{ Form::label('Birthday') }}
+    {{ Form::date('pat_dob', \Carbon\Carbon::now(), ['class' => 'form-control']) }}
 </div>  
 
 <div class="form-group">
-    {!! Form::label('Birthplace'); !!}
-    {!! Form::text('birth_place','', ['class' => 'form-control', 'required']); !!}
+    {{ Form::label('Birthplace')}}
+    {{ Form::text('birth_place','', ['class' => 'form-control', 'required'])}}
 </div>
 <div class="form-group">
-    {!! Form::label('Citizenship'); !!}
-    {!! Form::text('ctznshp','', ['class' => 'form-control', 'required']); !!}
+    {{ Form::label('Citizenship') }}
+    {{ Form::text('ctznshp','', ['class' => 'form-control', 'required'])}}
 </div>
 <div class="form-group">
-    {!! Form::label('Religion'); !!}
-    {!! Form::text('religion','', ['class' => 'form-control', 'required']); !!}
+    {{ Form::label('Religion') }}
+    {{ Form::text('religion','', ['class' => 'form-control', 'required'])}}
 </div>
 <div class="form-group">
-    {!! Form::label('Educational Attaintment'); !!}
-    {!! Form::text('educ_attain','', ['class' => 'form-control', 'required']); !!}
+    {{ Form::label('Educational Attaintment') }}
+    {{ Form::text('educ_attain','', ['class' => 'form-control', 'required'])}}
 </div>
 <div class="form-group">
-    {!! Form::label('Occupation'); !!}
-    {!! Form::text('occupation','', ['class' => 'form-control', 'required']); !!}
+    {{ Form::label('Occupation')}}
+    {{ Form::text('occupation','', ['class' => 'form-control', 'required'])}}
 </div>
-{!! Form::submit('Submit', ['class' => 'btn btn-primary btn-lg btnsub']); !!}
+{{Form::submit('Submit', ['class' => 'btn btn-primary btn-lg btnsub'])}}
     {!! Form::close() !!}
 Patient
 </div>
 </div>
-</div>
+
 
     <div class="container2">
         <div class="snotes">

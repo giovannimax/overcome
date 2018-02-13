@@ -45,7 +45,7 @@
                                 <li><a class="navlinkss" href="#faq">FAQ</a></li>
                                 <li><a class="navlinkss" href="#contact">CONTACT</a></li>
                             </ul>
-                            <ul class="member-actions">
+                            <ul class="member-actions" style="margin-top:10px;">
                                 <li><a href="login" class="login navlinkss">Log in</a></li>
                                 <li><a href="#signup" class="btn-white btn-small navlinkss">Sign up</a></li>
                             </ul>
@@ -227,10 +227,67 @@ by listening to and understanding your symptoms.</p>
         </div>
     </section>
    
-<section class="faq section-padding text-center" id="faq">
-<div class="container">
-    <p>for faqy</p>
+<section class="faq section-padding" id="faq">
+<div class="containerfaq">
+    
+<h2 style="margin-top: -25px;margin-bottom: 25px;">Frequently Asked Questions</h2>
+
+<button class="accordion text-info">What is Overcome?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
+
+<button class="accordion text-info">Who are the Psychologists?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion text-info">Who will be helping me?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion text-info">In what way I can use Overcome ?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion text-info">Is Overcome a substitute for traditional face-to-face therapy?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion text-info">How can I communicate with my Psychologist?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion text-info">How long will I use Overcome?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion text-info">What is the payment method of Overcome?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion text-info">Is this an effective form of counseling?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion text-info">How is my privacy protected?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion text-info">Can I stay anonymous?</button>
+<div class="panelfaq">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+</div> <!-- End of container for faq -->
 </section>
 
     <section class="sign-up section-padding text-center" id="contact">
@@ -380,5 +437,23 @@ by listening to and understanding your symptoms.</p>
     ga('create','UA-XXXXX-X','auto');ga('send','pageview');
 
     </script>
+
 </body>
 </html>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>

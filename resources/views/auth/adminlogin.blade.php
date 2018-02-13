@@ -32,7 +32,7 @@
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <section class="hero2">
+    <section class="hero">
       
  
         <div class="containerlog">
@@ -41,7 +41,7 @@
         <div class="col-md-12 ">
             <div class="panel  panellogin">
                 <div class="text-center">
-                 <img class="overcomelogo" src="img/overcomeadmin.png" alt="Overcome logo">
+                 <img class="overcomelogo" src="img/overcome.png" alt="Overcome logo">
                 </div>  
             <form class="form-horizontal register-form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}

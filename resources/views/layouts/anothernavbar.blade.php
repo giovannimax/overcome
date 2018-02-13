@@ -40,7 +40,7 @@
                     <div class="header-nav">
                         <nav>
                             
-                            <ul class="member-actions">
+                            <ul class="member-actions" style="margin-top:10px;">
                                 
                                 <li><a href="/" class="btn-white btn-small navlinkss">Back</a></li>
                             </ul>

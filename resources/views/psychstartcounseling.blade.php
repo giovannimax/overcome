@@ -18,12 +18,9 @@
                </div>
 
                 <div class="col-md-2">
-                <button type="submit" class="btn btn-primary" style="margin-top:25px;margin-left:50px;" onclick="showvideo()"><span><i class="material-icons">videocam</i>Video Call</span></button>
+                <button type="submit" class="btn btn-primary" style="margin-top:25px;margin-left:50px;" onclick="showvideo()"><span><i class="material-icons">videocam</i>Start E-Counseling</span></button>
                 </div>
 
-                <div class="col-md-2">
-                <button type="submit" class="btn btn-primary" style="margin-top:25px;" onclick="showcall()"><span><i class="material-icons" >call</i>Voice Call</span></button>
-                </div>
 
                </div> <!--End of row -->
             </div> <!-- End of card-header -->
