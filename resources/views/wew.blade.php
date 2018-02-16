@@ -1,5 +1,7 @@
 @extends ('layouts.pnavbar')
 @section ('content')
+
+
 <div class="containerdiary">
     
     <div class="diary1">

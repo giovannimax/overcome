@@ -40,7 +40,7 @@
                         <nav>
                             <ul class="primary-nav">
                                 <li><a class="navlinkss" href="#about">About</a></li>
-                                <li><a class="navlinkss" href="#psychologist">Psychologists</a></li>
+                                <li><a class="navlinkss" href="#psychologist">For Psychologists</a></li>
                                 <li><a class="navlinkss" href="#">Reviews</a></li>
                                 <li><a class="navlinkss" href="#faq">FAQ</a></li>
                                 <li><a class="navlinkss" href="#contact">CONTACT</a></li>
@@ -82,7 +82,7 @@ by listening to and understanding your symptoms.</p>
                ut hendrerit nibh tempor. Mauris convallis sem risus, 
                sit amet pharetra turpis tempus vitae. Vestibulum et nunc at orci volutpat dictum. In id magna eu mi dapibus hendrerit. Nunc at neque condimentum, porta lacus quis, tincidunt enim. Mauris in vulputate enim. Donec odio turpis, volutpat scelerisque arcu vel, suscipit placerat sem. Ut vitae est fermentum, aliquet purus ac, malesuada orci. Quisque a dapibus arcu, ac pharetra erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis ornare est in felis congue semper. Cras sed dolor sed dui semper cursus.</p>
              <h5 class="text-center">Mission</h5> 
-             <p class="text-center">To remove stigma of mental illness that hindering people on seeking help <br> and give an accessible place that is convenience for everyone.</p>  
+             <p class="text-center">To remove stigma of mental illness that hindering people on seeking help <br> and give an accessible place that is convenient for everyone.</p>  
             
         </div>
     </section>

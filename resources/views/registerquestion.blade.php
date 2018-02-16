@@ -1,38 +1,43 @@
-<!DOCTYPE html>
-<html>
-
-    <head><title>Try Lang</title> <link href="{{ asset('css/app.css') }}" rel="stylesheet">  @stack('css')</head>
-     
-<body>
-
-
+@extends ('layouts.anothernavbar')
+@section ('content')
 
 <div class="regcontent">
     <div class="regcontent1">
     <div class="card w-75 border-info">
          <div class="card-body">
              <h5 class="card-title">Questions</h5>
+             <div class="question">
                  <p class="card-text">1. What is your preference <b style="color:#01acbe;">Gender</b> of Psychologist?</p>
                  <fieldset class="form-group">
                  <div class="form-check">
-                   <label class="form-check-label">
-                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                     Male
-                   </label>
-                 </div>
+                     <div class="row">
+                   <div class="col-md-1"><label class="form-check-label">
+                   Male
+                   </label></div>
+                  <div class="col-md-11"> <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked></div>
+                  </div> <!-- End of row -->
+                 </div> <!-- End of form-check -->
                  <div class="form-check">
-                 <label class="form-check-label">
-                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                     Female
-                   </label>
-                 </div>
+                     <div class="row">
+                <div class="col-md-1"> <label class="form-check-label">
+                 Female       
+                   </label></div>
+                  <div class="col-md-11"> <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2"></div>
+                    </div> <!-- End of row -->
+                 </div> <!-- End of form-check -->
                  <div class="form-check">
-                 <label class="form-check-label">
-                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
+                     <div class="row">
+                 <div class="col-md-1"><label class="form-check-label">
                      Both
-                   </label>
-                 </div>
+                   </label> </div>
+                  <div class="col-md-11"> <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3"></div>
+                    </div> <!-- End of row -->
+                 </div> <!-- End of form-check -->
                </fieldset>
+               <a href="#" class="btn btn-primary btnquest" onclick="question('question2','question')" >Next</a>
+           </div>
+
+            <div class="question2">
                <p class="card-text">2. What is your preference <b style="color:#01acbe;">Location</b> of Psychologist?</p>
                <select class="form-control">
                 <option>Manila</option>
@@ -40,8 +45,20 @@
                 <option>Davao</option>
                 <option>Palawan</option>
                 </select>
-                     <a href="#" class="btn btn-primary btnquest" >Filter</a>
-                    
+                <a href="#" class="btn btn-primary btnquest" onclick="question('question3','question2')">Next</a>
+                </div>
+                
+            <div class="question3">
+               <p class="card-text">3. What is your preference <b style="color:#01acbe;">Location</b> of Psychologist?</p>
+               <select class="form-control">
+                <option>Manila</option>
+                <option>Cebu</option>
+                <option>Davao</option>
+                <option>Palawan</option>
+                </select>
+                <a href="#" class="btn btn-primary btnquest">Next</a>
+                </div>
+            
          </div>
 </div>
     </div>
@@ -100,7 +117,7 @@
   <div class="card-body">
   
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h6 style="color:#01acbe;">About Me</h6><small class="details">I'm is a Licensed Psychologist with a unique skill set refined toward counseling and helping others.
+    <li class="list-group-item"><h6 style="color:#01acbe;">About Me</h6><p class="details">I'm is a Licensed Psychologist with a unique skill set refined toward counseling and helping others.
          My work experience ranges from adult and adolescent outpatient services, as well as working with hospital based counseling
           services. Joh has over 5 years of experience helping clients with depression, anxiety, relationship struggles and various
            other mental health and emotional challenges. I uses a person-centered approach emphasizing the importance of the 
@@ -110,7 +127,7 @@
             solving and empowers them to make the changes needed in order to accomplish their goals. Saju and his wife are blessed with 
             a young daughter and expecting another child later this year!
 
-</small></li>
+</p></li>
     <li class="list-group-item"><h6 style="color:#01acbe;">Specialty</h6>
     <ul style="color:#f58c37">
       <li>Stress</li>
@@ -172,7 +189,7 @@
         <div class="form-group">
              <label for="exampleTextarea">Basic Information</label>
              <textarea class="form-control" id="exampleTextarea" rows="8" placeholder="Including how you feeling for the past few days/weeks."></textarea>
-             <small style="font-size: 10px; color: red;">Please wait for the psychologist to accept and confirm your intended booking date. It might be change to other date or time. There's also a possiblity that you will be refered to other 
+             <small style="font-size: 12px; color: red;">Please wait for the psychologist to accept and confirm your intended booking date. It might be change to other date or time. There's also a possiblity that you will be refered to other 
                  Psychologist who is inline with what you are experiencing.</small>
             </div>   <!-- End of form-group textarea -->  
         
@@ -195,14 +212,20 @@
 
 
 </div> <!-- end of regcontent -->
-</body>
-</html>
+
 <script src="{{ asset('js/app.js') }}"></script>
  
 <style>
     .regcontent{
     display: inline-flex;
 }
+
+.sender{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
 
 .regcontent1{
     margin-right:-80px;
@@ -251,7 +274,23 @@
 
 .details{
     text-indent: 50px;
+    font-size: 15px;
 }
 
+li{
+    font-size: 15px;
+}
 
 </style>
+ <script src="{{ asset('js/app.js') }}"></script>
+<script>
+    for(var i = 2; i <= 3; i++){
+    $('.question'+i).hide();
+    }
+    function question(id, id2){
+    $("."+id).show();
+    $("."+id2).hide();
+    }
+</script>
+
+@endsection

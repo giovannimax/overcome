@@ -36,7 +36,7 @@
         <section class="navigation">
             <header>
                 <div class="header-content">
-                    <div class="logo"><a href="#"><img class="overcomelogo" src="img/overcome.png" alt="Overcome logo"></a></div>
+                    <div class="logo"><a href="/"><img class="overcomelogo" src="img/overcome.png" alt="Overcome logo"></a></div>
                     <div class="header-nav">
                         <nav>
                             
