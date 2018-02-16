@@ -10,8 +10,6 @@
 
 ?>
 
-@section ('content')
-
     <div class="container">
      {!! Form::open(['url' => 'profileabout/submit']) !!}
        <div class="about form-group">
@@ -132,4 +130,7 @@
 
 </script>
 @endsection
+<<<<<<< HEAD
 
+=======
+>>>>>>> b472441a134c9a17a3edd2de5d403862eef25b09

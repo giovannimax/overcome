@@ -120,7 +120,7 @@
     </ul>
     </li>
 
-    <li class="list-group-item"><h6 style="color:#01acbe;">LICENSING</h6>
+    <li class="list-group-item"><h6 style="color:#01acbe;">Licensing</h6>
     <ul style="color:#f58c37;">
       <li>PRC 12345</li>
     </ul>
@@ -172,7 +172,7 @@
         <div class="form-group">
              <label for="exampleTextarea">Basic Information</label>
              <textarea class="form-control" id="exampleTextarea" rows="8" placeholder="Including how you feeling for the past few days/weeks."></textarea>
-             <small style="font-size: 10px; color: red;">Please wait for the psychologist to accept and confirm your intended booking date. It might be changed to other date or time. There's also a possiblity that you will be refered to other 
+             <small style="font-size: 10px; color: red;">Please wait for the psychologist to accept and confirm your intended booking date. It might be change to other date or time. There's also a possiblity that you will be refered to other 
                  Psychologist who is inline with what you are experiencing.</small>
             </div>   <!-- End of form-group textarea -->  
         

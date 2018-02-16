@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -113,10 +115,15 @@ Route::get('/regcontent', function () {
     return view('registerquestion');
 });
 
+Route::get('/adminlogin', function () {
+    return view('auth.adminlogin');
+});
+
+Route::get('/admin', function () {
+    return view('adminverifypsych');
+});
 Route::get('/login', function () {
     return view('login');
-    
-    
 });
 
 Route::get('/video', function () {
@@ -154,11 +161,11 @@ Route::get('/timepick', function () {
     return view('comp.timepick');
 });
 
-Route::get('/signup/psychologist', function () {
+Route::get('/psychologist', function () {
     return view('auth.psychregister');
 });
 
-Route::get('/signup/patient', function () {
+Route::get('/patient', function () {
     return view('auth.patregister');
 });
 
@@ -187,6 +194,7 @@ Route::get('signup', 'Auth\RegisterController@showRegistrationOptions');
 Route::post('RegisterControllerPsych','Auth\RegisterController@registerpsych');
 Route::post('RegisterControllerPat','Auth\RegisterController@registerpat');
 Route::get('AddAppointment','EcounselingsController@addapp');
+Route::post('AddAppointment','EcounselingsController@addapp');
 Route::post('DeleteAppointment','EcounselingsController@cancelapp');
 Route::post('AddAvailability','AvailabilityController@addavail');
 Route::get('editdiary','DiariesController@updatediary');

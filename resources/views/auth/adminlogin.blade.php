@@ -33,32 +33,17 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <section class="hero">
-        <section class="navigation">
-            <header>
-                <div class="header-content">
-                    <div class="logo"><a href="#"><img class="overcomelogo" src="img/overcome.png" alt="Overcome logo"></a></div>
-                    <div class="header-nav">
-                        <nav>
-                            
-                            <ul class="member-actions" style="margin-top:10px;">
-                                
-                                <li><a href="/" class="btn-white btn-small navlinkss">Back</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="navicon">
-                        <a class="nav-toggle" href="#"><span></span></a>
-                    </div>
-                </div>
-            </header>
-        </section>
-
+      
+ 
         <div class="containerlog">
     <div class="row">
+          
         <div class="col-md-12 ">
             <div class="panel  panellogin">
-               
-                    <form class="form-horizontal register-form" method="POST" action="{{ route('login') }}">
+                <div class="text-center">
+                 <img class="overcomelogo" src="img/overcome.png" alt="Overcome logo">
+                </div>  
+            <form class="form-horizontal register-form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}" style="margin-top:50px;margin-bottom:25px;">
@@ -115,7 +100,8 @@
             </div>
         </div>
 
-   </section>
+
+        </section>
 
 <footer>
         <div class="container">

@@ -8,6 +8,7 @@ body{
 
 .navbarlogo{
 	height: 1.8em;
+	
 }
 .cover{
 	background: url("/images/cover.jpg");
@@ -167,6 +168,28 @@ li.legend{
 ul,li{
 	list-style-type: none;
 }
+
+.pointer{
+	cursor: pointer;
+}
+
+.hide{
+	display: none !important;
+}
+
+.table{
+	display: table;
+	width: 100%;
+}
+
+.tablerow{
+	display: table-row;
+	width: 100%;
+}
+
+.tablecell{
+	display: table-cell;
+}
 .signup{
 	margin-top: 2em;
 	font-size: 13px;
@@ -204,34 +227,4 @@ thead{
 }
 h5{
 	margin-top: 1em;
-}
-.pointer{
-	cursor: pointer;
-}
-
-.hide{
-	display: none !important;
-}
-
-.table{
-	display: table;
-	width: 100%;
-}
-
-.tablerow{
-	display: table-row;
-	width: 100%;
-}
-
-.tablecell{
-	display: table-cell;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-
-    background-color: #17a2b8;
-}
-
-.diacont{
-	padding: 20px;
 }

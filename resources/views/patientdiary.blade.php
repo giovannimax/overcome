@@ -1,5 +1,8 @@
 @extends ('layouts.pnavbar')
 @section ('content')
+<div class="containerdiary">
+    
+    <div class="diary1">
 
 <?php 
   use App\Http\Controllers\DiariesController;
@@ -70,6 +73,7 @@
 
 </div>
 
+</div> <!-- End of Container -->
 
 <!-- Modal for Add Diary -->
     
@@ -118,11 +122,19 @@
  </div> <!-- End of modal-dialog -->
 </div> <!-- End of modal fade -->
 
-
 @endsection
 
-@section('scripts')
+@section ('scripts')
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>  -->
+<!-- <script src="/js/core.js" type="text/javascript"></script>  -->
+<!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+<!-- <script src="//code.jquery.com/jquery-1.12.4.js"></script> -->
+ <!-- <script src="{{ asset('js/jquery-ui.js') }}"></script> -->
 <script>
+  $(document).ready(function(){
+    $('#datepicker').datepicker();
+
+  })
      $(".editcont").hide();
     $('.edittrig').click(function(e) {
     e.preventDefault();

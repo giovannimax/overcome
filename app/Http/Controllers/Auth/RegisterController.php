@@ -45,10 +45,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         if($data['usertype']=='pat'){
-            $this->redirectTo = '/signup/patient';
+            $this->redirectTo = 'patient';
         }else
         {
-            $this->redirectTo = '/signup/psychologist';
+            $this->redirectTo = 'psychologist';
         }
         return Validator::make($data, [
             'email' => 'required|string|email|max:255|unique:users',
@@ -85,7 +85,7 @@ class RegisterController extends Controller
         $userreg = new User();
         $userreg->addpat($request->except('_token'));
         Session::put('usertype', 'pat');
-        return redirect()->route('profile');
+        return redirect()->route('registerquestion');
     }
     protected function validatepsych(array $data){
         return Validator::make($data, [
