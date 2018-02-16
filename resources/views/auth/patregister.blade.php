@@ -23,11 +23,11 @@
 <div class="form-group">
     <div class="row">
     <div class="col-md-5">
-    {{ Form::radio('sex', 'male') }} Male
-    {{ Form::radio('sex', 'female') }} Female
+    {{ Form::radio('pat_gndr', 'male') }} Male
+    {{ Form::radio('pat_gndr', 'female') }} Female
     </div>
     <div class="col-md-2">{!! Form::label('Birthday'); !!}</div>
-    <div class="col-md-5">{!! Form::date('pat_dob', \Carbon\Carbon::now(), ['class' => 'form-control']) ; !!}</div>
+    <div class="col-md-5">{!! Form::date('pat_bdate', \Carbon\Carbon::now(), ['class' => 'form-control']) ; !!}</div>
     </div>
 </div>
 <div class="form-group">

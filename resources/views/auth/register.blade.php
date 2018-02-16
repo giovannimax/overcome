@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal register-form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
-
+                            <input type="hidden" value="{{ session('usertype')}}" name="usertype">
                             <div class="col-md-6">
 
                                 @if ($errors->has('name'))

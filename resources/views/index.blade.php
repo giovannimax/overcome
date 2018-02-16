@@ -46,7 +46,7 @@
                                 <li><a class="navlinkss" href="#contact">CONTACT</a></li>
                             </ul>
                             <ul class="member-actions">
-                                <li><a href="#login" class="login navlinkss">Log in</a></li>
+                                <li><a href="login" class="login navlinkss">Log in</a></li>
                                 <li><a href="#signup" class="btn-white btn-small navlinkss">Sign up</a></li>
                             </ul>
                         </nav>
@@ -193,33 +193,41 @@ by listening to and understanding your symptoms.</p>
            
            <div class="signup1">
                <div class="signup11">
-           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Why Join as a Patient?</h3>
+           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Join as a Patient?</h3>
            <div class="signupcontent">
            <big class="blogh">Easy to use</big>
-                <p class="signupp">Overcome is a userfriendly web application with understandable text and navigations.</p>   
+                <p class="signupp">Overcome is a userfriendly web application with understandable<br> text and navigations.</p>   
 
                 <big class="blogh">Saves Time</big>
-                <p class="signupp">Book your first session depending on your availabilty and then psychologist will book your next sessions with the date you both agreed on.</p>                
+                <p class="signupp">Book your first session depending on your availabilty and<br> then psychologist will book your next sessions with the date<br> you both agreed on.</p>                
                 
                 <big class="blogh">Hassle Free</big>
-                <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
-                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Patient</a>
+                <p class="signupp">Book your session on your own convenience. <br> Either it will be an e-counseling or on-site counseling.</p>
+                <form method="POST" action="RegisterControllerRed">
+                  {{ csrf_field() }}
+                    <input type="hidden" name="usertype" value="pat">
+                     <input type="submit" class="btn btn-fill btn-md" value="Sign Up as Patient"  style="margin-bottom: 15px;" name="patient">
+                </form>
                 </div>
 </div>
            </div>
            <div class="signup2">
                <div class="signup11">
-           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Why work as a Psychologist</h3>
+           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Work as a Psychologist</h3>
            <div class="signupcontent">
            <big class="blogh">Additional Income</big>
-                <p class="signupp">Aside from your regular patients, you can get other patients from different cities using this web application.</p>   
+                <p class="signupp">Aside from your regular patients, you can get other patients from <br>different cities using this web application.</p>   
 
                 <big class="blogh">Convenience</big>
-                <p class="signupp">You can work from your home if your bookings on that day are all e-counseling. Messages and diaries are also provided for easy communication with your patient.</p>                
+                <p class="signupp">You can work from your home if your bookings on that day are all<br> e-counseling. Messages and diaries are also provided for easy communication with your patient.</p>                
                 
                 <big class="blogh">Hassle Free</big>
-                <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
-                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Pyschologist</a>
+                <p class="signupp">Book your session on your own convenience. <br>Either it will be an e-counseling or on-site counseling.</p>            
+                <form method="POST" action="RegisterControllerRed">
+                {{ csrf_field() }}
+                     <input type="hidden" name="usertype" value="psych">
+                     <input type="submit" class="btn btn-fill btn-md" value="Sign Up as Psychologist" name="psych">
+                </form>
 </div>
                 </div>
            </div>

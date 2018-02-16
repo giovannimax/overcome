@@ -154,8 +154,12 @@ Route::get('/timepick', function () {
     return view('comp.timepick');
 });
 
-Route::get('/register', function () {
-    return view('auth.registeroptions');
+Route::get('/signup/psychologist', function () {
+    return view('auth.psychregister');
+});
+
+Route::get('/signup/patient', function () {
+    return view('auth.patregister');
 });
 
 Route::get('/appointments', function () {
@@ -174,10 +178,10 @@ Route::get('/home', 'HomeController@index')->name('home');
         //Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 //
         // Registration Routes...
-        Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-        Route::post('register', 'Auth\RegisterController@register');
+      //  Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+        //Route::post('register', 'Auth\RegisterController@register');
 
-Route::get('signup/{user}', 'Auth\RegisterController@redusertype');
+//Route::get('signup/{user}', 'Auth\RegisterController@redusertype');
 Route::get('signup', 'Auth\RegisterController@showRegistrationOptions');
 
 Route::post('RegisterControllerPsych','Auth\RegisterController@registerpsych');
@@ -192,3 +196,4 @@ Route::get('/retapp','EcounselingsController@retapppsych');
 Route::post('CreateDiary','DiariesController@creatediary');
 Route::get('RetDiary','DiariesController@retdiaries');
 Route::get('sendmsg','MessagesController@sendmsg');
+Route::post('RegisterControllerRed','Auth\RegisterController@redirectuser');

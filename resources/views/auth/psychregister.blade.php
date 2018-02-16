@@ -10,7 +10,7 @@
 <h5>Personal Information</h5><br>
 <div class="form-group">
     {!! Form::label('Email Address'); !!}
-    {!! Form::text('email','', ['class' => 'form-control']); !!}
+    {!! Form::text('psych_email','', ['class' => 'form-control']); !!}
 </div>
 <div class="form-group">
     {!! Form::label('First Name'); !!}
@@ -27,20 +27,16 @@
 <div class="form-group">
     <div class="row">
     <div class="col-md-5">
-    {{ Form::radio('sex', 'male') }} Male
-    {{ Form::radio('sex', 'female') }} Female
+    {{ Form::radio('psych_gndr', 'male') }} Male
+    {{ Form::radio('psych_gndr', 'female') }} Female
     </div>
     <div class="col-md-2">{!! Form::label('Birthday'); !!}</div>
     <div class="col-md-5">{!! Form::date('psych_dob', \Carbon\Carbon::now(), ['class' => 'form-control']) ; !!}</div>
     </div>
 </div>
 <div class="form-group">
-    {!! Form::label('Mobile Number'); !!}
-    {!! Form::text('psych_mobilephone','', ['class' => 'form-control']); !!}
-</div>
-<div class="form-group">
-    {!! Form::label('Telephone Number'); !!}
-    {!! Form::text('psych_telphone','', ['class' => 'form-control']); !!}
+    {!! Form::label('Mobile/Telephone Number'); !!}
+    {!! Form::text('psych_phone','', ['class' => 'form-control']); !!}
 </div>
 <hr>
 <h5>Professional Background</h5><br>
