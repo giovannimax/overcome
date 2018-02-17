@@ -213,8 +213,8 @@ Start of Session Notes Tab -->
 
 function showvideo() {
 
-      var width = 1200;
-      var height = 650;
+      var width = 1600;
+      var height = 750;
       var top = parseInt((screen.availHeight/2) - (height/2));
       var left = parseInt((screen.availWidth/2) - (width/2));
       window.open('ecounseling_start', 
