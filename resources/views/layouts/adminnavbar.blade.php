@@ -11,53 +11,56 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery-ui.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui-smooth.css') }}">
+    @stack('css')
 </head>
 <body>
 
  <div class="wrapper">
             <!-- Sidebar Holder -->
             <nav id="sidebar">
-                <ul class="list-unstyled components">
-                  <li>
-                        <a href="#" id="sidebarCollapse" class="sidebaritem active">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+            <ul class="list-unstyled components">
+              <li>
+                    <a href="#" id="sidebarCollapse" class="sidebaritem active">
+                    <span></span>
+                    <span></span>
+                    <span></span>
 
-                      </a>
-                    </li>
-                    <li class="{{ Request::is('admin') ? 'active' : '' }}">
-                        <a href="admin" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Psychologists">
-                        <i class="material-icons">group_add</i>
-                        <font class="sidetext">Psychologists</font>
-                      </a>
-                    </li>
-                    <li class="{{ Request::is('adminpatient') ? 'active' : '' }}">
-                        <a href="adminpatient" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
-                          <i class="material-icons">people</i>
-                        <font class="sidetext">Patients</font>
-                      </a>
-                    </li>
-                    <li class="{{ Request::is('') ? 'active' : '' }}">
-                        <a href="" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Payments">
-                          <i class="material-icons">account_balance_wallet</i>
-                        <font class="sidetext">Payments</font>
-                      </a>
-                    </li>
-                    <li class="{{ Request::is('adminset') ? 'active' : '' }}">
-                        <a href="adminset" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="AdminUser">
-                          <i class="material-icons">settings</i>
-                        <font class="sidetext">Settings</font>
-                      </a>
-                    </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
-                        <i class="material-icons">assessment</i>
-                        <font class="sidetext">Reports</font>
-                      </a>
-                    </li>
-                </ul>
-            </nav>
+                  </a>
+                </li>
+                <li class="{{ Request::is('admin') ? 'active' : '' }}">
+                    <a href="admin" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Psychologists">
+                    <i class="material-icons">group_add</i>
+                    <font class="sidetext">Psychologists</font>
+                  </a>
+                </li>
+                <li class="{{ Request::is('adminpatient') ? 'active' : '' }}">
+                    <a href="adminpatient" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
+                      <i class="material-icons">people</i>
+                    <font class="sidetext">Patients</font>
+                  </a>
+                </li>
+                <li class="{{ Request::is('adminpayment') ? 'active' : '' }}">
+                    <a href="adminpayment" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Payments">
+                      <i class="material-icons">account_balance_wallet</i>
+                    <font class="sidetext">Payments</font>
+                  </a>
+                </li>
+                <li class="{{ Request::is('adminset') ? 'active' : '' }}">
+                    <a href="adminset" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="AdminUser">
+                      <i class="material-icons">settings</i>
+                    <font class="sidetext">Settings</font>
+                  </a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
+                    <i class="material-icons">assessment</i>
+                    <font class="sidetext">Reports</font>
+                  </a>
+                </li>
+            </ul>
+        </nav>
 
             <!-- Page Content Holder -->
             <div id="content">
@@ -94,12 +97,12 @@
         </ul>
       </div>
     </nav>
-
              @yield('content')
         </div>
         @yield('leftsidebar')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script type="text/javascript">
 
      var ind=0;

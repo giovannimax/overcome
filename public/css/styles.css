@@ -1539,13 +1539,23 @@ you can use the generic selector below, but it's slower:
         border: 0px !important;
         height: 43px;
       }
-
+    
       .btnviewall:hover, .btnviewall:focus {
         color: #fff;
         border-color: #2d6ba0;
         background-color: #2d6ba0; }
-  
+       
+        .btnviewallsearch{
+          border-radius: 5px !important;
+          border: 0px !important;
+          height: 43px;
+        }
 
+        .btnviewallsearch:hover, .btnviewallsearch:focus {
+          color: #fff;
+          border-color: #01acbe;
+          background-color: #01acbe; }
+         
 
       #forspecialty{
         width: 100%;

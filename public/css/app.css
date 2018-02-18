@@ -11802,8 +11802,13 @@ css */
   margin-bottom: 25px;
 }
 
+#pending {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
 .summarythead {
-  color: #f58c37;
+  color: #01acbe;
 }
 
 .summarytbody {
@@ -12256,4 +12261,8 @@ css */
 }
 
 /* End of new psychounseling */
+
+/* Start Admin Css*/
+
+/* End Admin Css */
 
