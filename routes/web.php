@@ -145,6 +145,10 @@ Route::get('/adminpatient', function () {
     return view('adminpatient');
 });
 
+Route::get('/adminpayment', function () {
+    return view('adminpayment');
+});
+
 Route::post('/availabilitytab', function () {
     return view('comp.availabilitytab');
 });
