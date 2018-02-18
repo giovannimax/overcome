@@ -96,7 +96,7 @@ Route::get('/user_profile', function () {
 });
 
 Route::get('/user_diary', function () {
-    return view('patientdiary');
+    return view('wew');
 });
 
 Route::get('/user_ecounseling', function () {
@@ -124,6 +124,10 @@ Route::get('/admin', function () {
 });
 Route::get('/login', function () {
     return view('login');
+});
+
+Route::get('/trytry', function () {
+    return view('trytry');
 });
 
 Route::get('/video', function () {

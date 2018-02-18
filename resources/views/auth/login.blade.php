@@ -36,7 +36,7 @@
         <section class="navigation">
             <header>
                 <div class="header-content">
-                    <div class="logo"><a href="#"><img class="overcomelogo" src="img/overcome.png" alt="Overcome logo"></a></div>
+                    <div class="logo"><a href="/"><img class="overcomelogo" src="img/overcome.png" alt="Overcome logo"></a></div>
                     <div class="header-nav">
                         <nav>
                             
@@ -57,7 +57,6 @@
     <div class="row">
         <div class="col-md-12 ">
             <div class="panel  panellogin">
-               
                     <form class="form-horizontal register-form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
