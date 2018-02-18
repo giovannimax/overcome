@@ -11,24 +11,25 @@
 
 <div class="diacont">
 
-<span class="float-left"><button class="diarybtn btn btn-info btn-lg" data-toggle="modal" data-target="#adddiaryModal" >Add Note<i class="material-icons">note_add</i></button>
+
 
 <div class="bd-example bd-example-tabs">
   <div class="row">
-    <div class="col-3">
+    <div class="col-md-3" style="margin-right:50px;">
+      <span ><button class="diarybtn btn btn-info btn-lg" data-toggle="modal" data-target="#adddiaryModal" >Add Note<i class="material-icons">note_add</i></button></span>
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <?php $i=1; ?>
 @if(count($result))
   @foreach($result as $res)
-  <a class="nav-link bginfo<?php if($i==1&&empty(Session::get('id'))) echo ' active'; else if(Session::get('id')==$res->dia_id) echo " active";?> show" id="v-pills-<?php echo $i;?>-tab" data-toggle="pill" href="#v-pills-<?php echo $i;?>" role="tab" aria-controls="v-pills-<?php echo $i;?>" aria-selected="true"><?php echo date("F d, Y", strtotime($res->dia_date));?></a>
+  <a class="nav-link bginfo<?php if($i==1&&empty(Session::get('id'))) echo ' active'; else if(Session::get('id')==$res->dia_id) echo " active";?> show" id="v-pills-<?php echo $i;?>-tab" data-toggle="pill" href="#v-pills-<?php echo $i;?>" role="tab" aria-controls="v-pills-<?php echo $i;?>" aria-selected="true" style="width: 200px;margin-bottom:5px;"><?php echo date("F d, Y", strtotime($res->dia_date));?></a>
     <?php $i++; ?>
   @endforeach
 @endif
       </div>
     </div>
 
-<div class="col-9">
-      <div class="tab-content" id="v-pills-tabContent">
+<div class="col-md-9" style="margin-left: 300px;margin-top: -150px;">
+      <div class="tab-content" id="v-pills-tabContent" style="width:800px;">
 
  @if(count($result)>0)
   <?php $j=1;?>
@@ -42,7 +43,7 @@
         <div class="editcont">
             <form method="GET" action="editdiary">
             <input name="dia_id" type="hidden" value="<?php echo $res->dia_id;?>">
-            <textarea class="editcontent" name="dia_content"></textarea><br>
+            <textarea class="editcontent" name="dia_content" rows="8" cols="100"></textarea><br>
             <input type="submit"  class="btn btn-info" value="Save">
             <a class="canceledit btn btn-info text-light">Cancel</a>
             </form>
@@ -72,6 +73,9 @@
 </div>
 
 </div>
+   </div>
+    </div> <!-- diacont -->
+    </div> <!-- Diary1 -->
 
 </div> <!-- End of Container -->
 
