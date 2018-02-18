@@ -1392,7 +1392,7 @@ you can use the generic selector below, but it's slower:
 
     .btnsub{
       float:right !important;
-      border-radius: 0px !important;
+      border-radius: 5px !important;
     }
 
     .btnsub:hover, .btnsub:focus {
@@ -1527,10 +1527,25 @@ you can use the generic selector below, but it's slower:
       }
 
       .ddfg{
-        margin-top: 70px;
-        
+        margin: auto;
+        margin-left: 500px !important;
+        margin-top: 80px !important;
+        width: 900px;
       
       }
+
+      .btnviewall{
+        border-radius: 5px !important;
+        border: 0px !important;
+        height: 43px;
+      }
+
+      .btnviewall:hover, .btnviewall:focus {
+        color: #fff;
+        border-color: #2d6ba0;
+        background-color: #2d6ba0; }
+  
+
 
       #forspecialty{
         width: 100%;
@@ -1585,3 +1600,196 @@ you can use the generic selector below, but it's slower:
       border-radius: 150px;
       margin: 10px 10px 10px 10px;
     }
+
+    .psychdetails{
+      color: #01acbe;
+    }
+
+    .ulspecialty{
+      margin-left: 50px;
+      color: #f58c37;
+    }
+    
+    .list{
+      list-style-type: disc;
+    }
+
+    .specificpsych{
+      background: #fcfafa;
+      height: fit-content;
+    }
+
+    .aboutpsychcontent{
+      margin-left: 25px;
+      margin-right: 25px;
+      margin-bottom: 60px;
+    }
+
+    .btnbook{
+      float:right;
+      border-radius: 5px !important;
+
+    }
+
+    #bookModal{
+      margin-top: 25px;
+      width: 600px;
+      margin-left: 560px;
+      height: fit-content;
+    }
+
+    #viewDetailsModal{
+      margin-top: 25px;  
+      margin-left: 25px;
+      margin-right: 250px;
+    }
+
+    #viewDetailsModal .modal-content{
+      height: 700px;
+      width: 900px;
+      overflow: auto;
+    }
+    .rowcontent{
+      margin-left: 50px;
+      margin-top:20px;
+      margin-right: 50px;
+    }
+
+    .btnapp{
+      margin-bottom: 5px;
+      margin-right: 25px;
+      border-radius: 5px !important;
+    }
+
+    /* Start of Register Question CSS */
+    .regcontent{
+      display: inline-flex;
+      margin-top: 100px;
+   
+  }
+
+  .regcontent1{
+    margin-right:50px;
+  margin-top: 25px;
+  margin-left: 170px;
+   width: 500px;
+   background: #fefefe;
+   height: fit-content;
+}
+
+.regcontent2{
+  width:800px;
+   margin-top: 25px;
+   margin-right:150px;
+   margin-bottom: 15px;
+   background: #fefefe;
+   height: fit-content;
+}
+
+.cardforquestion{
+  margin: 25px 25px 25px 25px;
+}
+
+.sender{
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px 10px 10px 10px;
+}
+
+.btnquest{
+  margin-top:50px;
+  float:right;
+  margin-bottom: 25px;
+  border-radius: 5px !important;
+}
+
+.btnquest:hover, .btnquest:focus {
+  color: #fff;
+  border-color: #2d6ba0;
+  background-color: #2d6ba0;
+
+}
+
+
+
+.contforpsychsearch{
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.newparsearch{
+  font-size: 12px;
+  color: #212834;
+  
+}
+
+.rowcolsearch{
+  margin-top: 15px;
+}
+
+.divrowsearch{
+  margin-top:25px;
+}
+
+.btnrowsearch{
+  border-radius: 5px !important;
+  margin-right: -5px;
+}
+
+.btnrowsearch2{
+  border-radius: 5px !important;
+
+}
+
+.psychbookpic{
+  width: 120px;
+  height: 120px;
+  margin-top: 15px;
+  border-radius: 150px;
+  margin-bottom: 25px;
+}
+
+
+.details{
+  text-indent: 50px;
+  font-size: 16px;
+}
+
+.list{
+  font-size: 16px;
+  margin-left: 25px;
+}
+
+.btnstyle{
+  border-radius: 5px !important;
+}
+
+.btnstyle:hover, .btnstyle:focus {
+  color: #fff;
+  border-color: #2d6ba0;
+  background-color: #2d6ba0;
+
+}
+
+.contforpsych{
+  cursor: pointer;
+  color: rgba(28, 54, 83, 0.6);
+}
+
+.contforpsychsearch:hover{
+  background: #f8f7f7;
+    border-radius: 5px;
+    color: #01acbe;
+}
+
+.page{
+  float: right;
+  margin-top: -5px;
+}
+
+.rowgender{
+  margin-bottom: 10px;
+}
+      
+    /* End of Register Question CSS */

@@ -57,11 +57,12 @@
             <div class="dd">
                <h3 class="text-center test" style="color:#85898c;"><q>Healing takes time, and asking for help is a courageous step. - <small>Mariska Hargitay</small></q></h3>
                
+               </div> <!-- End of DD -->
               
         <div class="form-group ddfg">
             <div class="row">
-                <div class="col-md-4">
-            <div class="input-group">
+                <div class="col-md-3">
+            <div class="input-group" style="margin-right: -20px;">
                
                  <input  class="form-control" list="hosting-plan" type="text"  data-toggle="collapse" data-target="#hotsing-plan" placeholder="Location" id="forlocation"  onkeypress="onKeyPress(event);">
                     <datalist id="hosting-plan" class="collapse">
@@ -77,8 +78,9 @@
                  </div>
      
                 </div> <!-- End of input-group -->
-            </div> <!-- End of col-md-4 -->
-            <div class="input-group">
+            </div> <!-- End of col-md-3 -->
+            <div class="col-md-6">
+            <div class="input-group" style="margin-right: -20px;">
                 
                  <input  class="form-control" list="hosting-plan2" type="text"  data-toggle="collapse" data-target="#hotsing-plan" placeholder="Specialties Ex: [Depression, Marriage, Anxiety]" id="forspecialty" >
                     <datalist id="hosting-plan2" class="collapse">
@@ -94,14 +96,14 @@
                  </div>
      
                 </div> <!-- End of input-group -->
-            <div class="col-md-8">
-
+            </div> <!-- End of col-md-6 -->
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary btn-lg btnviewall">View All</button>
             </div>
         </div> <!-- End of Row -->
         </div> <!-- End of form-group -->
 
         
-                    </div> <!-- End of DD -->
         
 
                 </div>
@@ -288,10 +290,89 @@ $(id).click(function(){
             <div class="text-center">
             <img class="insideimg2 d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
             <h4>John Doe</h4>
-            
             </div> <!-- End of text-center -->
+
+            <div class="aboutpsychcontent">
+
+             <h3 class="psychdetails">About Me</h3>
+             <p style="text-indent: 5%;"> My work experience ranges from adult and adolescent outpatient services, as well as working with hospital based counseling
+          services. I have over 5 years of experience helping clients with depression, anxiety, relationship struggles and various
+           other mental health and emotional challenges. I uses a person-centered approach emphasizing the importance of the 
+           therapist/client relationship, along with a cognitive behavioral approach to allow the client to explore the thought 
+           patterns related to the challenging emotions and behaviors. My counseling philosophy is based on an acknowledgment of the
+            individual’s background and personal beliefs. His expertise allows clients to develop their own perspective of problem 
+            solving and empowers them to make the changes needed in order to accomplish their goals. Saju and his wife are blessed with 
+            a young daughter and expecting another child later this year!</p>
+            
+            <h3 class="psychdetails">Specialty</h3>
+
+            <ul class="ulspecialty">
+                <li class="list2">Stress</li>
+                <li class="list2">Anxiety</li>
+                <li class="list2">Self esteem</li>
+                <li class="list2">Depression</li>
+            </ul>
+ 
+
+            <h3 class="psychdetails">Licensing</h3>
+
+            <ul class="ulspecialty">
+             <li class="list2">PRC 12345</li>
+            </ul>
+            <button class="btn btn-info btn-lg btnbook" onclick="loadAppointmentModal();">Book An Appointment</button>
+
+            </div> <!-- End of aboutpsychcontent -->
+
+            
             </div> <!-- End of specificpsych -->
     </section>
+
+        <!-- For Modal -->
+        
+            <div id="bookModal" class="modal"> <!-- Start Modal -->
+               <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                    <span class="close" onclick="closeModal();" style="color:red;">x</span>
+                        <h4 class="modal-title">Book Appointment</h4>
+                    </div>
+
+                    <div class="modal-body">
+
+                    <div class="form-group rowcontent">
+            <label for="example-date-input" class="col-2 col-form-label">Preferred Date</label>
+                 <div class="col-10">
+                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                 </div>
+        </div> <!-- End of form-group row for date -->
+        
+        <div class="form-group rowcontent">
+            <label for="example-time-input" class="col-2 col-form-label">Preferred Time</label>
+                 <div class="col-10">
+                      <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                 </div>
+        </div> <!-- Enf of form-group row for time -->
+        <div class="form-group rowcontent">
+             <label for="exampleTextarea">Basic Information</label>
+             <textarea class="form-control" id="exampleTextarea" rows="8" placeholder="Including how you feeling for the past few days/weeks."></textarea>
+             <small style="font-size: 12px; color: red;">Please wait for the psychologist to accept and confirm your intended booking date. It might be change to other date or time. There's also a possiblity that you will be refered to other 
+                 Psychologist who is inline with what you are experiencing.</small>
+            </div>   <!-- End of form-group textarea -->  
+       
+                
+
+
+                  </div> <!-- End of Modal-Body -->
+
+                  <div class="modal-footer text-right">
+                        <button type="submit" class="btn btn-md btn-info btnapp">Book Appointment</button>   
+                 </div>
+
+                </div> <!-- End of Modal-Content -->
+              </div> <!-- End of Modal-Dialog -->
+            </div> <!-- Close Modal-->
+
 
     `;
     $("#listofpsych").html(getter);
@@ -300,6 +381,15 @@ $(id).click(function(){
 )
 }
 
+function loadAppointmentModal(){
+    var bookModal = document.getElementById('bookModal');
+    bookModal.style.display='block';
+}
+
+function closeModal(){
+    var closeModal=document.getElementById('bookModal');
+    closeModal.style.display="none";
+}
 function onKeyPress(args)
     {
         if(args.keyCode === 13)
