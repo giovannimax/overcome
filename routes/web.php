@@ -111,9 +111,9 @@ Route::get('/user_wallet', function () {
     return view('patientwallet');
 });
 
-Route::get('/regcontent', function () {
+Route::get('/findpsychologist', function () {
     return view('registerquestion');
-});
+})->name('registerquestion');
 
 Route::get('/adminlogin', function () {
     return view('auth.adminlogin');
