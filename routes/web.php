@@ -120,9 +120,13 @@ Route::get('/user_wallet', function () {
     return view('patientwallet');
 });
 
+Route::get('/pat_accountsettings', function () {
+    return view('accountsettingspatient');
+});
+
 Route::get('/findpsychologist', function () {
     return view('registerquestion');
-})->name('registerquestion');
+})->name('findpsychologist');
 
 Route::get('/adminlogin', function () {
     return view('auth.adminlogin');
@@ -157,6 +161,10 @@ Route::get('/adminset', function () {
 });
 Route::get('/adminpatient', function () {
     return view('adminpatient');
+});
+
+Route::get('/adminpayment', function () {
+    return view('adminpayment');
 });
 
 Route::post('/availabilitytab', function () {

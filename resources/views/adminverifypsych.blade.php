@@ -1,5 +1,8 @@
 @extends ('layouts.adminnavbar')
-
+@push('css')
+  <link rel="stylesheet" href="{{ asset('css/datatable.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/datatable-button.css') }}">
+@endpush
 @section ('content')
 
 <?php
@@ -44,4 +47,8 @@
     </tbody>
   </table>
 </div>
+@endsection
+@section ('scripts')
+
+
 @endsection

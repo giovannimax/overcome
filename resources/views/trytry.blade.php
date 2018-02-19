@@ -61,7 +61,7 @@
               
         <div class="form-group ddfg">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
             <div class="input-group" style="margin-right: -20px;">
                
                  <input  class="form-control" list="hosting-plan" type="text"  data-toggle="collapse" data-target="#hotsing-plan" placeholder="Location" id="forlocation"  onkeypress="onKeyPress(event);">
@@ -97,7 +97,10 @@
      
                 </div> <!-- End of input-group -->
             </div> <!-- End of col-md-6 -->
-            <div class="col-md-3">
+            <div class="col-md-2" style="margin-right: -60px;">
+                <button type="submit" class="btn btn-info btn-lg btnviewallsearch">Search</button>
+            </div>
+            <div class="col-md-2">
                 <button type="submit" class="btn btn-primary btn-lg btnviewall">View All</button>
             </div>
         </div> <!-- End of Row -->
