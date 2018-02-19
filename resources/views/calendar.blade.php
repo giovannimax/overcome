@@ -17,18 +17,21 @@
 ?>
 @endsection
 
-
 @section('leftsidebar')
 {!! Form::open(['action' => 'AvailabilityController@addavail', 'method' => 'POST']) !!}
-<div id="wrapper" class="toggled">
+<div id="wrapperr" class="toggled">
 	<div id="sidebar-wrapper">
         <ul class="sidebar-nav" id='appntcont'>
           
         
         </ul>
+        
         <ul class="timeret">
-
         </ul>
+        <ul>
+         {{Form::submit('Save', ['class' => 'btn btn-info', 'style'=>'margin-top: 300px;'])}}
+        </ul>
+        
     </div>
     <div id="overlay" class="toggled">
 
@@ -61,10 +64,69 @@ window.onload = function (){
   $.get('./timepick',{},function(data){
        $('.sidebar2-nav').html(data);
         });
+   $.get('./checkavail',{},function(data){
+      if($.trim(data)=='yes'){
+       swal({
+          title: '<img src="images/cal.png" style="height: 150px;">',
+          html:
+            '<h3>Welcome to your calendar!</h3>afafasf asfsaf asfass saf',
+          focusConfirm: true,
+          allowOutsideClick: false,
+          confirmButtonText:
+            'Ok, proceed'
+        }).then((result) => {
+          setfirstavail();
+        })
+      }
+        });
+}
+
+function setfirstavail(){
+  swal.setDefaults({
+  input: 'text',
+  confirmButtonText: 'Next &rarr;',
+  showCancelButton: true,
+  progressSteps: ['1'],
+  allowOutsideClick: false,
+})
+
+var steps = [
+  {
+    html: '<div class="animated slideInRight"><h3>Set availability.</h3>'+
+    "<input type='checkbox'> Sunday &nbsp;&nbsp;"+
+    "<input type='checkbox'> Monday &nbsp;&nbsp;"+
+    "<input type='checkbox'> Tuesday &nbsp;&nbsp;"+
+    "<input type='checkbox'> Wednesday &nbsp;&nbsp;<br/>"+
+    "<input type='checkbox'> Thurday &nbsp;&nbsp;"+
+    "<input type='checkbox'> Friday &nbsp;&nbsp;"+
+    "<input type='checkbox'> Saturday<br/><br/>"+
+    "<div class='addtime' style='width: 100%;'>add time"+
+    "<a class='material-icons text-info float-right pointer' onclick='addfirsttime();'>add_box</a><br/></div>"+
+    "</div>",
+    animation: false,
+  },
+]
+
+swal.queue(steps).then((result) => {
+  getselectedtime();
+  //alert(end);
+})
+}
+
+function getselectedtime(element){
+  var start = [];
+ 
+ $('input[name="starttime[]"]').each(function() {
+   start.push($(this).val());
+ });
+ 
+ start = $(element).val();
+ 
+   alert(start);
 }
 
 function displayleftsidebar(){
-    $("#wrapper").toggleClass("toggled");
+    $("#wrapperr").toggleClass("toggled");
     $("#overlay").toggleClass("toggled");
     if(i==0)
       i=1;
@@ -73,7 +135,6 @@ function displayleftsidebar(){
 }
 
 function toggleleftsidebar(daydate, day){
-  
   if(avail==0){
 
     $.ajaxSetup({
@@ -123,6 +184,23 @@ function toggleleftsidebar(daydate, day){
    $(".availreset").toggleClass("hide");
    avail=1;
 });
+
+//
+
+function addfirsttime(){
+    var qwer = "<?php 
+      $time;
+      for($i=1;$i<=24;$i++){
+        $time[date('H:i:s', strtotime('00:00:00')+60*60*$i)] = date('h:i A', strtotime('00:00:00')+60*60*$i);
+      }
+      foreach($time as $t){
+        echo "<option value='".$t."'>".$t."</option>";
+      }
+    ?>";
+
+    $(".addtime").append("<br> start time: &nbsp;"+ "<select onchange='getselectedtime(this);'>" + qwer + "</select>" );
+    $(".addtime").append("&nbsp;&nbsp;end time: &nbsp;" + "<input name='endtime[]'>" + "</select>" );
+}
 
 //
 

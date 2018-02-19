@@ -22,5 +22,9 @@ class Ecounseling extends Model
     public function cancelappnt($id){
         return DB::table('ecounselings')->where('counsel_id',$id)->update(['counsel_status' => 'canceled']);
     }
+
+    public function getpatients(){
+        return DB::select("SELECT * FROM patients");
+    }
    
 }

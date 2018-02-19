@@ -20,7 +20,7 @@
                 <div class="insidecard card text-white bg-secondary w-50" align="right">
             <div class="pnmcont">
                 <p class="pmsg">Lorem ipsum dolor sit amet, munere eligendi percipit in ius, vim dolorem probatus ex.</p></[></div>
-             <div class="dtime" style="margin-top:15px;margin-left:15px;"><p class="insidetime text-white"s>8:15PM</p></div>
+             <div class="dtime" style="margin-top:15px;margin-left:15px;"><p class="insidetime text-white"s>9:15PM</p></div>
              </div>
                 </div>
                 
@@ -54,5 +54,19 @@
     </div> <!-- End of container -->
 
 
+@endsection
+
+@section('scripts')
+
+<script>
+
+$('#btn-chat').click(function(e) {
+    var msg_content = $("#btn-input").val();
+    $.get('./sendmsg',{msg_content:msg_content,sender:1,convo_id:1},function(data){
+        $("#btn-input").val(data);
+        });
+});
+
+</script>
 
 @endsection

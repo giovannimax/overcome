@@ -39,15 +39,10 @@
                 <div class="col-md-6"><h4 id="book">Bookings</h4></div>
                   <div class="history col-md-4"><h6>History</h6></div>
                   
-                
-                   <!-- Button trigger modal -->
-                  <div class="buttonmodal col-md-2" data-toggle="tooltip" data-placement="top" title="Add Bookings"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" ><i class="material-icons" >add</i>
-                  </button></div>
-                  
                 </div>
                 
                 <div class="card">
-                    
+                  
                   <div class='tab table'>  
         <?php 
           $result = EcounselingsController::retapppsych(Auth::user()->id);
@@ -216,21 +211,23 @@
 
 @section('scripts')
 <script>
+ function getavail(date){
+  var date = $(date).val();
+  $.post('./availcal',{date:date},function(data){
+       $('#addbooktc').html(data);
+        });
+    }
 
 $(document).ready(function(){ 
  getavail($("#counseldate"));
-})
 
-  function getavail(date){
+})
     $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
      }
   });
-  var date = $(date).val();
-  $.post('./availcal',{date:date},function(data){
-       $('#addbooktc').html(data);
-        });
-  }
+
+ 
 </script>
 @endsection

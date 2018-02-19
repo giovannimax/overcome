@@ -27,7 +27,8 @@ class EcounselingsController extends Controller
 	public function addapp(Request $request){
     	$appoints = new Ecounseling();
 		$result=$appoints->createapp($request->except('_token'));
-		return redirect()->route('appointments');
+		
+		//return redirect()->route('appointments');
 	}
 
 	public static function retapppsych($id){
@@ -42,5 +43,17 @@ class EcounselingsController extends Controller
     	$appoints = new Ecounseling();
 		$result=$appoints->cancelappnt($request->except('_token'));
 		return redirect()->route('appointments');
+	}
+
+	public static function getpatients(){
+    	$appoints = new Ecounseling();
+		$result=$appoints->getpatients();
+		return $result;
+	}
+
+	public function addpostapp(Request $request){
+    	$appoints = new Ecounseling();
+		$result=$appoints->createapp($request->except('_token'));
+		
 	}
 }

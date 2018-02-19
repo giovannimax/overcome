@@ -35,21 +35,20 @@
                         <font class="sidetext">Profile</font>
                       </a>
                     </li>
-                    <li class="{{ Request::is('patientappointment') ? 'active' : '' }}">
-                        <a href="user_appointments" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
+                    <li class="{{ Request::is('appointments') ? 'active' : '' }}">
+                        <a href="appointments" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
                           <i class="material-icons">date_range</i>
                         <font class="sidetext">Appointments</font>
                       </a>
                     </li>
-                    <li class="{{ Request::is('patientdiary') ? 'active' : '' }}">
-                        <a href="user_diary" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Diary">
+                    <li class="{{ Request::is('diary') ? 'active' : '' }}">
+                        <a href="diary" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Diary">
                           <i class="material-icons">content_paste</i>
                         <font class="sidetext">Diary</font>
                       </a>
                     </li>
-                
-                    <li  class="{{ Request::is('usermessage') ? 'active' : '' }}">
-                        <a href="user_messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
+                    <li class="{{ Request::is('messages') ? 'active' : '' }}">
+                        <a href="/messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
                         <i class="material-icons">mail_outline</i>
                         <font class="sidetext">Messages</font>
                       </a>

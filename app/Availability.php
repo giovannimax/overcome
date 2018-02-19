@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\DB;
 class Availability extends Model
 {
     public function createavail($data){
-    	return DB::table('availabilities')->insert([$data]);
+    	return DB::table('blocked_dates')->insert([$data]);
     }
 
     public function getavailspefdate($date){
-    	return DB::select("SELECT * FROM availabilities WHERE blocked_date = ?", $date);
+    	return DB::select("SELECT * FROM blocked_dates WHERE blocked_date = ?", $date);
     }
 
     public function deleteavail($date){
-    	return DB::select("DELETE FROM availabilities WHERE blocked_date = ?", $date);
+    	return DB::select("DELETE FROM blocked_dates WHERE blocked_date = ?", $date);
     }
 }

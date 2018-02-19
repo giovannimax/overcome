@@ -221,24 +221,13 @@ css */
     color:#212834;
 }
 
-.tabappointment{
-    margin-top: 25px;
-}
-.tabsesnotes{
-    margin-top: 50px;
-}
-
-.tabdiary{
-    margin-top: 50px;
-}
 
 .tabhistory{
     margin-top: 50px;
 }
 
 .h5diary{
-    color:#212834;
-    margin-left:50px;  
+    color:#212834;  
 }
 
 .adiary{
@@ -247,10 +236,6 @@ css */
     margin-left:15px;
 }
 
-.divdiary{
-    margin-left:250px;
-    margin-right:250px;
-}
 
 .theadhistory{
      color: #f58c37;
@@ -276,7 +261,7 @@ css */
 .card-block
 {
     overflow-y: scroll;
-    height: 250px;
+    height: 400px;
 }
 
 
@@ -482,12 +467,6 @@ css */
 
 }
 
-.sender{
-    width: 100px;
-    height: 100px;
-    float: left;
-}
-
 .rowcol{
     margin-top: 15px;
 }
@@ -552,9 +531,9 @@ css */
     width: 50px;
     height: 50px;
     float: left;
-    margin-top: 10px;
     margin-left: 15px;
-    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .insidecard{
@@ -1091,6 +1070,7 @@ margin-top:50px;
 
 .forpsychcounsel{
     display: inline-flex;
+    margin-top: 20px;
 }
 
 .newtxtmsg{
@@ -1114,5 +1094,80 @@ margin-top:50px;
     height: 50px;
 }
 
+.containercounseling1{
+  margin-left: 25px;
+  width: 420px;
 
+}
+
+.containercounseling2{
+  margin-right: 25px;
+  width: 850px;
+  
+}
+
+.divforsearch{
+    border-bottom: 1px solid rgb(221, 221, 221);
+    margin-right: 1px;
+    margin-left:2px;
+}
+
+.divforsearch:hover{
+    background: #eeeeee;
+}
+
+.insidecontent{
+    height: 500px;
+}
+
+.insidecontent2{
+    height: 532px;
+}
+
+.cardmsg{
+    width: 800px;
+    margin-left: 25px;
+
+}
+
+.diarycontainer{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active2, .accordion:hover {
+    background-color: #ccc; 
+}
+
+.accordion:after {
+    content: '\21E3';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active2:after {
+    content: "\21E1";
+}
+.panell {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+    
 /* End of new psychounseling */

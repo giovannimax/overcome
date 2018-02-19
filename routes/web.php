@@ -15,13 +15,15 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+
 Route::get('/about', function () {
     return view('about');
 });
 
 Route::get('/profile', function () {
     return view('profile');
-})->name('profile');
+});
 
 Route::get('/calendar', function () {
     return view('calendar');
@@ -41,8 +43,10 @@ Route::get('/patient_details', function () {
 
 
 Route::get('/messages', function () {
+    if(Auth::user()->usertype == "pat")
+    return view('usernewmessage');
+    else 
     return view('psychmessage');
-    
 });
 
 Route::get('/mywallet', function () {
@@ -55,6 +59,11 @@ Route::get('/ecounseling', function () {
     
 });
 
+Route::get('/diary', function () {
+    return view('patientdiary');
+    
+})->name("diary");
+
 Route::get('/ecounseling_start', function () {
     return view('psychstartcounseling');
     
@@ -66,8 +75,12 @@ Route::get('/user_messages', function () {
     
 });
 
-Route::get('/usermessages_openmessage', function () {
-    return view('usernewmessage');
+Route::get('/checksession', function () {
+    return view('checksession');
+});
+
+Route::get('/checkavail', function () {
+    return view('comp.availchecker');
     
 });
 
@@ -75,18 +88,15 @@ Route::get('/usermessages_openmessage', function () {
 Route::get('/conversation', function () {
     return view('psychnewmessage');
 });
-
+Route::get('/admin', function () {
+    return view('adminverifypsych');
+});
 Route::get('/user_profile', function () {
     return view('patientprofile');
 });
 
-
-Route::get('/user_appointments', function () {
-    return view('patientappointment');
-});
-
 Route::get('/user_diary', function () {
-    return view('patientdiary');
+    return view('wew');
 });
 
 Route::get('/user_ecounseling', function () {
@@ -101,29 +111,46 @@ Route::get('/user_wallet', function () {
     return view('patientwallet');
 });
 
-Route::get('/regcontent', function () {
+Route::get('/findpsychologist', function () {
     return view('registerquestion');
+})->name('registerquestion');
+
+Route::get('/adminlogin', function () {
+    return view('auth.adminlogin');
 });
 
-
-
-
-
-
-
-
+Route::get('/admin', function () {
+    return view('adminverifypsych');
+});
 Route::get('/login', function () {
     return view('login');
-    
-    
+});
+
+Route::get('/trytry', function () {
+    return view('trytry');
+});
+
+Route::get('/browsepsych', function () {
+    return view('comp.browsepsych');
+});
+
+Route::get('/viewpsych', function () {
+    return view('comp.viewpsych');
 });
 
 Route::get('/video', function () {
     return view('video');
 });
 
-Route::post('/availcal', function () {
+Route::get('/availcal', function () {
     return view('comp.availcal');
+});
+
+Route::get('/adminset', function () {
+    return view('adminset');
+});
+Route::get('/adminpatient', function () {
+    return view('adminpatient');
 });
 
 Route::post('/availabilitytab', function () {
@@ -146,8 +173,12 @@ Route::get('/timepick', function () {
     return view('comp.timepick');
 });
 
-Route::get('/register', function () {
-    return view('auth.registeroptions');
+Route::get('/psychologist', function () {
+    return view('auth.psychregister');
+});
+
+Route::get('/patient', function () {
+    return view('auth.patregister');
 });
 
 Route::get('/appointments', function () {
@@ -166,16 +197,24 @@ Route::get('/home', 'HomeController@index')->name('home');
         //Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 //
         // Registration Routes...
-        Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-        Route::post('register', 'Auth\RegisterController@register');
+      //  Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+        //Route::post('register', 'Auth\RegisterController@register');
 
-Route::get('signup/{user}', 'Auth\RegisterController@redusertype');
+//Route::get('signup/{user}', 'Auth\RegisterController@redusertype');
 Route::get('signup', 'Auth\RegisterController@showRegistrationOptions');
 
 Route::post('RegisterControllerPsych','Auth\RegisterController@registerpsych');
 Route::post('RegisterControllerPat','Auth\RegisterController@registerpat');
+Route::get('AddAppointment','EcounselingsController@addapp');
 Route::post('AddAppointment','EcounselingsController@addapp');
 Route::post('DeleteAppointment','EcounselingsController@cancelapp');
 Route::post('AddAvailability','AvailabilityController@addavail');
+Route::get('editdiary','DiariesController@updatediary');
+Route::post('CheckAvail','AvailabilityController@checkavail');
 Route::get('GetAvailabilitySpefDate','AvailabilityController@getavailspefdate');
 Route::get('/retapp','EcounselingsController@retapppsych');
+Route::post('CreateDiary','DiariesController@creatediary');
+Route::get('RetDiary','DiariesController@retdiaries');
+Route::get('sendmsg','MessagesController@sendmsg');
+Route::post('RegisterControllerRed','Auth\RegisterController@redirectuser');
+Route::post('addpostappointment','EcounselingsController@addpostapp');

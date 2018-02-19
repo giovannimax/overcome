@@ -70,4 +70,8 @@ class AvailabilityController extends Controller
         $availl = new Availability();
         $result=$availl->deleteavail($date);
     }
+
+    public static function checkavail(){
+        return Availability::all();
+    }
 }
