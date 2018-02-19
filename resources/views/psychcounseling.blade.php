@@ -14,38 +14,8 @@
   </div>
 </div>
   </div>
-  <div class="card-block insidecontent">
-        <a href="#">
-        <div class="row divforsearch">  
-            <div class="col-md-2"><img class="insideimg2 rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture"></div>
-            <div class="col-md-8" style="margin-top:20px;">John Doe</div>
-            <div class="col-md-2" style="margin-top:20px;"><small class="text-success">Active</small></div>    
-        </div> 
-        </a>
-
-        <a href="#">
-        <div class="row divforsearch">  
-            <div class="col-md-2"><img class="insideimg2 rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture"></div>
-            <div class="col-md-8" style="margin-top:20px;">Jessa Char</div>
-            <div class="col-md-2" style="margin-top:20px;"><small class="text-success">Active</small></div>    
-        </div> 
-        </a>
-
-        <a href="#">
-        <div class="row divforsearch">  
-            <div class="col-md-2"><img class="insideimg2 rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture"></div>
-            <div class="col-md-8" style="margin-top:20px;">Jane Doe</div>
-            <div class="col-md-2" style="margin-top:20px;"><small class="text-success">Active</small></div>    
-        </div> 
-        </a>
-
-        <a href="#">
-        <div class="row divforsearch">  
-            <div class="col-md-2"><img class="insideimg2 rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture"></div>
-            <div class="col-md-8" style="margin-top:20px;">Joe Hannes</div>
-            <div class="col-md-2" style="margin-top:20px;"><small class="text-success">Active</small></div>    
-        </div> 
-        </a>
+  <div class="card-block insidecontent" id="convomenu">
+       
   </div>
   
 </div>
@@ -76,49 +46,15 @@
     <div class="row">
     <div class="col-md-12">
         <div class="card card-primary mb3 cardmsg">
-            <div class="card-header">
-                <div class="row">
-                <div class="col-md-8">
-                <table>
-                <tr>
-                    <td><img class="sendernewimg rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture" align="left"></td>
-                    <td><strong>John Doe</strong></td>
-               </tr> </table>
-               </div>
+            <div id="msgcont">
 
-                <div class="col-md-2">
-                <button type="submit" class="btn btn-success" style="margin-top:15px;margin-left:50px;" onclick="showvideo()"><span><i class="material-icons">videocam</i>Start E-counseling</span></button>
-                </div>
-
-               </div> <!--End of row -->
-            </div> <!-- End of card-header -->
-           
-            
-            <div class="card-block">
-                <div align="right">
-                  <img class="insideimg rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
-            <div class="insidecard card text-white bg-secondary w-50" align="right">
-        <div class="pnmcont">
-            <p class="pmsg">Lorem ipsum dolor sit amet, munere eligendi percipit in ius, vim dolorem probatus ex.</p></[></div>
-         <div class="dtime" style="margin-top:15px;margin-left:15px;"><p class="insidetime text-white"s>8:15PM</p></div>
-         </div>
             </div>
-            
-                
-                <img class="insideimg2 rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
-            <div class="insidecard card text-white bg-info w-50">
-        <div class="pmcont">
-            <p class="pmsg2">Lorem ipsum dolor sit amet, munere eligendi percipit in ius, vim dolorem probatus ex.</p></div>
-         <div class="dtime2"><p class="insidetime2 text-white">8:15PM</p></div>
-         </div>
-            </div> <!-- End of card-block -->
-        
-
             <div class="card-footer">
                 <div class="input-group">
-                    <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                    <input id="msgcontent" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                     <span >
-                        <button class="btn btn-primary btn-md" id="btn-chat">
+                        <input type="hidden" id="convoid" value="">
+                        <button class="btn btn-primary btn-md" id="btn-chat" onclick="sendmsg()">
                           <i class="material-icons">send</i> Send</button>
                     </span>
                     <span><button class="btn btn-primary btn-md" type="file" id="btn-attach"><i class="material-icons">attach_file</i>Attach File</button>
@@ -210,6 +146,11 @@ Start of Session Notes Tab -->
 
 @section ('scripts')
 <script Language="JavaScript">
+    var id = "{{ Auth::user()->id}}";
+    var idnty= "psych";
+    $.get('./convomenu',{id:id,idnty,idnty},function(data){
+            $('#convomenu').html(data);
+     });
 
 function showvideo() {
 
@@ -249,6 +190,22 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
-</script> 
+</script>
+
+<script>
+    function sendmsg(){
+        var msgcontent = $('#msgcontent').val();
+        var sender = 1;
+        var convoid = $('#convoid').val();
+
+        $.get('./sendmsg',{msg:msgcontent,sender:sender,id:convoid},function(data){
+            $.get('./convoloader',{id:convoid},function(data){
+            $('#msgcont').html(data);
+     });
+     });
+     $('#msgcontent').scrollTop($('#msgcontent')[0].scrollHeight);
+     $('#msgcontent').val("");
+    }
+</script>
 @endsection
 

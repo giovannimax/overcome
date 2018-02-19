@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Input;
+use App\Http\Controllers\PatientsController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Ecounseling;
@@ -53,7 +54,22 @@ class EcounselingsController extends Controller
 
 	public function addpostapp(Request $request){
     	$appoints = new Ecounseling();
-		$result=$appoints->createapp($request->except('_token'));
-		
+		$result=$appoints->createapp($request->except(['_token','patmsg']));
+
+		$id = DB::table('conversations')->insertgetId(
+			['psych_id' => $request->psych_id, 'pat_id' => $request->pat_id]);
+			$msg = "Patient blahblah wants you to be his psychologist <br><br> Patient:".$request->patmsg;
+			DB::table('messages')->insert(
+				['msg_content' => $msg, 
+				'sender' => 0,
+				'convo_id' => $id,
+				 "created_at" =>  \Carbon\Carbon::now()]);
+			$msg2 = "Your first session will be on ".$request->counsel_date. ' at '.date("H:M a",strtotime($request->counsel_time));
+			DB::table('messages')->insert(
+				['msg_content' => $msg2, 
+				'sender' => 0,
+				'convo_id' => $id,
+				 "created_at" =>  \Carbon\Carbon::now()]);
+			return redirect()->route('profile');   
 	}
 }

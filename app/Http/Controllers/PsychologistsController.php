@@ -11,7 +11,7 @@ class PsychologistsController extends Controller
     static function findpsych(){
         $gndr = Input::get('gndr');
         $loc = Input::get('loc');
-        $row = DB::select("SELECT * FROM psychologists WHERE psych_gndr like '%$gndr%' AND clinic_province like '%$loc%'");
+        $row = DB::select("SELECT * FROM psychologists WHERE psych_gndr like '%$gndr%' AND clinic_province like '%$loc%' AND psych_status='approved'");
         return $row;
     }
 

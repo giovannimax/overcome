@@ -1,62 +1,29 @@
 @extends ('layouts.pnavbar')
 @section ('content')
+<?php
+    use App\Http\Controllers\MessagesController;
+    $resultt = MessagesController::convomenu(Auth::user()->id, Auth::user()->usertype);
+?>
 
-
-<div class="container">
-  <div class="row">
-   <div class="col-md-6"><p id="duration">Duration: 58mins left</p></div>
-   <div class="col-md-6"><span class="float-right"><button class="btn btn-danger btn-sm" style="margin-top:20px;">Request to Remove<i class="material-icons">backspace</i></button></span></div>
-    </div>
+  <div class="card-block insidecontent2">
+<div class="tab-content" id="nav-tabContent">
+  <div class="tabmessages tab-pane fade show active" id="nav-messages" role="tabpanel" aria-labelledby="nav-messages-tab">  <!-- Start of Appointment Tab -->
+   
+  <p id="duration">Duration: 58mins left</p>
     <div class="row">
     <div class="col-md-12">
-        <div class="card card-primary mb3 w-100 h-100">
-            <div class="card-header">
-                <div class="row">
-                <div class="col-md-8">
-                <table>
-                <tr>
-                    <td><img class="sendernewimg rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture" align="left"></td>
-                    <td><strong>John Doe</strong></td>
-               </tr> </table>
-               </div>
+        <div class="card card-primary mb3 cardmsg">
+            <div id="msgcont">
 
-                <div class="col-md-2">
-                <button type="submit" class="btn btn-primary" style="margin-top:25px;margin-left:50px;" onclick="showvideo()"><span><i class="material-icons">videocam</i>Video Call</span></button>
-                </div>
-
-                <div class="col-md-2">
-                <button type="submit" class="btn btn-primary" style="margin-top:25px;" onclick="showcall()"><span><i class="material-icons" >call</i>Voice Call</span></button>
-                </div>
-
-               </div> <!--End of row -->
-            </div> <!-- End of card-header -->
-           
-            
-            <div class="card-block">
-                <div align="right">
-                  <img class="insideimg rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
-            <div class="insidecard card text-white bg-secondary w-50" align="right">
-        <div class="pnmcont">
-            <p class="pmsg">Lorem ipsum dolor sit amet, munere eligendi percipit in ius, vim dolorem probatus ex.</p></[></div>
-         <div class="dtime" style="margin-top:15px;margin-left:15px;"><p class="insidetime text-white"s>8:15PM</p></div>
-         </div>
             </div>
-            
-                
-                <img class="insideimg2 rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
-            <div class="insidecard card text-white bg-info w-50">
-        <div class="pmcont">
-            <p class="pmsg2">Lorem ipsum dolor sit amet, munere eligendi percipit in ius, vim dolorem probatus ex.</p></div>
-         <div class="dtime2"><p class="insidetime2 text-white">8:15PM</p></div>
-         </div>
-            </div> <!-- End of card-block -->
-        
-
             <div class="card-footer">
                 <div class="input-group">
-                    <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                    <input id="msgcontent" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                     <span >
-                        <button class="btn btn-primary btn-md" id="btn-chat">
+                        @foreach($resultt as $ress)
+                            <input type="hidden" id="convoid" value="{{$ress->convo_id}}">
+                        @endforeach
+                        <button class="btn btn-primary btn-md" id="btn-chat" onclick="sendmsg()">
                           <i class="material-icons">send</i> Send</button>
                     </span>
                     <span><button class="btn btn-primary btn-md" type="file" id="btn-attach"><i class="material-icons">attach_file</i>Attach File</button>
@@ -68,12 +35,15 @@
         </div>
     </div> <!-- End of row -->
 
-</div>
 @endsection
 
 @section ('scripts')
 <script Language="JavaScript">
-
+    var idd= $('#convoid').val();
+          //$('#convoid').val(6);
+    $.get('./convoloaderpat',{id:idd},function(data){
+        $('#msgcont').html(data);
+});
 
 function showvideo() {
 
@@ -99,4 +69,19 @@ window.open('ecounseling_start',
       + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top);    
 }
 </script> 
+<script>
+    function sendmsg(){
+        var msgcontent = $('#msgcontent').val();
+        var sender = 0;
+        var convoid = $('#convoid').val();
+
+        $.get('./sendmsg',{msg:msgcontent,sender:sender,id:convoid},function(data){
+            $.get('./convoloaderpat',{id:convoid},function(data){
+            $('#msgcont').html(data);
+     });
+     });
+     $('#msgcontent').scrollTop($('#msgcontent')[0].scrollHeight);
+     $('#msgcontent').val("");
+    }
+</script>
 @endsection

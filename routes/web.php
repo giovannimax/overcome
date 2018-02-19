@@ -55,6 +55,9 @@ Route::get('/mywallet', function () {
 });
 
 Route::get('/ecounseling', function () {
+    if(Auth::user()->usertype=="pat")
+    return view('patientecounseling');
+    else
     return view('psychcounseling');
     
 });
@@ -112,8 +115,15 @@ Route::get('/user_ecounseling', function () {
     return view('patientdoctors');
 });
 
-Route::get('/user_startecounseling', function () {
-    return view('patientecounseling');
+Route::get('/convomenu', function () {
+    return view('comp.convomenu');
+});
+
+Route::get('/convoloader', function () {
+    return view('comp.convoloader');
+});
+Route::get('/convoloaderpat', function () {
+    return view('comp.convoloaderpat');
 });
 
 Route::get('/user_wallet', function () {
@@ -126,7 +136,7 @@ Route::get('/pat_accountsettings', function () {
 
 Route::get('/findpsychologist', function () {
     return view('registerquestion');
-})->name('findpsychologist');
+})->name('registerquestion');
 
 Route::get('/adminlogin', function () {
     return view('auth.adminlogin');
@@ -158,7 +168,7 @@ Route::get('/availcal', function () {
 
 Route::get('/adminset', function () {
     return view('adminset');
-});
+})->name('adminset');
 Route::get('/adminpatient', function () {
     return view('adminpatient');
 });
@@ -241,3 +251,6 @@ Route::post('addpostappointment','EcounselingsController@addpostapp');
 Route::post('updatepsych','Auth\RegisterController@updatepsych');
 Route::get('approvepsych','PsychologistsController@approvepsych');
 Route::get('declinepsych','PsychologistsController@declinepsych');
+Route::get('sendmsg','MessagesController@sendmsg');
+Route::get('createadmin','AdminsController@createadmin');
+Route::get('deactadmin','AdminsController@deactadmin');

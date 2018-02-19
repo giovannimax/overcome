@@ -1,3 +1,11 @@
+<?php
+     use App\Http\Controllers\AdminsController;;
+     
+     $result = AdminsController::retactadmin();
+     $resultt = AdminsController::retdeaadmin();
+    
+?>
+
 @extends ('layouts.adminnavbar')
 
 @section ('content')
@@ -6,10 +14,10 @@
 </div>
 <ul class="nav nav-tabs justify-content-end" role="tablist" style="margin-top:50px;" >
   <li class="nav-item">
-    <a class="nav-link active" href="#active" role="tab" data-toggle="tab">Active Patients</a>
+    <a class="nav-link active" href="#active" role="tab" data-toggle="tab">Active Admins</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#deactivate" role="tab" data-toggle="tab" style="margin-right: 50px;">Deactivated Patients</a>
+    <a class="nav-link" href="#deactivate" role="tab" data-toggle="tab" style="margin-right: 50px;">Deactivated Admins</a>
   </li>
   
 </ul>
@@ -22,62 +30,31 @@
   <table class="table table-bordered w-75 ">
             <thead class="theadadmin">
                 <tr class="text-info">
-                    <th></th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
-                    <th>Registration Date</th>
+                    <th>Password</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+            @foreach($result as $res)
                 <tr class="tradmin">
+        
+                    <td>{{$res->fname}}</td>
+                    <td>{{$res->lname}}</td>
+                    <td>{{$res->email}}</td>
+                    <td>{{$res->pass}}</td>
+                    <td>{{$res->status}}</td>
                     <td>
-                    <div class="form-check text-center">
-                      <input class="form-check-input" type="checkbox" value="">
-                  </div>
+                        <form method="get" action="deactadmin">
+                            <input type="hidden" name="adminid" value="{{$res->id}}">
+                            <input type="submit" value="deactivate">
+                        </form>
                     </td>
-                    <td>John </td>
-                    <td>Lilki</td>
-                    <td>john@gmail.com</td>
-                    <td>September 14, 2013</td>
-                    <td>Pending</td>
                 </tr>
-                <tr>
-                <td>
-                <div class="form-check text-center">
-                  <input class="form-check-input" type="checkbox" value="">
-              </div>
-                </td>
-                <td>John </td>
-                <td>Lilki</td>
-                <td>john@gmail.com</td>
-                <td>September 14, 2013</td>
-                <td>Pending</td>
-                </tr>
-                <tr>
-                <td>
-                <div class="form-check text-center">
-                  <input class="form-check-input" type="checkbox" value="">
-              </div>
-                </td>
-                <td>John </td>
-                    <td>Lilki</td>
-                    <td>john@gmail.com</td>
-                    <td>September 14, 2013</td>
-                    <td>Pending</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th></th>
-                    <th colspan="6">
-                    <button class="btn btn-success float-right">Deactivate</button>
-                       
-                        
-                    </th>
-                </tr>
-            </tfoot>
+            @endforeach
         </table>
 
   </div><!-- End of Active -->
@@ -85,62 +62,29 @@
   <table class="table table-bordered w-75 ">
             <thead class="theadadmin">
                 <tr class="text-info">
-                    <th></th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
-                    <th>Registration Date</th>
+                    <th>Password</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="tradmin">
+                @foreach($resultt as $res)
+                <tr class="tradmin">
+        
+                    <td>{{$res->fname}}</td>
+                    <td>{{$res->lname}}</td>
+                    <td>{{$res->email}}</td>
+                    <td>{{$res->pass}}</td>
+                    <td>{{$res->status}}</td>
                     <td>
-                    <div class="form-check text-center">
-                      <input class="form-check-input" type="checkbox" value="">
-                  </div>
                     </td>
-                    <td>John </td>
-                    <td>Lilki</td>
-                    <td>john@gmail.com</td>
-                    <td>September 14, 2013</td>
-                    <td>Pending</td>
                 </tr>
-                <tr>
-                <td>
-                <div class="form-check text-center">
-                  <input class="form-check-input" type="checkbox" value="">
-              </div>
-                </td>
-                <td>John </td>
-                <td>Lilki</td>
-                <td>john@gmail.com</td>
-                <td>September 14, 2013</td>
-                <td>Pending</td>
-                </tr>
-                <tr>
-                <td>
-                <div class="form-check text-center">
-                  <input class="form-check-input" type="checkbox" value="">
-              </div>
-                </td>
-                <td>John </td>
-                    <td>Lilki</td>
-                    <td>john@gmail.com</td>
-                    <td>September 14, 2013</td>
-                    <td>Pending</td>
-                </tr>
+            @endforeach
             </tbody>
-            <tfoot>
-                <tr>
-                    <th></th>
-                    <th colspan="6">
-                    <button class="btn btn-info float-right">Activate</button>
-                       
-                        
-                    </th>
-                </tr>
-            </tfoot>
         </table>
 
   </div> <!-- End of Deactivate -->
@@ -161,21 +105,23 @@
       <div class="modal-body">
         <div class="adduser">
 
+        <form method="GET" action="createadmin">
+
         <div class="form-group">
             {!! Form::label('First Name'); !!}
-            {!! Form::text('adminfname','', ['class' => 'form-control']); !!}
+            {!! Form::text('fname','', ['class' => 'form-control']); !!}
         </div>
         <div class="form-group">
             {!! Form::label('Last Name'); !!}
-            {!! Form::text('adminlname','', ['class' => 'form-control']); !!}
+            {!! Form::text('lname','', ['class' => 'form-control']); !!}
         </div>
         <div class="form-group">
             {!! Form::label('Email Address'); !!}
-            {!! Form::text('adminemail','', ['class' => 'form-control']); !!}
+            {!! Form::text('email','', ['class' => 'form-control']); !!}
         </div>
         <div class="form-group">
             {!! Form::label('Password'); !!}
-            {!! Form::text('adminpw','', ['class' => 'form-control']); !!}
+            {!! Form::text('pass','', ['class' => 'form-control']); !!}
         </div>
 
       </div> <!-- End of Modal-body -->

@@ -107,6 +107,8 @@
     <div class="modal-body">
 <form method="POST" action="addpostappointment">
 {{ csrf_field() }}
+{!! Form::hidden('psych_id','', ['id' => 'psych_id']) !!}
+{!! Form::hidden('pat_id',Auth::user()->id) !!}
 {!! Form::hidden('counsel_status', 'pending', ['id' => 'counsel_status']) !!}
     <div class="form-group rowcontent">
 <label for="example-date-input" class="col-2 col-form-label">Preferred Date</label>
@@ -123,7 +125,7 @@
 </div> <!-- Enf of form-group row for time -->
 <div class="form-group rowcontent">
 <label for="exampleTextarea">Basic Information</label>
-<textarea class="form-control" id="exampleTextarea" rows="8" placeholder="Including how you feeling for the past few days/weeks."></textarea>
+<textarea class="form-control" name="patmsg" id="exampleTextarea" rows="8" placeholder="Including how you feeling for the past few days/weeks."></textarea>
 <small style="font-size: 12px; color: red;">Please wait for the psychologist to accept and confirm your intended booking date. It might be change to other date or time. There's also a possiblity that you will be refered to other 
  Psychologist who is inline with what you are experiencing.</small>
 </div>   <!-- End of form-group textarea -->  
