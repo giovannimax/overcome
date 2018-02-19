@@ -37,6 +37,7 @@ class CreatePatientsTable extends Migration
             $table->mediumtext('diagnosis',100)->nullable();
             $table->integer('psych_id')->unsigned()->nullable();
             $table->foreign('psych_id')->references('psych_id')->on('psychologists');
+            $table->timestamps();
         });
     }
 

@@ -40,13 +40,13 @@
                         <nav>
                             <ul class="primary-nav">
                                 <li><a class="navlinkss" href="#about">About</a></li>
-                                <li><a class="navlinkss" href="#psychologist">For Psychologists</a></li>
-                                <!-- <li><a class="navlinkss" href="#">Reviews</a></li> -->
+                                <li><a class="navlinkss" href="#psychologist">Psychologists</a></li>
+                                <li><a class="navlinkss" href="#">Reviews</a></li>
                                 <li><a class="navlinkss" href="#faq">FAQ</a></li>
                                 <li><a class="navlinkss" href="#contact">CONTACT</a></li>
                             </ul>
-                            <ul class="member-actions" style="margin-top:10px;">
-                                <li><a href="login" class="login navlinkss">Log in</a></li>
+                            <ul class="member-actions">
+                                <li><a href="#login" class="login navlinkss">Log in</a></li>
                                 <li><a href="#signup" class="btn-white btn-small navlinkss">Sign up</a></li>
                             </ul>
                         </nav>
@@ -64,7 +64,7 @@
                         <h1>Search. Book. Interact!</h1>
                         <p class="intro">It's about making peace with 
 by listening to and understanding your symptoms.</p>
-                        <a href="#signup" class="btn btn-fill btn-large btn-margin-right">Get started</a> <a href="trytry" class="btn btn-accent btn-large">View Psychologists</a>
+                        <a href="#signup" class="btn btn-fill btn-large btn-margin-right">Get started</a> <a href="#about" class="btn btn-accent btn-large">Learn more</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@ by listening to and understanding your symptoms.</p>
                ut hendrerit nibh tempor. Mauris convallis sem risus, 
                sit amet pharetra turpis tempus vitae. Vestibulum et nunc at orci volutpat dictum. In id magna eu mi dapibus hendrerit. Nunc at neque condimentum, porta lacus quis, tincidunt enim. Mauris in vulputate enim. Donec odio turpis, volutpat scelerisque arcu vel, suscipit placerat sem. Ut vitae est fermentum, aliquet purus ac, malesuada orci. Quisque a dapibus arcu, ac pharetra erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis ornare est in felis congue semper. Cras sed dolor sed dui semper cursus.</p>
              <h5 class="text-center">Mission</h5> 
-             <p class="text-center">To remove stigma of mental illness that hindering people on seeking help <br> and give an accessible place that is convenient for everyone.</p>  
+             <p class="text-center">To remove stigma of mental illness that hindering people on seeking help <br> and give an accessible place that is convenience for everyone.</p>  
             
         </div>
     </section>
@@ -193,41 +193,33 @@ by listening to and understanding your symptoms.</p>
            
            <div class="signup1">
                <div class="signup11">
-           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Join as a Patient?</h3>
+           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Why Join as a Patient?</h3>
            <div class="signupcontent">
            <big class="blogh">Easy to use</big>
                 <p class="signupp">Overcome is a userfriendly web application with understandable text and navigations.</p>   
 
                 <big class="blogh">Saves Time</big>
-                <p class="signupp">Book your first session depending on your availabilty and<br> then psychologist will book your next sessions with the date<br> you both agreed on.</p>                
+                <p class="signupp">Book your first session depending on your availabilty and then psychologist will book your next sessions with the date you both agreed on.</p>                
                 
                 <big class="blogh">Hassle Free</big>
-                <p class="signupp">Book your session on your own convenience. <br> Either it will be an e-counseling or on-site counseling.</p>
-                <form method="POST" action="RegisterControllerRed">
-                  {{ csrf_field() }}
-                    <input type="hidden" name="usertype" value="pat">
-                     <input type="submit" class="btn btn-fill btn-md" value="Sign Up as Patient"  style="margin-bottom: 15px;" name="patient">
-                </form>
+                <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
+                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Patient</a>
                 </div>
 </div>
            </div>
            <div class="signup2">
                <div class="signup11">
-           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Work as a Psychologist</h3>
+           <h3 style="margin-left:15px;margin-bottom:25px;padding-top:15px;">Why work as a Psychologist</h3>
            <div class="signupcontent">
            <big class="blogh">Additional Income</big>
-                <p class="signupp">Aside from your regular patients, you can get other patients from <br>different cities using this web application.</p>   
+                <p class="signupp">Aside from your regular patients, you can get other patients from different cities using this web application.</p>   
 
                 <big class="blogh">Convenience</big>
-                <p class="signupp">You can work from your home if your bookings on that day are all<br> e-counseling. Messages and diaries are also provided for easy communication with your patient.</p>                
+                <p class="signupp">You can work from your home if your bookings on that day are all e-counseling. Messages and diaries are also provided for easy communication with your patient.</p>                
                 
                 <big class="blogh">Hassle Free</big>
-                <p class="signupp">Book your session on your own convenience. <br>Either it will be an e-counseling or on-site counseling.</p>            
-                <form method="POST" action="RegisterControllerRed">
-                {{ csrf_field() }}
-                     <input type="hidden" name="usertype" value="psych">
-                     <input type="submit" class="btn btn-fill btn-md" value="Sign Up as Psychologist" name="psych">
-                </form>
+                <p class="signupp">Book your session on your own convenience. Either it will be an e-counseling or on-site counseling.</p>            
+                <a href="#" class="btn btn-fill btn-md" style="margin-bottom:15px;">Sign Up as Pyschologist</a>
 </div>
                 </div>
            </div>
@@ -235,67 +227,10 @@ by listening to and understanding your symptoms.</p>
         </div>
     </section>
    
-<section class="faq section-padding" id="faq">
-<div class="containerfaq">
-    
-<h2 style="margin-top: -25px;margin-bottom: 25px;">Frequently Asked Questions</h2>
-
-<button class="accordion text-info">What is Overcome?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<section class="faq section-padding text-center" id="faq">
+<div class="container">
+    <p>for faqy</p>
 </div>
-
-<button class="accordion text-info">Who are the Psychologists?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion text-info">Who will be helping me?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion text-info">In what way I can use Overcome ?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion text-info">Is Overcome a substitute for traditional face-to-face therapy?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion text-info">How can I communicate with my Psychologist?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion text-info">How long will I use Overcome?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion text-info">What is the payment method of Overcome?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion text-info">Is this an effective form of counseling?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion text-info">How is my privacy protected?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion text-info">Can I stay anonymous?</button>
-<div class="panelfaq">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-</div> <!-- End of container for faq -->
 </section>
 
     <section class="sign-up section-padding text-center" id="contact">
@@ -303,7 +238,7 @@ by listening to and understanding your symptoms.</p>
             <div class="row">
                 <div class="col-md-6">
                     <h3>Get in Touch</h3>
-                    <p>For some quick answers, <a href="#faq" class="faq">visit our frequent asked questions</a>.If you still need assistance,
+                    <p>For some quick answers, <a href="#" class="faq">visit our frequent asked questions</a>.If you still need assistance,
                 please fill-up the form below. Happy to serve you :)</p>
                     <form class="signup-form" action="#" method="POST" role="form">
                     <div class="form-input-group">
@@ -445,23 +380,5 @@ by listening to and understanding your symptoms.</p>
     ga('create','UA-XXXXX-X','auto');ga('send','pageview');
 
     </script>
-
 </body>
 </html>
-
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
-</script>

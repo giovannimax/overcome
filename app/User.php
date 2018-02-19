@@ -36,8 +36,4 @@ class User extends Authenticatable
         DB::table('patients')->insert($data);
         DB::table('users')->where('id', $data['pat_id'])->update(['usertype' => 'pat']);
     }
-
-    public function getprovinces(){
-        return DB::select("SELECT prov_name FROM provinces");
-    }
 }

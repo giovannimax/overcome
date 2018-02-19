@@ -342,12 +342,12 @@ i, .sidetext{
     }
 }
 
-#wrapperr {
+#wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     position:fixed;
 }
-#wrapperr {
+#wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -358,7 +358,7 @@ i, .sidetext{
     transition: all 0.5s ease;
 }
 
-#wrapperr.toggled {
+#wrapper.toggled {
     padding-right: 350px;
 }
 
@@ -377,8 +377,8 @@ i, .sidetext{
     transition: all 0.5s ease;
 }
 
-#wrapperr.toggled #sidebar-wrapper {
-    width: 300px;
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
 }
 
 #page-content-wrapper {
@@ -387,7 +387,7 @@ i, .sidetext{
     padding: 15px;
 }
 
-#wrapperr.toggled #page-content-wrapper {
+#wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
 }
@@ -441,11 +441,11 @@ i, .sidetext{
 }
 
 @media(min-width:768px) {
-    #wrapperr {
+    #wrapper {
         padding-right: 250px;
     }
 
-    #wrapperr.toggled {
+    #wrapper.toggled {
         padding-right: 0;
     }
 
@@ -453,7 +453,7 @@ i, .sidetext{
         width: 330px;
     }
 
-    #wrapperr.toggled #sidebar-wrapper {
+    #wrapper.toggled #sidebar-wrapper {
         width: 0;
     }
 
@@ -462,7 +462,7 @@ i, .sidetext{
         position: relative;
     }
 
-    #wrapperr.toggled #page-content-wrapper {
+    #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
     }

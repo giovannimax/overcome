@@ -1,6 +1,6 @@
 <?php
     use App\Http\Controllers\AvailabilityController;
-    $date = $_GET['date'];
+    $date = $_POST['date'];
 
     $result = AvailabilityController::getspefdate($date);
     $availtime = Array();
@@ -15,12 +15,13 @@
         
     }
 
-    echo "<select class='form-control' name='counsel_time' id='counsel_time'>";
+    echo "<select class='form-control name='counsel_time'>";
           for($i=1;$i<=24;$i++){
             $time = date('h:i A', strtotime('00:00:00')+60*60*$i);
-            $timee = date('H:i', strtotime('00:00:00')+60*60*$i);
             if (!in_array($i, $availtime)) {
-                echo "<option value='".$timee."'>".$time."</option>";
+                echo "<option value='".$time."'>".$time."</option>";
+            } else {
+                echo "<option value='".$time."' disabled>".$time."</option>";
             }
 
             

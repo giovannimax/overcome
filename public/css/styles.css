@@ -49,8 +49,7 @@ h5 {
   border: solid 2px;
   border-radius: 40px;
   display: inline-block;
-  border-color: #fff;
- }
+  border-color: #fff; }
 
 .btn-white:hover, .btn-white:focus {
   color: #c7c7c7;
@@ -350,9 +349,6 @@ Hero
 .hero {
   min-height: 750px;
   background: url("../img/hero.jpg") center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   position: relative; }
   .hero .down-arrow a {
@@ -590,13 +586,20 @@ Features-stack
    }
 
 
+.faq:hover{
+  color:#17a2b8;
+  text-decoration:underline;
+}
+
 .signupp {
   font-size: 14px;
   line-height: 18px;
   color: #000;
   padding-bottom: 20px;
   margin-top: 10px;
+  
  }
+
 
  .btn-signup {
   font-size: 13px;
@@ -1232,12 +1235,10 @@ you can use the generic selector below, but it's slower:
 }
 
 .overcomelogo{
-  height:   40px;
- 
+  height:   35px;
 }
 
 .containerforsignup{
-  width: 100%;
   display: inline-flex;
   background: #f3f4f8;
 }
@@ -1254,6 +1255,8 @@ you can use the generic selector below, but it's slower:
 
 .signup11{
   margin: 30px;
+  background-color: #f3f4f8;
+  opacity: 0.6;
   filter: alpha(opacity=60);
   margin-top: -20px;
 
@@ -1268,9 +1271,20 @@ you can use the generic selector below, but it's slower:
   background: url("../img/signupdoc.png") no-repeat center center;
 }
 
+.signup11:hover{
+  background: #cecece;
+  -moz-transition: all 1s ease-in;
+  /* WebKit */
+  -webkit-transition: all 1s ease-in;
+  /* Opera */
+  -o-transition: all 1s ease-in;
+  /* Standard */
+  transition: all 1s ease-in;
+  
+}
 .signupcontent{
-  width: 50%;
-  margin: 20px;
+  padding: 20px;
+
 }
 
 .blogh{
@@ -1287,491 +1301,3 @@ you can use the generic selector below, but it's slower:
     align-items: center;
 }
 
-.panellogin{
-  margin: auto;
-  width: 500px;
-  margin-top: 170px !important;
-  background: rgba(27, 37, 47, 0.5);
-}
-
-
-.btnforlogin {
-  font-size: 13px;
-  border: solid 0px !important;
-  border-radius: 0px !important;
-  display: inline-block;
-  text-transform: uppercase; 
-  background: #01acbe;
-}
-
-
-  .btnforlogin:hover, .btnforlogin:focus {
-    color: #fff;
-    border-color: #1592a5;
-    background-color: #1592a5; }
-  
-
-    .forgotlink{
-      color: #fefefe;
-    }
-
-    .forgotlink:hover{
-      text-decoration:underline;
-    }
-
-    .hero2 {
-      min-height: 750px;
-      background: url("../img/hero.jpg") repeat-x center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      position: relative; }
-      .hero2 .down-arrow a {
-        color: #fff; }
-      .hero2 h1 {
-        color: #fff;
-        margin-bottom: 40px; }
-      .hero2 p.intro {
-        color: #fff;
-        font-size: 20px;
-        font-weight: 300;
-        margin-bottom: 80px; }
-      .hero2 .hero-content {
-        padding-top: 26%; }
-    
-    .containerforreg{
-      display: inline-flex;
-      margin-top:130px;
-      margin-left: 220px;
- 
-    }
-
-    .container1{
-        background:#fefefe;
-        width: 650px;
-        margin-right: 50px;
-        padding-bottom: 35px;
-        margin-bottom: 50px;
-        
-    }
-
-    .container2{
-        width: 400px;
-   
-    }
-
-    .rowreg{
-      margin-left: 25px;
-      margin-right: 25px;
-    
-    }
-
-    .snotes2{   
-     padding-left: 15px;
-     padding-top:15px;
-     padding-right: 15px;
-     padding-bottom: 15px;
-    
-    }
-
-    .btnsub{
-      float:right !important;
-      border-radius: 5px !important;
-    }
-
-    .btnsub:hover, .btnsub:focus {
-      color: #fff;
-      border-color: #2d6ba0;
-      background-color: #2d6ba0; }
-
-      .accordion {
-        background-color: #eee;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-        transition: 0.4s;
-    }
-    
-    .active, .accordion:hover {
-        background-color: #ccc;
-    }
-    
-    .accordion:after {
-        content: '\21E3';
-        color: #01acbe;
-        font-weight: bold;
-        float: right;
-        margin-left: 5px;
-    }
-    
-    .active:after {
-        content: "\21E1";
-        color: #01acbe;
-    }
-    
-    .panelfaq {
-        padding: 0 18px;
-        background-color: white;
-        border: 1px solid #cecece;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-    }
-
-    .containerfaq{
-      margin-left: 150px;
-      margin-top: -15px;
-      margin-right: 150px;
-    }
-
-   
-    .hero3 {
-      /* min-height:750px; */
-      background: url("../img/testimonials-bg.jpg");
-      -webkit-background-size: 100% 100%;
-      -moz-background-size: 100% 100%;
-      -o-background-size: 100% 100%;
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      
-      /* position: relative; */
-    height: 500px; }
-      .hero3 .down-arrow a {
-        color: #fff; }
-      .hero3 h1 {
-        color: #fff;
-        margin-bottom: 40px; }
-      .hero3 p.intro {
-        color: #fff;
-        font-size: 20px;
-        font-weight: 300;
-        margin-bottom: 80px; }
-      .hero3 .hero-content {
-        padding-top: 26%; }
-    
-       .containerforsearchpysch{
-          background: pink;
-          margin-top: 150px;
-        } 
-
-        .dd{
-          margin: auto;
-          width: 500px;
-          margin-top: 190px !important;
-        }
-        .test{
-          margin-top: 25px;
-          animation: fadein 2s;
-          -moz-animation: fadein 2s; /* Firefox */
-          -webkit-animation: fadein 2s; /* Safari and Chrome */
-          -o-animation: fadein 2s; /* Opera */
-      }
-      @keyframes fadein {
-          from {
-              opacity:0;
-          }
-          to {
-              opacity:1;
-          }
-      }
-      @-moz-keyframes fadein { /* Firefox */
-          from {
-              opacity:0;
-          }
-          to {
-              opacity:1;
-          }
-      }
-      @-webkit-keyframes fadein { /* Safari and Chrome */
-          from {
-              opacity:0;
-          }
-          to {
-              opacity:1;
-          }
-      }
-      @-o-keyframes fadein { /* Opera */
-          from {
-              opacity:0;
-          }
-          to {
-              opacity: 1;
-          }
-      }
-       
-
-      #forlocation{
-        width: 100%;
-        cursor: pointer;
-        padding: 20px;
-      }
-
-      .ddfg{
-        margin: auto;
-        margin-left: 500px !important;
-        margin-top: 80px !important;
-        width: 900px;
-      
-      }
-
-      .btnviewall{
-        border-radius: 5px !important;
-        border: 0px !important;
-        height: 43px;
-      }
-
-      .btnviewall:hover, .btnviewall:focus {
-        color: #fff;
-        border-color: #2d6ba0;
-        background-color: #2d6ba0; }
-  
-
-
-      #forspecialty{
-        width: 100%;
-        cursor: pointer;
-        padding: 20px;
-      }
-
-  .listofpsychologist{
-    margin-top: 50px;
-    margin-left: 200px;
-    margin-right: 200px;
-  }
-
-  .insideimg{
-    width: 100px;
-    height: 100px;
-    border-radius: 150px;
-    margin: 10px 10px 10px 10px;
-  }
-
-  .rowsearch{
-    margin-top: 50px;
-  }
-
-  .psearch{
-    margin-left: -10px;
-    margin-top: 15px;
-  }
-
-  .linkforpsych{
-    cursor: pointer;
-    color: rgba(28, 54, 83, 0.6);
-  }
-
-  .psychhover:hover{
-    background: #f8f7f7;
-    border-radius: 5px;
-    color: #01acbe;
-    }
-
-    .divforname{
-      margin-top:35px;
-    }
-   
-    .forlistofpsych{
-      margin-bottom: 100px;
-    }
-
-    .insideimg2{
-      width: 200px;
-      height: 200px;
-      border-radius: 150px;
-      margin: 10px 10px 10px 10px;
-    }
-
-    .psychdetails{
-      color: #01acbe;
-    }
-
-    .ulspecialty{
-      margin-left: 50px;
-      color: #f58c37;
-    }
-    
-    .list{
-      list-style-type: disc;
-    }
-
-    .specificpsych{
-      background: #fcfafa;
-      height: fit-content;
-    }
-
-    .aboutpsychcontent{
-      margin-left: 25px;
-      margin-right: 25px;
-      margin-bottom: 60px;
-    }
-
-    .btnbook{
-      float:right;
-      border-radius: 5px !important;
-
-    }
-
-    #bookModal{
-      margin-top: 25px;
-      width: 600px;
-      margin-left: 560px;
-      height: fit-content;
-    }
-
-    #viewDetailsModal{
-      margin-top: 25px;  
-      margin-left: 25px;
-      margin-right: 250px;
-    }
-
-    #viewDetailsModal .modal-content{
-      height: 700px;
-      width: 900px;
-      overflow: auto;
-    }
-    .rowcontent{
-      margin-left: 50px;
-      margin-top:20px;
-      margin-right: 50px;
-    }
-
-    .btnapp{
-      margin-bottom: 5px;
-      margin-right: 25px;
-      border-radius: 5px !important;
-    }
-
-    /* Start of Register Question CSS */
-    .regcontent{
-      display: inline-flex;
-      margin-top: 100px;
-      width: 100%;
-      padding: 20px;
-  }
-
-  .regcontent1{
-    margin: 50px;
-    margin-top: 20px !important;
-   background: #fefefe;
-   height: fit-content;
-}
-
-.regcontent2{
-  width: 60%;
-  margin: 20px;
-   background: #fefefe;
-   height: fit-content;
-}
-
-.cardforquestion{
-  margin: 25px 25px 25px 25px;
-}
-
-.sender{
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin: 10px 10px 10px 10px;
-}
-
-.btnquest{
-  margin-top:50px;
-  float:right;
-  margin-bottom: 25px;
-  border-radius: 5px !important;
-}
-
-.btnquest:hover, .btnquest:focus {
-  color: #fff;
-  border-color: #2d6ba0;
-  background-color: #2d6ba0;
-
-}
-
-
-
-.contforpsychsearch{
-  margin-left: 50px;
-  margin-top: 10px;
-}
-
-.newparsearch{
-  font-size: 12px;
-  color: #212834;
-  
-}
-
-.rowcolsearch{
-  margin-top: 15px;
-}
-
-.divrowsearch{
-  margin-top:25px;
-}
-
-.btnrowsearch{
-  border-radius: 5px !important;
-  margin-right: -5px;
-}
-
-.btnrowsearch2{
-  border-radius: 5px !important;
-
-}
-
-.psychbookpic{
-  width: 120px;
-  height: 120px;
-  margin-top: 15px;
-  border-radius: 150px;
-  margin-bottom: 25px;
-}
-
-
-.details{
-  text-indent: 50px;
-  font-size: 16px;
-}
-
-.list{
-  font-size: 16px;
-  margin-left: 25px;
-}
-
-.btnstyle{
-  border-radius: 5px !important;
-}
-
-.btnstyle:hover, .btnstyle:focus {
-  color: #fff;
-  border-color: #2d6ba0;
-  background-color: #2d6ba0;
-
-}
-
-.contforpsych{
-  cursor: pointer;
-  color: rgba(28, 54, 83, 0.6);
-}
-
-.contforpsychsearch:hover{
-  background: #f8f7f7;
-    border-radius: 5px;
-    color: #01acbe;
-}
-
-.page{
-  float: right;
-  margin-top: -5px;
-}
-
-.rowgender{
-  margin-bottom: 10px;
-}
-      
-    /* End of Register Question CSS */
