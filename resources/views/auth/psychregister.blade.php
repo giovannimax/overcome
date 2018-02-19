@@ -1,5 +1,11 @@
 @extends('layouts.anothernavbar')
 @section('content')
+
+<?php
+    use App\Http\Controllers\Auth\RegisterController;
+    $availl = RegisterController::getprovinces();
+?>
+
 <div class="containerforreg">
     
     <div class="container1">
@@ -8,11 +14,6 @@
     <div class="row rowreg">
     <h3>Personal Information</h3><br>
     {!! Form::hidden('psych_id', Auth::user()->id); !!}
-    <div class="form-group">
-        {{Form::label('Email Address')}}
-        {{Form::text('psych_email','', ['class' => 'form-control', 'required'])}}
-    </div>
-
     <div class="form-group">
         {{Form::label('First Name') }}
         {{Form::text('psych_fname','', ['class' => 'form-control', 'placeholder' => 'John' ,'required'])}}
@@ -69,6 +70,16 @@
     <div class="form-group">
         {{ Form::label('Clinic Address') }}
         {{ Form::text('clinic_address','', ['class' => 'form-control'])}}
+    </div>
+    <div class="form-group">
+        {{ Form::label('Province') }}
+       <select name="clinic_province" class="form-control">
+       <?php
+                    foreach($availl as $av){
+                        echo '<option>'.$av->prov_name.'</option>';
+                    }
+                ?>
+        </select>
     </div>
     <div class="form-group">
         {{ Form::label('Clinic Email Address') }}

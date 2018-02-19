@@ -130,11 +130,19 @@ Route::get('/trytry', function () {
     return view('trytry');
 });
 
+Route::get('/browsepsych', function () {
+    return view('comp.browsepsych');
+});
+
+Route::get('/viewpsych', function () {
+    return view('comp.viewpsych');
+});
+
 Route::get('/video', function () {
     return view('video');
 });
 
-Route::post('/availcal', function () {
+Route::get('/availcal', function () {
     return view('comp.availcal');
 });
 
@@ -209,3 +217,4 @@ Route::post('CreateDiary','DiariesController@creatediary');
 Route::get('RetDiary','DiariesController@retdiaries');
 Route::get('sendmsg','MessagesController@sendmsg');
 Route::post('RegisterControllerRed','Auth\RegisterController@redirectuser');
+Route::post('addpostappointment','EcounselingsController@addpostapp');

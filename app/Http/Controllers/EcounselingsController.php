@@ -50,4 +50,10 @@ class EcounselingsController extends Controller
 		$result=$appoints->getpatients();
 		return $result;
 	}
+
+	public function addpostapp(Request $request){
+    	$appoints = new Ecounseling();
+		$result=$appoints->createapp($request->except('_token'));
+		
+	}
 }

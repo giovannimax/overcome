@@ -211,6 +211,12 @@
 
 @section('scripts')
 <script>
+ function getavail(date){
+  var date = $(date).val();
+  $.post('./availcal',{date:date},function(data){
+       $('#addbooktc').html(data);
+        });
+    }
 
 $(document).ready(function(){ 
  getavail($("#counseldate"));
@@ -221,9 +227,7 @@ $(document).ready(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
      }
   });
-  var date = $(date).val();
-  $.post('./availcal',{date:date},function(data){
-       $('#addbooktc').html(data);
-        });
+
+ 
 </script>
 @endsection

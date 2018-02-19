@@ -1,66 +1,46 @@
 @extends ('layouts.anothernavbar')
 @section ('content')
-
+<?php
+    use App\Http\Controllers\Auth\RegisterController;
+    $availl = RegisterController::getprovinces();
+?>
 <div class="regcontent">
     <div class="regcontent1">
-    <div class="card w-75  cardforquestion">
+    <div class="card w-65  cardforquestion">
          <div class="card-body">
-             <h3 class="card-title">Questions</h3>
-             <div class="question">
-                 <h4 class="card-text">1. What is your preference <b style="color:#01acbe;">Gender</b> of Psychologist?</h4>
+         <h5 class="card-title">Find your psychologist</h5>
+                 <p class="card-text">1. What is your preference <b style="color:#01acbe;">Gender</b> of Psychologist?</p>
                  <fieldset class="form-group">
                  <div class="form-check">
-                     <div class="row rowgender">
-                   <div class="col-md-2"><label class="form-check-label">
-                   Male
-                   </label></div>
-                  <div class="col-md-10"> <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked></div>
-                  </div> <!-- End of row -->
-                 </div> <!-- End of form-check -->
+                   <label class="form-check-label">
+                     <input type="radio" class="form-check-input" name="gndr" onclick="radioclicked();" id="optionsRadios1" value="male" checked>
+                     Male
+                   </label>
+                 </div>
                  <div class="form-check">
-                     <div class="row  rowgender">
-                <div class="col-md-2"> <label class="form-check-label">
-                 Female       
-                   </label></div>
-                  <div class="col-md-10"> <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2"></div>
-                    </div> <!-- End of row -->
-                 </div> <!-- End of form-check -->
+                 <label class="form-check-label">
+                     <input type="radio" class="form-check-input" name="gndr" onclick="radioclicked();" id="optionsRadios2" value="female">
+                     Female
+                   </label>
+                 </div>
                  <div class="form-check">
-                     <div class="row ">
-                 <div class="col-md-2"><label class="form-check-label">
+                 <label class="form-check-label">
+                     <input type="radio" class="form-check-input" name="gndr" onclick="radioclicked();" id="optionsRadios3" value="" checked="checked"/>
                      Both
-                   </label> </div>
-                  <div class="col-md-10"> <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3"></div>
-                    </div> <!-- End of row -->
-                 </div> <!-- End of form-check -->
+                   </label>
+                 </div>
                </fieldset>
-               <a href="#" class="btn btn-primary btn-lg btnquest" onclick="question('question2','question')" >Next</a>
-           </div>
-
-            <div class="question2">
-               <h4 class="card-text">2. What is your preferred <b style="color:#01acbe;">Location</b> of Psychologist?</h4>
-               <select class="form-control">
-                <option>Manila</option>
-                <option>Cebu</option>
-                <option>Davao</option>
-                <option>Palawan</option>
+               <p class="card-text">2. What is your preference <b style="color:#01acbe;">Location</b> of Psychologist?</p>
+               <select class="form-control" onchange="sendprov(this);" id="provdrop">
+                <?php
+                    foreach($availl as $av){
+                        echo '<option>'.$av->prov_name.'</option>';
+                    }
+                ?>
                 </select>
-                <a href="#" class="btn btn-primary btn-lg btnquest" onclick="question('question3','question2')">Next</a>
-                </div>
-                
-            <div class="question3">
-               <h4 class="card-text">3. What is your preferred <b style="color:#01acbe;">Location</b> of Psychologist?</h4>
-               <select class="form-control">
-                <option>Manila</option>
-                <option>Cebu</option>
-                <option>Davao</option>
-                <option>Palawan</option>
-                </select>
-                <a href="#" class="btn btn-primary btn-lg btnquest">Next</a>
-                </div>
-            
-         </div>
-</div>
+                     <a href="#" class="btn btn-primary btnquest" >Filter</a>
+</div>      
+        </div>
     </div>
 
     <div class="regcontent2">
@@ -75,56 +55,9 @@
                     </div>
              </div>
              <hr>
-             <div class="clearfix forpsychsearchdiv">
-             <a href="#" class="linkforpsychsearch">
-             <div class="contforpsychsearch">
-            <img class="sender rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
-            
-            <div class="row">
-            <div class="rowcolsearch col-md-4"><strong class="strong">John Snow</strong><br>
-                <p class="newpar">Cebu,City</div>
-             
-                <div class="divrowsearch col-md-2"><button type="button" class="btn btn-sm btn-info btnrowsearch" onclick="loadViewDetailsModal();">View Details</button></div>
-                <div class="divrowsearch col-md-2"><button type="button" class="btn btn-sm btn-info btnrowsearch2" onclick="loadAppointmentModal();">Book an Appointment</button></div>
-            </div>
-          
-             </div> <!-- end of contforpsychsearch   -->
-             </a> 
-             </div>     
-             <hr>       
-             
-             <div class="clearfix forpsychsearchdiv">
-             <a href="#" class="linkforpsychsearch">
-             <div class="contforpsychsearch">
-            <img class="sender rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
-            
-            <div class="row">
-            <div class="rowcolsearch col-md-4"><strong class="strong">John Snow</strong><br>
-                <p class="newpar">Cebu,City</div>
-             
-                <div class="divrowsearch col-md-2"><button type="button" class="btn btn-sm btn-info btnrowsearch">View Details</button></div>
-                <div class="divrowsearch col-md-2"><button type="button" class="btn btn-sm btn-info btnrowsearch2">Book an Appointment</button></div>
-            </div>
-          
-             </div> <!-- end of contforpsychsearch   -->
-             </a> 
-             </div>     
-             <hr>      
+             <div class="psychretcont">
 
-             <div class="clearfix forpsychsearchdiv">
-             <a href="#" class="linkforpsychsearch">
-             <div class="contforpsychsearch">
-            <img class="sender rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
-            
-            <div class="row">
-            <div class="rowcolsearch col-md-4"><strong class="strong">John Snow</strong><br>
-                <p class="newpar">Cebu,City</div>
-             
-                <div class="divrowsearch col-md-2"><button type="button" class="btn btn-sm btn-info btnrowsearch">View Details</button></div>
-                <div class="divrowsearch col-md-2"><button type="button" class="btn btn-sm btn-info btnrowsearch2" >Book an Appointment</button></div>
-            </div>
-          
-             </div> <!-- end of contforpsychsearch   -->
+             </div>
              </a> 
              </div>     
              <hr>  
@@ -149,51 +82,8 @@
         <h4 class="modal-title">John Snow</h4>
     </div> <!-- End of Modal-Header -->
         
-    <div class="modal-body">
-
+    <div class="modal-body" id="viewpsych">
     
-         <div class="text-center">
-  <img class="psychbookpic rounded-circle mx-auto d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
-    </div>
-<div class="detailscontent">
-
-<ul class="list-group list-group-flush">
-<li class="list-group-item"><h4 style="color:#01acbe;">About Me</h4><p class="details">I'm is a Licensed Psychologist with a unique skill set refined toward counseling and helping others.
-     My work experience ranges from adult and adolescent outpatient services, as well as working with hospital based counseling
-      services. Joh has over 5 years of experience helping clients with depression, anxiety, relationship struggles and various
-       other mental health and emotional challenges. I uses a person-centered approach emphasizing the importance of the 
-       therapist/client relationship, along with a cognitive behavioral approach to allow the client to explore the thought 
-       patterns related to the challenging emotions and behaviors. My counseling philosophy is based on an acknowledgment of the
-        individual’s background and personal beliefs. His expertise allows clients to develop their own perspective of problem 
-        solving and empowers them to make the changes needed in order to accomplish their goals. Saju and his wife are blessed with 
-        a young daughter and expecting another child later this year!
-
-</p></li>
-<li class="list-group-item"><h4 style="color:#01acbe;">Specialty</h4>
-<ul style="color:#f58c37">
-  <li class="list">Stress</li>
-  <li class="list">Anxiety</li>
-  <li class="list">Self esteem</li>
-  <li class="list">Depression</li>
-</ul>
-</li>
-
-<li class="list-group-item"><h4 style="color:#01acbe;">Licensing</h4>
-<ul style="color:#f58c37;">
-  <li class="list">PRC 12345</li>
-</ul>
-</li>
-
-
-<li class="list-group-item"><h4 style="color:#01acbe;">Clinic</h4>
-<ul style="color:#f58c37;">
-  <li class="list">12345 Street Brgy.Somewhere Cebu City Philippines </li>
-</ul>
-</li>
-
-</div>
-
-
 </div> <!-- End of modal-body -->
 
 
@@ -215,18 +105,20 @@
     </div>
 
     <div class="modal-body">
-    
+<form method="POST" action="addpostappointment">
+{{ csrf_field() }}
+{!! Form::hidden('counsel_status', 'pending', ['id' => 'counsel_status']) !!}
     <div class="form-group rowcontent">
 <label for="example-date-input" class="col-2 col-form-label">Preferred Date</label>
  <div class="col-10">
-    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+ <input class="form-control" id="counseldate" name="counsel_date" type="date" value="{{date('Y-m-d')}}" onChange="getavail(this);">
  </div>
 </div> <!-- End of form-group row for date -->
 
 <div class="form-group rowcontent">
 <label for="example-time-input" class="col-2 col-form-label">Preferred Time</label>
  <div class="col-10">
-      <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+    <div class='addbooktc tablecell' id="addbooktc"></div>
  </div>
 </div> <!-- Enf of form-group row for time -->
 <div class="form-group rowcontent">
@@ -239,7 +131,7 @@
 <div class="modal-footer text-right">
 <button type="submit" class="btn btn-md btn-info btnapp">Book Appointment</button>
 </div>
-
+</form>
 
 
     </div> <!-- End of modal-body -->
@@ -267,7 +159,7 @@
  
  <script src="{{ asset('js/app.js') }}"></script>
 <script>
-    for(var i = 2; i <= 3; i++){
+   /* for(var i = 2; i <= 3; i++){
     $('.question'+i).hide();
     }
     function question(id, id2){
@@ -293,8 +185,56 @@ function closeModal(){
 function closeModal2(){
     var closeModal=document.getElementById('viewDetailsModal');
     closeModal.style.display="none";
+}*/
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+var loc = '';
+    var gndr = $('input[name=gndr]:checked').val();
+    //alert(loc + " " + gndr)
+    $.get('./browsepsych',{loc:loc,gndr:gndr},function(data){
+            $('.psychretcont').html(data);
+     });
+
+function sendprov(sel){
+    var loc = $('#provdrop').find(":selected").text();
+    var gndr = $('input[name=gndr]:checked').val();
+    //alert(loc + " " + gndr)
+    $.get('./browsepsych',{loc:loc,gndr:gndr},function(data){
+            $('.psychretcont').html(data);
+     });
 }
 
+function radioclicked(){
+    var loc = $('#provdrop').find(":selected").text();
+    var gndr = $('input[name=gndr]:checked').val();
+    //alert(loc + " " + gndr)
+    $.get('./browsepsych',{gndr:gndr,loc:loc},function(data){
+            $('.psychretcont').html(data);
+     });
+}
+</script>
+
+<script>
+
+$(document).ready(function(){ 
+ getavail($("#counseldate"));
+
+})
+    $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+     }
+  });
+  function getavail(date){
+  var date = $(date).val();
+  $.get('./availcal',{date:date},function(data){
+       $('#addbooktc').html(data);
+        });
+    }
 </script>
 
 @endsection

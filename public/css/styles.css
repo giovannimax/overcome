@@ -1650,23 +1650,20 @@ you can use the generic selector below, but it's slower:
     .regcontent{
       display: inline-flex;
       margin-top: 100px;
-   
+      width: 100%;
+      padding: 20px;
   }
 
   .regcontent1{
-    margin-right:50px;
-  margin-top: 25px;
-  margin-left: 170px;
-   width: 500px;
+    margin: 50px;
+    margin-top: 20px !important;
    background: #fefefe;
    height: fit-content;
 }
 
 .regcontent2{
-  width:800px;
-   margin-top: 25px;
-   margin-right:150px;
-   margin-bottom: 15px;
+  width: 60%;
+  margin: 20px;
    background: #fefefe;
    height: fit-content;
 }
