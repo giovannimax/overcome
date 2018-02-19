@@ -14,6 +14,7 @@
     <div class="row rowreg">
     <h3>Personal Information</h3><br>
     {!! Form::hidden('psych_id', Auth::user()->id); !!}
+    {!! Form::hidden('created_at', date('Y-m-d')); !!}
     <div class="form-group">
         {{Form::label('First Name') }}
         {{Form::text('psych_fname','', ['class' => 'form-control', 'placeholder' => 'John' ,'required'])}}

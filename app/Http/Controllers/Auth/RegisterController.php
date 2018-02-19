@@ -95,6 +95,10 @@ class RegisterController extends Controller
         ]);
     }
 
+    function updatepsych(){
+       return "sfdfdfd";
+    }
+
     protected function redirectuser(Request $request){
         $usertype = $request->usertype;
         return redirect()->route('register')->with('usertype', $usertype);

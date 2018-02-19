@@ -90,7 +90,16 @@ Route::get('/conversation', function () {
 });
 Route::get('/admin', function () {
     return view('adminverifypsych');
+})->name('admin');
+
+Route::get('/adminverified', function () {
+    return view('adminverifiedpsych');
 });
+
+Route::get('/admindeclined', function () {
+    return view('admindeclinedpsych');
+});
+
 Route::get('/user_profile', function () {
     return view('patientprofile');
 });
@@ -119,9 +128,6 @@ Route::get('/adminlogin', function () {
     return view('auth.adminlogin');
 });
 
-Route::get('/admin', function () {
-    return view('adminverifypsych');
-});
 Route::get('/login', function () {
     return view('login');
 });
@@ -177,6 +183,10 @@ Route::get('/psychologist', function () {
     return view('auth.psychregister');
 });
 
+Route::get('/viewadminpsych', function () {
+    return view('viewadminpsych');
+});
+
 Route::get('/patient', function () {
     return view('auth.patregister');
 });
@@ -201,8 +211,10 @@ Route::get('/home', 'HomeController@index')->name('home');
         //Route::post('register', 'Auth\RegisterController@register');
 
 //Route::get('signup/{user}', 'Auth\RegisterController@redusertype');
-Route::get('signup', 'Auth\RegisterController@showRegistrationOptions');
 
+//functions
+
+Route::get('signup', 'Auth\RegisterController@showRegistrationOptions');
 Route::post('RegisterControllerPsych','Auth\RegisterController@registerpsych');
 Route::post('RegisterControllerPat','Auth\RegisterController@registerpat');
 Route::get('AddAppointment','EcounselingsController@addapp');
@@ -218,3 +230,6 @@ Route::get('RetDiary','DiariesController@retdiaries');
 Route::get('sendmsg','MessagesController@sendmsg');
 Route::post('RegisterControllerRed','Auth\RegisterController@redirectuser');
 Route::post('addpostappointment','EcounselingsController@addpostapp');
+Route::post('updatepsych','Auth\RegisterController@updatepsych');
+Route::get('approvepsych','PsychologistsController@approvepsych');
+Route::get('declinepsych','PsychologistsController@declinepsych');

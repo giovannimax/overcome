@@ -4,17 +4,17 @@
 
 <?php
     use App\Http\Controllers\PsychologistsController;
-    $availl = PsychologistsController::getpendpsych();
+    $availl = PsychologistsController::getdeclpsych();
 ?>
 <ul class="nav nav-tabs nav-psych">
   <li class="nav-item">
-    <a class="nav-link active" href="admin">New Registration</a>
+    <a class="nav-link" href="admin">New Registration</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="adminverified">Verified Psychologists</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="admindeclined">Declined Psychologists</a>
+    <a class="nav-link active" href="admindeclined">Declined Psychologists</a>
   </li>
 </ul>
 <div class="container">

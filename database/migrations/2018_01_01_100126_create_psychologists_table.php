@@ -34,7 +34,8 @@ class CreatePsychologistsTable extends Migration
             $table->string('license_title',100)->nullable();
             $table->string('training',255)->nullable();
             $table->mediumtext('about')->nullable();
-            $table->string('psych_status',10)->nullable();
+            $table->string('psych_status',10)->default('pending');
+            $table->timestamps();
         });
     }
 

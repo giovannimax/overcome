@@ -20,4 +20,36 @@ class PsychologistsController extends Controller
         $row = DB::select("SELECT * FROM psychologists WHERE psych_id = $id");
         return $row;
     }
+
+    static function approvepsych(){
+        $id = Input::get('psychid');
+        DB::table('psychologists')->where('psych_id',$id)->update(array(
+            'psych_status'=>'approved',
+        ));
+
+        return redirect()->route('admin');   
+     }
+
+     static function declinepsych(){
+        $id = Input::get('psychid');
+        DB::table('psychologists')->where('psych_id',$id)->update(array(
+            'psych_status'=>'declined',
+        ));
+
+        return redirect()->route('admin');   
+     }
+
+    static function getpendpsych(){
+        $row = DB::select("SELECT * FROM psychologists WHERE psych_status = 'pending'");
+        return $row;
+    }
+
+    static function getveripsych(){
+        $row = DB::select("SELECT * FROM psychologists WHERE psych_status = 'approved'");
+        return $row;
+    }
+    static function getdeclpsych(){
+        $row = DB::select("SELECT * FROM psychologists WHERE psych_status = 'declined'");
+        return $row;
+    }
 }
