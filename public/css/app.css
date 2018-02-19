@@ -10199,54 +10199,6 @@ li {
   display: table-cell;
 }
 
-.signup {
-  margin-top: 2em;
-  font-size: 13px;
-}
-
-input[type="radio"] {
-  margin-left: 2em;
-}
-
-.register-form input {
-  border-radius: 0px;
-}
-
-.signup-notes {
-  color: #ffffff;
-  padding: 30px;
-  font-size: 14px;
-}
-
-.register-css {
-  background-color: #ffffff;
-  padding: 30px;
-}
-
-.btn-admin {
-  margin: 1em;
-}
-
-.adduser input {
-  border-radius: 0px;
-}
-
-.nav-psych {
-  margin: 2em;
-}
-
-thead {
-  color: #ffffff;
-}
-
-.adminpatient {
-  margin-top: 2em;
-}
-
-h5 {
-  margin-top: 1em;
-}
-
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -10678,19 +10630,19 @@ i,
   }
 }
 
-#wrapperr {
+#wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   position: fixed;
 }
 
-#wrapperr {
+#wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-#wrapperr.toggled {
+#wrapper.toggled {
   padding-right: 350px;
 }
 
@@ -10707,8 +10659,8 @@ i,
   transition: all 0.5s ease;
 }
 
-#wrapperr.toggled #sidebar-wrapper {
-  width: 300px;
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
 }
 
 #page-content-wrapper {
@@ -10717,7 +10669,7 @@ i,
   padding: 15px;
 }
 
-#wrapperr.toggled #page-content-wrapper {
+#wrapper.toggled #page-content-wrapper {
   position: absolute;
   margin-right: -250px;
 }
@@ -10771,11 +10723,11 @@ i,
 }
 
 @media (min-width: 768px) {
-  #wrapperr {
+  #wrapper {
     padding-right: 250px;
   }
 
-  #wrapperr.toggled {
+  #wrapper.toggled {
     padding-right: 0;
   }
 
@@ -10783,7 +10735,7 @@ i,
     width: 330px;
   }
 
-  #wrapperr.toggled #sidebar-wrapper {
+  #wrapper.toggled #sidebar-wrapper {
     width: 0;
   }
 
@@ -10792,7 +10744,7 @@ i,
     position: relative;
   }
 
-  #wrapperr.toggled #page-content-wrapper {
+  #wrapper.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0;
   }
@@ -11364,18 +11316,36 @@ css */
   color: #212834;
 }
 
+.tabappointment {
+  margin-top: 25px;
+}
+
+.tabsesnotes {
+  margin-top: 50px;
+}
+
+.tabdiary {
+  margin-top: 50px;
+}
+
 .tabhistory {
   margin-top: 50px;
 }
 
 .h5diary {
   color: #212834;
+  margin-left: 50px;
 }
 
 .adiary {
   color: #01acbe;
   font-size: 12px;
   margin-left: 15px;
+}
+
+.divdiary {
+  margin-left: 250px;
+  margin-right: 250px;
 }
 
 .theadhistory {
@@ -11397,7 +11367,7 @@ css */
 
 .card-block {
   overflow-y: scroll;
-  height: 400px;
+  height: 250px;
 }
 
 ::-webkit-scrollbar-track {
@@ -11587,6 +11557,12 @@ css */
   margin-bottom: 15px;
 }
 
+.sender {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
 .rowcol {
   margin-top: 15px;
 }
@@ -11643,9 +11619,9 @@ css */
   width: 50px;
   height: 50px;
   float: left;
-  margin-left: 15px;
-  margin-bottom: 10px;
   margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 10px;
 }
 
 .insidecard {
@@ -12157,7 +12133,6 @@ css */
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-top: 20px;
 }
 
 .newtxtmsg {
@@ -12177,82 +12152,6 @@ css */
 .imgforlist {
   width: 50px;
   height: 50px;
-}
-
-.containercounseling1 {
-  margin-left: 25px;
-  width: 420px;
-}
-
-.containercounseling2 {
-  margin-right: 25px;
-  width: 850px;
-}
-
-.divforsearch {
-  border-bottom: 1px solid #dddddd;
-  margin-right: 1px;
-  margin-left: 2px;
-}
-
-.divforsearch:hover {
-  background: #eeeeee;
-}
-
-.insidecontent {
-  height: 500px;
-}
-
-.insidecontent2 {
-  height: 532px;
-}
-
-.cardmsg {
-  width: 800px;
-  margin-left: 25px;
-}
-
-.diarycontainer {
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.active2,
-.accordion:hover {
-  background-color: #ccc;
-}
-
-.accordion:after {
-  content: '\21E3';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active2:after {
-  content: "\21E1";
-}
-
-.panell {
-  padding: 0 18px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
 }
 
 /* End of new psychounseling */

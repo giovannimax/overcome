@@ -53,5 +53,3 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
-
-require('sweetalert2');
