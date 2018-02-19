@@ -103,6 +103,10 @@ Route::get('/user_wallet', function () {
     return view('patientwallet');
 });
 
+Route::get('/pat_accountsettings', function () {
+    return view('accountsettingspatient');
+});
+
 Route::get('/regcontent', function () {
     return view('registerquestion');
 })->name('registerquestions');

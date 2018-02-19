@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.pnavbar')
 
 @section('content')
 
@@ -31,10 +31,7 @@
             {{Form::text('lastname', '',['class' => 'form-control', 'disabled','placeholder' => 'Last Name'])}} 
         </div>
             <p style="color:red;font-size:12px;">Note:To change your name please <a href="#" style="color:blue;text-decoration:underline;">Contact Us</a></p>
-         <div class="form-group"> 
-            {{Form::label('address', 'Address')}} 
-            {{Form::text('address', '',['class' => 'form-control', 'placeholder' => 'Address'])}} 
-        </div>
+       
 
         <div class="form-group">
         <div class="row">
@@ -43,23 +40,36 @@
              <div class="col-md-4">{{ Form::radio('sex', 'female') }} Female </div>
         </div>
     </div>
-
+    <div class="form-group"> 
+            {{Form::label('email', 'Email Address')}} 
+            {{Form::text('email', '',['class' => 'form-control', 'placeholder' => 'Email Address'])}} 
+        </div>
     <div class="form-group">
     {{ Form::label('Birthday') }}
     {{ Form::date('pat_dob', \Carbon\Carbon::now(), ['class' => 'form-control'])}}
     </div>   
   
+    <div class="form-group">
+    {{ Form::label('Birthplace')}}
+    {{ Form::text('birth_place','', ['class' => 'form-control', 'required'])}}
+</div>
 
-        <div class="form-group"> 
-            {{Form::label('email', 'Email Address')}} 
-            {{Form::text('email', '',['class' => 'form-control', 'placeholder' => 'Email Address'])}} 
-        </div>
-    
-          <div class="form-group"> 
-            {{Form::label('mobile', 'Mobile No.')}} 
-            {{Form::text('mobile', '',['class' => 'form-control', 'placeholder' => 'Mobile Number'])}} 
-        </div>
-    <hr>
+<div class="form-group">
+    {{ Form::label('Citizenship') }}
+    {{ Form::text('ctznshp','', ['class' => 'form-control', 'required'])}}
+</div>
+<div class="form-group">
+    {{ Form::label('Religion') }}
+    {{ Form::text('religion','', ['class' => 'form-control', 'required'])}}
+</div>
+<div class="form-group">
+{{ Form::label('Educational Attaintment') }}
+{{ Form::text('educ_attain','', ['class' => 'form-control', 'required'])}}
+</div>
+<div class="form-group">
+{{ Form::label('Occupation')}}
+{{ Form::text('occupation','', ['class' => 'form-control', 'required'])}}
+</div>
   
 <p>
   <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="color:red;font-size:12px;">
@@ -87,41 +97,7 @@
         </div>
           
 </div>
-   
-     
-    <h3 style="color:#f58c37;margin-top:25px;">Professional Background</h3>
-         
-    <div class="form-group">
-    {{ Form::label('License Number') }}
-    {{ Form::text('license_no','', ['class' => 'form-control','required'])}}
-</div>
-<div class="form-group">
-    {{ Form::label('License Title') }}
-    {{ Form::text('license_title','', ['class' => 'form-control','required'])}}
-</div>
-<img src="..." alt="..." class="img-thumbnail">
-<div class="form-group">
- <label for="image">Upload Card License</label>
- <input type="file" class="form-control" name="image" id="image">
-  </div>
-        
-  <h5>Clinic Details</h5><br>
-    <div class="form-group">
-        {{ Form::label('Clinic Name') }}
-        {{ Form::text('clinic_name','', ['class' => 'form-control'])}}
-    </div>
-    <div class="form-group">
-        {{ Form::label('Clinic Address') }}
-        {{ Form::text('clinic_address','', ['class' => 'form-control'])}}
-    </div>
-    <div class="form-group">
-        {{ Form::label('Clinic Email Address') }}
-       {{ Form::text('clinic_email','', ['class' => 'form-control'])}}
-    </div>
-    <div class="form-group">
-        {{ Form::label('Clinic Phone Number') }}
-        {{ Form::text('clinic_phone','', ['class' => 'form-control'])}}
-    </div>
+
     
         <div style="float:right;margin-bottom:25px;">
             {{Form::submit('SAVE', ['class' => 'btn btn-primary'])}}
