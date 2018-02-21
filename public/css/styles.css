@@ -1294,7 +1294,14 @@ you can use the generic selector below, but it's slower:
   background: rgba(27, 37, 47, 0.5);
 }
 
+.panellregister{
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    margin-top: 170px !important;
+    background: rgba(27, 37, 47, 0.5);
 
+}
 .btnforlogin {
   font-size: 13px;
   border: solid 0px !important;
@@ -1783,5 +1790,22 @@ you can use the generic selector below, but it's slower:
 .rowgender{
   margin-bottom: 10px;
 }
+
+.btnreg {
+  font-size: 13px;
+  border: solid 0px !important;
+  border-radius: 0px !important;
+  display: inline-block;
+  text-transform: uppercase; 
+  background: #01acbe;
+  width: 215px;
+}
+
+
+  .btnreg:hover, .btnreg:focus {
+    color: #fff;
+    border-color: #1592a5;
+    background-color: #1592a5; }
+  
       
     /* End of Register Question CSS */
