@@ -7,8 +7,19 @@
     $availl = RegisterController::getprovinces();
 ?>
 
-<div class="containerforreg">
-    
+<div class="container">
+
+ <div class="profile-pic">
+       <div class="imgwrap rounded-circle">
+           <img class="propic rounded-circle mx-auto d-block" src="{{ asset('images/pic.png') }}" alt="profile picture"></div>
+        <input  id="changeprofpic" type="file" 
+       name="profile_photo" placeholder="Photo" required="" accept=".jpg, .jpeg, .png" capture>      
+       <span class="edit"><i class="material-icons changepp">camera_alt</i><b>Change Picture</b></span>
+       
+      </div> 
+
+
+    <div class="w-75" style="margin-left: 130px;">
      <h3 style="color:#f58c37;">Personal Information</h3>
         <div class="form-group">
             {{Form::label('fname', 'First Name')}} 
@@ -80,65 +91,6 @@
     <h3 style="color:#f58c37;margin-top:25px;">Professional Background</h3>
          
     <div class="form-group">
-    {{ Form::label('License Number') }}
-    {{ Form::text('license_no','', ['class' => 'form-control','required'])}}
-</div>
-<div class="form-group">
-    {{ Form::label('License Title') }}
-    {{ Form::text('license_title','', ['class' => 'form-control','required'])}}
-</div>
-<img src="..." alt="..." class="img-thumbnail">
-<div class="form-group">
- <label for="image">Upload Card License</label>
- <input type="file" class="form-control" name="image" id="image">
-  </div>
-        
-  <h5>Clinic Details</h5><br>
-    <div class="form-group">
-        {{ Form::label('Clinic Name') }}
-        {{ Form::text('clinic_name','', ['class' => 'form-control'])}}
-    </div>
-    <div class="form-group">
-        {{ Form::label('Clinic Address') }}
-        {{ Form::text('clinic_address','', ['class' => 'form-control'])}}
-    </div>
-    <div class="form-group">
-        {{ Form::label('Clinic Email Address') }}
-       {{ Form::text('clinic_email','', ['class' => 'form-control'])}}
-    </div>
-    <div class="form-group">
-        {{ Form::label('Clinic Phone Number') }}
-        {{ Form::text('clinic_phone','', ['class' => 'form-control'])}}
-    </div>
-    
-        <div style="float:right;margin-bottom:25px;">
-            {{Form::submit('SAVE', ['class' => 'btn btn-primary'])}}
-        </div>
-        
-</div> <!-- end of container-->
-{!! Form::close() !!}
-
-    <div class="form-group">
-        <div class="row">
-             <div class="col-md-4"> {{ Form::label('Gender') }}</div>
-             <div class="col-md-4"> {{ Form::radio('psych_gndr', 'male') }} Male </div>
-             <div class="col-md-4">{{ Form::radio('psych_gndr', 'female') }} Female </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-    {{ Form::label('Birthday') }}
-    {!! Form::date('psych_dob', \Carbon\Carbon::now(), ['class' => 'form-control']) ; !!}
-    </div>   
-  
-
-    <div class="form-group">
-        {{ Form::label('Mobile/Telephone Number') }}
-    {!! Form::text('psych_telphone','', ['class' => 'form-control']); !!}
-    </div>
-    <hr>
-    <h5>Professional Background</h5><br>
-    <div class="form-group">
         {{ Form::label('License Number') }}
         {{ Form::text('license_no','', ['class' => 'form-control','required'])}}
     </div>
@@ -151,8 +103,9 @@
  <input type="file" class="form-control" id="image">
   </div>
     <hr>
-    <h5>Clinic Details</h5><br>
-    <div class="form-group">
+        
+  <h3 style="color:#f58c37;margin-top:25px;">Clinic Details</h3><br>
+  <div class="form-group">
         {{ Form::label('Clinic Name') }}
         {{ Form::text('clinic_name','', ['class' => 'form-control'])}}
     </div>
@@ -178,12 +131,27 @@
         {{ Form::label('Clinic Phone Number') }}
         {{ Form::text('clinic_phone','', ['class' => 'form-control'])}}
     </div>
-{{Form::submit('Submit', ['class' => 'btn btn-primary btn-lg btnsub'])}}
-    {!! Form::close() !!}
-Psychologist
     
-    </div> <!-- End of row reg -->
-    </div> <!-- End of container1 -->
+        <div style="float:right;margin-bottom:25px;">
+            {{Form::submit('SAVE', ['class' => 'btn btn-primary'])}}
+        </div>
+    </div> 
+</div> <!-- end of container-->
 
-</div> <!-- End of Contaier for reg -->
+
+    
+
+
+@endsection
+
+@section ('scripts')
+<script>
+            
+$(".propic").click(function(e) {
+    $("#changeprofpic").click();
+});
+   
+
+
+</script>
 @endsection

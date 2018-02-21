@@ -29,4 +29,10 @@ class AdminsController extends Controller
 
     return redirect()->route('adminset');
  }
+
+ function addinquiry(Request $request){
+     $request->created_at=\Carbon\Carbon::now();
+    DB::table('inquiries')->insert([$request->except('_token')]);
+    return redirect()->route('index');
+ }
 }

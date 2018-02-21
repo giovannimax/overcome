@@ -46,15 +46,17 @@ class EcounselingsController extends Controller
 		return redirect()->route('appointments');
 	}
 
-	public static function getpatients(){
+	public static function getpatients($id){
     	$appoints = new Ecounseling();
-		$result=$appoints->getpatients();
+		$result=$appoints->getpatients($id);
 		return $result;
 	}
 
 	public function addpostapp(Request $request){
-    	$appoints = new Ecounseling();
-		$result=$appoints->createapp($request->except(['_token','patmsg']));
+    	//$appoints = new Ecounseling();
+		//$result=$appoints->createapp($request->except(['_token','patmsg']));
+
+		$result = DB::table('ecounselings')->insertGetId($request->except(['_token','patmsg']));
 
 		$id = DB::table('conversations')->insertgetId(
 			['psych_id' => $request->psych_id, 'pat_id' => $request->pat_id]);
@@ -64,12 +66,24 @@ class EcounselingsController extends Controller
 				'sender' => 0,
 				'convo_id' => $id,
 				 "created_at" =>  \Carbon\Carbon::now()]);
-			$msg2 = "Your first session will be on ".$request->counsel_date. ' at '.date("H:M a",strtotime($request->counsel_time));
+			$msg2 = "Your first session will be on ".$request->counsel_date. ' at '.date("H:M a",strtotime($request->counsel_time))."<br><form method='GET' action='approvebook'><input type='hidden' name='psych_id' value='".$request->psych_id."'><input type='hidden' name='pat_id' value='".$request->pat_id."'><input type='hidden' name='counsel_id' value='".$result."'><input type='submit' value='Approve'/></form>";
 			DB::table('messages')->insert(
 				['msg_content' => $msg2, 
 				'sender' => 0,
 				'convo_id' => $id,
 				 "created_at" =>  \Carbon\Carbon::now()]);
-			return redirect()->route('profile');   
+			return redirect()->route('ecounseling');   
+	}
+
+	function approvepat(Request $request){
+
+		DB::table('ecounselings')
+            ->where('counsel_id', $request->counsel_id)
+			->update(['counsel_status' => "active",
+			]);
+		DB::table('patients')
+            ->where('pat_id', $request->pat_id)
+			->update(["psych_id" => $request->psych_id,
+			]);
 	}
 }

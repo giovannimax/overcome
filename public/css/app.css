@@ -11201,6 +11201,7 @@ div.clear {
 .propic {
   height: 150px;
   width: 150px;
+  margin-top: 25px;
   cursor: pointer;
 }
 

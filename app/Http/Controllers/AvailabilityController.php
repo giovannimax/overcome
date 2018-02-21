@@ -74,4 +74,4 @@ class AvailabilityController extends Controller
     public static function checkavail(){
         return Availability::all();
     }
-}
+}   

@@ -13,9 +13,11 @@
 
 Route::get('/', function () {
     return view('index');
+})->name('index');
+
+Route::get('/inquiries', function () {
+    return view('inquiries');
 });
-
-
 
 Route::get('/about', function () {
     return view('about');
@@ -60,7 +62,7 @@ Route::get('/ecounseling', function () {
     else
     return view('psychcounseling');
     
-});
+})->name('ecounseling');
 
 Route::get('/diary', function () {
     return view('patientdiary');
@@ -86,6 +88,7 @@ Route::get('/checkavail', function () {
     return view('comp.availchecker');
     
 });
+
 
 
 Route::get('/conversation', function () {
@@ -254,3 +257,5 @@ Route::get('declinepsych','PsychologistsController@declinepsych');
 Route::get('sendmsg','MessagesController@sendmsg');
 Route::get('createadmin','AdminsController@createadmin');
 Route::get('deactadmin','AdminsController@deactadmin');
+Route::get('addinquiry','AdminsController@addinquiry');
+Route::get('approvepat','EcounselingsController@approvepat');

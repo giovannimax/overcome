@@ -61,6 +61,12 @@
                     <font class="sidetext">Reports</font>
                   </a>
                 </li>
+                <li>
+                    <a href="inquiries" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
+                    <i class="material-icons">assessment</i>
+                    <font class="sidetext">Inquiries</font>
+                  </a>
+                </li>
             </ul>
         </nav>
 
