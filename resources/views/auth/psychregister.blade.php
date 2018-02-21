@@ -37,7 +37,11 @@
              <div class="col-md-4">{{ Form::radio('psych_gndr', 'female') }} Female </div>
         </div>
     </div>
-
+    <div class="form-group"> 
+            {{Form::label('email', 'Email Address')}} 
+            {{Form::text('email', '',['class' => 'form-control', 'placeholder' => 'Email Address'])}} 
+        </div>
+        
     <div class="form-group">
     {{ Form::label('Birthday') }}
     {!! Form::date('psych_dob', \Carbon\Carbon::now(), ['class' => 'form-control']) ; !!}

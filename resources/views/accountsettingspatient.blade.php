@@ -30,7 +30,7 @@
             {{Form::label('lname', 'Last Name')}} 
             {{Form::text('lastname', '',['class' => 'form-control', 'disabled','placeholder' => 'Last Name'])}} 
         </div>
-            <p style="color:red;font-size:12px;">Note:To change your name please <a href="#" style="color:blue;text-decoration:underline;">Contact Us</a></p>
+            <p style="color:red;font-size:12px;">Note:To change your name please <a href="/" style="color:blue;text-decoration:underline;">Contact Us</a></p>
        
 
         <div class="form-group">

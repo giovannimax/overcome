@@ -47,22 +47,10 @@
                         <font class="sidetext">Diary</font>
                       </a>
                     </li>
-                    <li class="{{ Request::is('messages') ? 'active' : '' }}">
-                        <a href="/messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
-                        <i class="material-icons">mail_outline</i>
-                        <font class="sidetext">Messages</font>
-                      </a>
-                    </li>
                     <li  class="{{ Request::is('patientdoctors') ? 'active' : '' }}">
                         <a href="user_ecounseling" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="e-Counseling">
                         <i class="material-icons">people_outline</i>
                         <font class="sidetext">e-Counseling</font>
-                      </a>
-                    </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Podcast">
-                        <i class="material-icons">wifi_tethering</i>
-                        <font class="sidetext">Podcast</font>
                       </a>
                     </li>
                     <li  class="{{ Request::is('patientwallet') ? 'active' : '' }}">
@@ -100,8 +88,8 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">face</i></a>
             <div class="dropdown-menu dropdown-menu-right" style="left: auto !important;right: 20px;">
               <span class="dropdown-header" href="#">Hanna Kris Ko</span>
-              <a class="dropdown-item {{ Request::is('profile') ? 'active' : '' }}" href="profile">Profile</a>
-              <a class="dropdown-item {{ Request::is('accountsettings') ? 'active' : '' }}" href="accountsettings">Account Settings</a>
+              <a class="dropdown-item {{ Request::is('patientprofile') ? 'active' : '' }}" href="user_profile">Profile</a>
+              <a class="dropdown-item {{ Request::is('pataccountsettings') ? 'active' : '' }}" href="pat_accountsettings">Account Settings</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Logout</a>
             </div>

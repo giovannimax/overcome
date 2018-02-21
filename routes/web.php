@@ -59,6 +59,11 @@ Route::get('/ecounseling', function () {
     
 });
 
+Route::get('/notice', function () {
+    return view('notice');
+    
+});
+
 Route::get('/diary', function () {
     return view('patientdiary');
     
@@ -109,7 +114,7 @@ Route::get('/user_diary', function () {
 });
 
 Route::get('/user_ecounseling', function () {
-    return view('patientdoctors');
+    return view('patientecounseling');
 });
 
 Route::get('/user_startecounseling', function () {
@@ -136,7 +141,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/trytry', function () {
+Route::get('/searchpsychologist', function () {
     return view('trytry');
 });
 

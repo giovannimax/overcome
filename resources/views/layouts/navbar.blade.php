@@ -43,28 +43,11 @@
                         <font class="sidetext">Calendar</font>
                       </a>
                     </li>
-                    <li class="{{ Request::is('patients') ? 'active' : '' }}">
-                        <a href="patients" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
-                        <i class="material-icons">person_outline</i>
-                        <font class="sidetext">Patients</font>
-                      </a>
-                    </li>
-                    <li class="{{ Request::is('psychmessage') ? 'active' : '' }}">
-                        <a href="messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
-                        <i class="material-icons">mail_outline</i>
-                        <font class="sidetext">Messages</font>
-                      </a>
-                    </li>
+            
                     <li class="{{ Request::is('psychcounseling') ? 'active' : '' }}">
                         <a href="ecounseling" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="E-Counseling">
                         <i class="material-icons">people_outline</i>
                         <font class="sidetext">E-Counseling</font>
-                      </a>
-                    </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Podcast">
-                        <i class="material-icons">wifi_tethering</i>
-                        <font class="sidetext">Podcast</font>
                       </a>
                     </li>
                     <li class="{{ Request::is('psychwallet') ? 'active' : '' }}">

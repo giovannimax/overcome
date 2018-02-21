@@ -75,7 +75,7 @@
             <tr class="space">
                 <td><b class="text-info" style="margin-right: 25px;">License Title</b></td>
                 <td><label c{{$av->license_title }}</td>
-            <tr>
+</tr>
             <tr class="space">
                 <td><b class="text-info" style="margin-right: 25px;">License Image</b></td>
                 <td><img src="images/pp.jpg" width="200px" height="100px" id="imghov"></td>

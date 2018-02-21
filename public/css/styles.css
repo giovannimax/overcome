@@ -1616,6 +1616,10 @@ you can use the generic selector below, but it's slower:
       list-style-type: disc;
     }
 
+    .list2{
+      list-style-type: disc;
+    }
+    
     .specificpsych{
       background: #fcfafa;
       height: fit-content;

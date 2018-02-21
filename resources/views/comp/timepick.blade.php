@@ -1,5 +1,5 @@
 
-    Pick time.
+    <h5 class="text-info text-center">Pick Your Available Time</h5>
     <?php 
     use App\Http\Controllers\AvailabilityController;
     $availtime = Array();
@@ -47,7 +47,7 @@
                 </div>
                 <div class="table-row">
                     <div class="table-cell">
-                    <button class="btn btn-primary" id="editdone">Done</button>
+                    <button class="btn btn-primary" id="editdone" style="margin-left:15px;margin-top:25px;">Done</button>
                     </div>
                 </div>
                 </div>
@@ -77,7 +77,7 @@
       </div>
       <div class="table-row">
         <div class="table-cell">
-          <button class="btn btn-primary" id="timedone">Done</button>
+          <button class="btn btn-primary" id="timedone" style="margin-left:15px;margin-top:25px;">Done</button>
         </div>
       </div>
     </div>

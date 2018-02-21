@@ -4,6 +4,7 @@
             <li class="text-info">
               Blocked Dates
             </li>
+            <p style="margin-left: 25px;font-size: 14px;   ">
            @if(!empty($_POST))
               <?php
                   $dates=$_POST['dates'];
@@ -22,12 +23,20 @@
             @else
                   No selected date.
            @endif
+                </p>
            <li>
                <a href="#" class="card-link">ADD</a>
             </li>
-            <li class="sidebar-brand text-info">
-              <br>
-                   Time <a class="close" id="addtime">Add</a>
+            <li class="sidebar-brand text-info" style="margin-left: 8px;margin-right: 25px;">
+              <table>
+                   <tr>
+                      <td style="padding-top: 20px;padding-right:5px;"><big> Time  </big></td>
+                      <td class="text-center"><a class="close btn btn-info btn-sm" id="addtime" style="color:#fff;text-align:center;">Add Time</a></td>
+                   </tr>     
+                </table>
+            
+
+                
 
 
                 <!--<ol id="selectable">
