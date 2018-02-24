@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Message;
+use Session;
 
 class MessagesController extends Controller
 {
@@ -27,12 +28,15 @@ class MessagesController extends Controller
        }
     }
 
-    static function loadmsg($id){
+    static function loadmsg($id,$pat){
+        
+	    session(['pat_id' => $pat]);
         $row = DB::select("SELECT * FROM messages WHERE convo_id = $id");
         return $row;
     }
 
-    static function retconvo($id){
+    static function retconvo($id,$pat){
+        session(['pat_id' => $pat]);
         $row = DB::select("SELECT * FROM conversations WHERE convo_id = $id");
         return $row;
     }
@@ -43,5 +47,10 @@ class MessagesController extends Controller
             'sender' => $request->sender,
             'convo_id' => $request->id,
             "created_at" =>  \Carbon\Carbon::now()]);
+    }
+
+    static function getpatid($id){
+        $row = DB::select("SELECT * FROM conversations WHERE pat_id = $id");
+        return $row;
     }
 }

@@ -212,6 +212,14 @@ Route::get('/patient', function () {
     return view('auth.patregister');
 });
 
+Route::get('/diaryloader', function () {
+    return view('comp.diaryloader');
+});
+
+Route::get('/sessionloader', function () {
+    return view('comp.sessionloader');
+});
+
 Route::get('/appointments', function () {
     return view('appointments');
 })->name('appointments');
@@ -259,3 +267,5 @@ Route::get('createadmin','AdminsController@createadmin');
 Route::get('deactadmin','AdminsController@deactadmin');
 Route::get('addinquiry','AdminsController@addinquiry');
 Route::get('approvepat','EcounselingsController@approvepat');
+Route::get('addcomment','DiariesController@addcomment');
+Route::get('updatenotes','EcounselingsController@updatenotes');

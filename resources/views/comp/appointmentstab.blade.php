@@ -165,7 +165,7 @@ $(document).ready(function(){
       }
    });
    var date = $(date).val();
-   $.post('./availcal',{date:date},function(data){
+   $.get('./availcal',{date:date},function(data){
         $('#addbooktc').html(data);
          });
    }

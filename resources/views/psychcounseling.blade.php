@@ -99,6 +99,7 @@
                     <input id="msgcontent" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                     <span >
                         <input type="hidden" id="convoid" value="">
+
                         <button class="btn btn-primary btn-md" id="btn-chat" onclick="sendmsg()">
                           <i class="material-icons">send</i> Send</button>
                     </span>
@@ -115,52 +116,14 @@
 
 <div class="tabdiary tab-pane fade" id="nav-diary" role="tabpanel" aria-labelledby="nav-diary-tab"> <!-- Start of diary tab -->
 
-<div class="diarycontainer">
-       {!! Form::open(['url' => 'diary/submit']) !!}
-  <h5 class="h5diary"> August 29, 2017<a class="adiary" data-toggle="collapse" href="#collapseDiary" aria-expanded="false" aria-controls="collapseExample">
-   See More <i class="material-icons">arrow_drop_down</i>
-  </a></h5>
-  
-
-<div class="divdiary collapse" id="collapseDiary">
-    
-     <div class="form-group"> 
-            {{Form::label('npass', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',['style' => 'color:#f58c37'])}} 
-         
-            {{Form::textarea('about', '',['class' => 'form-control', 'placeholder' => 'Add Comment Here','style' => 'height:150px'])}}<br>
-         
-            {{Form::submit('SAVE', ['class' => 'btn btn-primary' , 'style' => 'float:right'])}}
-    </div>
-         
-</div>
-       {!! Form::close() !!}
-    
-        {!! Form::open(['url' => 'diary/submit']) !!}
-  <h5 class="h5diary"> August 21, 2017<a class="adiary" data-toggle="collapse" href="#collapseDiary2" aria-expanded="false" aria-controls="collapseExample">
-   See More <i class="material-icons">arrow_drop_down</i>
-  </a></h5>
-  
-
-<div class="divdiary collapse" id="collapseDiary2">
-    
-     <div class="form-group"> 
-            {{Form::label('npass', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',['style' => 'color:#f58c37'])}} 
-         
-            {{Form::textarea('about', 'Add Comment Here',['class' => 'form-control', 'style' => 'height:150px'])}}<br>
-         
-            {{Form::submit('SAVE', ['class' => 'btn btn-primary' , 'style' => 'float:right'])}}
-    </div>
-         
-</div>
-       {!! Form::close() !!}
-    
+<div class="diarycontainer" id="diarycont">
     
     </div> <!-- End of diarycontainer -->
     
  </div> <!-- End of diary tab -->
     
 
- <div class="tabsesnotes tab-pane fade" id="nav-sesnotes" role="tabpanel" aria-labelledby="nav-sesnotes-tab"><!--
+ <div class="tabsesnotes tab-pane fade" id="nav-snotes" role="tabpanel" aria-labelledby="nav-sesnotes-tab"><!--
 Start of Session Notes Tab -->
 <button class="accordion">Session 1 Feb 1, 2018 10:30-12:00 PM</button>
 <div class="panell">
@@ -206,7 +169,7 @@ function showvideo() {
       window.open('ecounseling_start', 
             "Video Counselling", 
             "menubar=no,resizable=no,width=" + width + ",height=" + height + ",scrollbars=no,left="  
-            + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top);    
+            + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top); 
       }
 
       $(function() {

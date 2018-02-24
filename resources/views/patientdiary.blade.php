@@ -53,7 +53,7 @@
           <div class="doccomment card bg-light mb-3">
               <div class="chead card-header">Psychologist's Comment</div>
                   <div class="cbody card-body">
-                          <p class="card-text text-info">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <p class="card-text text-info">{{$res->psych_comment}}</p>
                   </div>
   
   </div>

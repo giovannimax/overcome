@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 date_default_timezone_set('Asia/Hong_Kong');
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Diary;
 
@@ -33,5 +34,13 @@ class DiariesController extends Controller
         $appoints->updatediary($data);
         $id=$request->dia_id;
         return redirect()->route('diary')->with(['id' => $id]);
+    }
+    
+    function addcomment(Request $request){
+        $data=Array();
+        array_push($data, $request->comment);
+        array_push($data, $request->dia_id);
+        DB::select("UPDATE diaries SET psych_comment = ? WHERE dia_id = ?", $data);
+        return redirect()->route('ecounseling');
     }
 }

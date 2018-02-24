@@ -7,6 +7,7 @@ use App\Http\Controllers\PatientsController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Ecounseling;
+use Session;
 
 class EcounselingsController extends Controller
 {
@@ -86,4 +87,27 @@ class EcounselingsController extends Controller
 			->update(["psych_id" => $request->psych_id,
 			]);
 	}
+
+	static function addnotes(){
+		
+		$id = DB::table('psych_notes')->insertgetId(
+			['session_notes' => ""]);
+			session(['notes_id' => $id]);
+	}
+
+	static function updatenotes(Request $request){
+		$id = session('notes_id');
+		$pat = session('pat_id');
+		DB::select("UPDATE psych_notes SET session_notes = ?, pat_id = ? WHERE notes_id = ?", [$request->notes,$pat,$id]);
+
+		if(empty($request->notes))
+		return "Wala!";
+		else 
+		return "Naa brad!";
+	}
+
+	static function getnotes($id){
+		return DB::select("SELECT * FROM psych_notes WHERE pat_id = ?", [$id]);
+	}
+
 }
