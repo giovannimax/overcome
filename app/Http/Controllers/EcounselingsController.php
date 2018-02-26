@@ -2,26 +2,39 @@
 
 namespace App\Http\Controllers;
 
+date_default_timezone_set('Asia/Hong_Kong');
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\PatientsController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Ecounseling;
 use Session;
+use Auth;
 
 class EcounselingsController extends Controller
 {
     public function viewspefecoun(){
     	$date = Array();
     	array_push($date, Input::post('date'));
+    	array_push($date, Auth::user()->id);
     	$appoints = new Ecounseling();
     	$result=$appoints->getspefapp($date);
     	return view('comp.appointmentstab')->with('appoints', $result);    	
 	}
 
+	public static function viewspefecounn($datee){
+    	$date = Array();
+    	array_push($date, $datee);
+    	array_push($date, Auth::user()->id);
+    	$appoints = new Ecounseling();
+    	$result=$appoints->getspefapp($date);
+    	return $result;    	
+	}
+
 	public static function givepeople($givendate){
 		$date = Array();
     	array_push($date, $givendate);
+    	array_push($date, Auth::user()->id);
     	$appoints = new Ecounseling();
     	return $result=$appoints->getspefapp($date);
 	}
@@ -88,10 +101,13 @@ class EcounselingsController extends Controller
 			]);
 	}
 
-	static function addnotes(){
+	static function addnotes($idd){
 		
 		$id = DB::table('psych_notes')->insertgetId(
-			['session_notes' => ""]);
+			['session_notes' => "",
+				'notes_time' => date("H:m"),
+				'notes_date' => date("Y-m-d"),
+				'pat_id' => $idd]);
 			session(['notes_id' => $id]);
 	}
 
@@ -108,6 +124,24 @@ class EcounselingsController extends Controller
 
 	static function getnotes($id){
 		return DB::select("SELECT * FROM psych_notes WHERE pat_id = ?", [$id]);
+	}
+
+	function addvideoid(Request $request){
+		DB::table('videoids')->insert([
+			"address" => $request->address,
+			"id" => Auth::user()->id,
+		]);
+	}
+
+	static function retvideoid($id){
+		return DB::select("SELECT * FROM videoids WHERE id = ?", [$id]);
+	}
+	static function deletevidid(){
+		DB::table('videoids')->truncate();
+	}
+
+	static function getspefnotes($id){
+		return DB::select("SELECT * FROM psych_notes WHERE notes_id = ?", [$id]);
 	}
 
 }

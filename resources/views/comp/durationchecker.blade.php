@@ -2,6 +2,7 @@
     use App\Http\Controllers\AvailabilityController;
     use App\Http\Controllers\EcounselingsController;
     $date = $_GET['date'];
+    $selected = $_GET['selected'];
 
     $result = AvailabilityController::getspefdate($date);
     $day = date("l", strtotime($date));
@@ -41,8 +42,7 @@
 
         
     }
-
-    echo "<select class='form-control' name='counsel_time' id='counsel_time' onChange='durcheck();'>";
+    $opentime = array();
           for($i=1;$i<=24;$i++){
             $time = date('h:i A', strtotime('00:00:00')+60*60*$i);
             $timee = date('H:i', strtotime('00:00:00')+60*60*$i);
@@ -50,7 +50,7 @@
              if (!in_array($i, $unavailtime)) {
 
                 if (!in_array($i, $availtime)) {
-                    echo "<option value='".$timee."'>".$time."</option>";
+                   array_push($opentime, $timee);
                 }
             }
 
@@ -58,6 +58,26 @@
           }
 
         }
-    echo "</select>";
+        $j=0;
+      
+       		for($i=0;$i<count($opentime);$i++){
+       			if($opentime[$i] == $selected){
+       				if (count($opentime)-$i==1)
+       					$j=1;
+       				else 
+       					$j=2;
+       			}
+       		}
+
+       	 echo "<select class='form-control' name='session_length'>";
+       	 $k=1;
+       	 while($k<=$j){
+       	 	if($k>1)
+       	 	echo '<option value="'.$k.'">'.$k.'hrs</option>';
+       	 else
+       	 	echo '<option value="'.$k.'">'.$k.'hr</option>';
+       	 	$k++;
+       	 }
+    	echo "</select>";
 
 ?>

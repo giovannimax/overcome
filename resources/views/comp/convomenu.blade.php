@@ -25,6 +25,7 @@
 
 <script>
     function loadmsg(id,pat_id){
+        $('#pat_id').val(pat_id);
         $('#convoid').val(id);
     $.get('./convoloader',{id:id,patid:pat_id},function(data){
             $('#msgcont').html(data);
@@ -34,7 +35,7 @@
      });
 
      $.get('./sessionloader',{id:pat_id},function(data){
-            $('#snotes').html(data);
+            $('#nav-sesnotes').html(data);
      });
 
 }

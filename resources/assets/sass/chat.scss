@@ -1185,3 +1185,59 @@ margin-top:50px;
 
 /* End Admin Css */
 
+ /*EMOJI THREE*/
+
+/*ANIMATION 1 EMOJI 3*/   
+.alien {
+    animation: alien 7s linear infinite;
+    transform: translateY(140px);
+}                          
+@keyframes alien {
+    30% {
+        transform: translateY(140px);
+    }
+    50%, 70% {
+        transform: translateY(0px);
+    }
+}
+
+/*ANIMATION 2 EMOJI 3*/
+.spaceship {
+    animation: fly 3s linear infinite;
+}
+@keyframes fly {
+    0%{
+        transform: translate(0);
+    }
+    25% {
+        transform: translate(20px, 20px);
+    }
+    50% {
+        transform: translate(30px, -10px);
+    }
+    75% {
+        transform: translate(10px, 10px);
+    }
+}
+
+/*ANIMATION 3 EMOJI 3*/
+.laser1 {
+    opacity: 0;
+    animation: laser 1.5s linear infinite;
+}
+.laser2 {
+    opacity: 0;
+    animation: laser 1.5s 1s linear infinite;
+}
+.laser3 {
+    opacity: 0;
+    animation: laser 1.5s 2s linear infinite;
+}
+@keyframes laser {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}

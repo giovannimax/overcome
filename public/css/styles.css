@@ -1342,14 +1342,13 @@ you can use the generic selector below, but it's slower:
     
     .containerforreg{
       display: inline-flex;
-      margin-top:130px;
-      margin-left: 220px;
+      padding: 100px;
  
     }
 
     .container1{
         background:#fefefe;
-        width: 650px;
+        width: 100%;
         margin-right: 50px;
         padding-bottom: 35px;
         margin-bottom: 50px;

@@ -39,6 +39,11 @@ class PsychologistsController extends Controller
         return redirect()->route('admin');   
      }
 
+     static function checkpsych($id){
+        $row = DB::select("SELECT * FROM psychologists WHERE psych_id = $id");
+        return $row;
+     }
+
     static function getpendpsych(){
         $row = DB::select("SELECT * FROM psychologists WHERE psych_status = 'pending'");
         return $row;

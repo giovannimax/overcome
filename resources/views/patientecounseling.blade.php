@@ -51,7 +51,7 @@ function showvideo() {
       var height = 650;
       var top = parseInt((screen.availHeight/2) - (height/2));
       var left = parseInt((screen.availWidth/2) - (width/2));
-      window.open('ecounseling_start', 
+      window.open('patecounseling_start', 
             "Video Counselling", 
             "menubar=no,resizable=no,width=" + width + ",height=" + height + ",scrollbars=no,left="  
             + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top);    
@@ -63,7 +63,7 @@ var width = 1200;
 var height = 650;
 var top = parseInt((screen.availHeight/2) - (height/2));
 var left = parseInt((screen.availWidth/2) - (width/2));
-window.open('ecounseling_start', 
+window.open('patecounseling_start', 
       "Call Counselling", 
       "menubar=no,resizable=no,width=" + width + ",height=" + height + ",scrollbars=no,left="  
       + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top);    

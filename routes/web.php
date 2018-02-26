@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\PsychologistsController;
+
 Route::get('/', function () {
     return view('index');
 })->name('index');
@@ -57,10 +59,20 @@ Route::get('/mywallet', function () {
 });
 
 Route::get('/ecounseling', function () {
+    $result = PsychologistsController::checkpsych(Auth::user()->id);
     if(Auth::user()->usertype=="pat")
     return view('patientecounseling');
-    else
-    return view('psychcounseling');
+    else{
+
+    foreach($result as $res){
+        if($res->psych_status=="approved")
+            return view('psychcounseling');
+        else
+            return view("notice");
+    }
+
+
+}
     
 })->name('ecounseling');
 
@@ -71,6 +83,11 @@ Route::get('/diary', function () {
 
 Route::get('/ecounseling_start', function () {
     return view('psychstartcounseling');
+    
+});
+
+Route::get('/patecounseling_start', function () {
+    return view('patstartcounseling');
     
 });
 
@@ -88,6 +105,12 @@ Route::get('/checkavail', function () {
     return view('comp.availchecker');
     
 });
+
+Route::get('/durationchecker', function () {
+    return view('comp.durationchecker');
+    
+});
+
 
 
 
@@ -211,6 +234,9 @@ Route::get('/viewadminpsych', function () {
 Route::get('/patient', function () {
     return view('auth.patregister');
 });
+Route::get('/sessioneditor', function () {
+    return view('sessioneditor');
+});
 
 Route::get('/diaryloader', function () {
     return view('comp.diaryloader');
@@ -218,6 +244,14 @@ Route::get('/diaryloader', function () {
 
 Route::get('/sessionloader', function () {
     return view('comp.sessionloader');
+});
+
+Route::get('/availabilities', function () {
+    return view('availabilities');
+});
+
+Route::get('/notice', function () {
+    return view('notice');
 });
 
 Route::get('/appointments', function () {
@@ -269,3 +303,6 @@ Route::get('addinquiry','AdminsController@addinquiry');
 Route::get('approvepat','EcounselingsController@approvepat');
 Route::get('addcomment','DiariesController@addcomment');
 Route::get('updatenotes','EcounselingsController@updatenotes');
+Route::get('addvideoid','EcounselingsController@addvideoid');
+Route::get('addpsychavaila','AvailabilityController@addpsychavaila');
+Route::get('deleteavaila','AvailabilityController@deleteavaila');

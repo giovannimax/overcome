@@ -36,6 +36,7 @@ class MessagesController extends Controller
     }
 
     static function retconvo($id,$pat){
+        if(!empty($pat))
         session(['pat_id' => $pat]);
         $row = DB::select("SELECT * FROM conversations WHERE convo_id = $id");
         return $row;

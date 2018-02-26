@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Availability;
+use DB;
+use Auth;
+use Redirect;
 class AvailabilityController extends Controller
 {
     function addavail(Request $request){
@@ -73,5 +76,31 @@ class AvailabilityController extends Controller
 
     public static function checkavail(){
         return Availability::all();
+    }
+
+    function addpsychavaila(Request $request){
+    $days = $request->days;
+        foreach($days as $d){
+            DB::table('availabilities')->insert(
+        ['day' => $d, 
+            'start_time' => $request->start_time,
+            'end_time' => $request->end_time,
+            'psych_id' => Auth::user()->id
+            ]);
+        }
+         return Redirect::back();
+    }
+
+    static function retpsychavaila($id){
+       return DB::select("SELECT * FROM availabilities WHERE psych_id = ?", [$id]);
+    }
+
+    function deleteavaila(Request $request){
+        DB::select("DELETE FROM availabilities WHERE avail_id = ?", [$request->id]);
+        return Redirect::back();
+    }
+
+    static function getpsychavailaspefday($day){
+       return DB::select("SELECT * FROM availabilities WHERE day = ?", [$day]);
     }
 }   

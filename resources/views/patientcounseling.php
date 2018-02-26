@@ -19,7 +19,6 @@
   </div>
   
 </div>
-<input type="hidden" id="pat_id" value="">
     </div> <!-- End of containercounseling1 -->
 
     <div class="containercounseling2">
@@ -124,8 +123,22 @@
  </div> <!-- End of diary tab -->
     
 
- <div class="tabsesnotes tab-pane fade" id="nav-sesnotes" role="tabpanel" aria-labelledby="nav-sesnotes-tab"><!--
+ <div class="tabsesnotes tab-pane fade" id="navbar-sesnotes" role="tabpanel" aria-labelledby="nav-sesnotes-tab"><!--
 Start of Session Notes Tab -->
+<button class="accordion">Session 1 Feb 1, 2018 10:30-12:00 PM</button>
+<div class="panell">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panell">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panell">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
   
 </div> <!-- End of Session tab -->
 
@@ -153,8 +166,7 @@ function showvideo() {
       var height = 750;
       var top = parseInt((screen.availHeight/2) - (height/2));
       var left = parseInt((screen.availWidth/2) - (width/2));
-      var myurl = "ecounseling_start?id=" + $("#pat_id").val();
-      window.open(myurl, 
+      window.open('ecounseling_start?id=1', 
             "Video Counselling", 
             "menubar=no,resizable=no,width=" + width + ",height=" + height + ",scrollbars=no,left="  
             + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top); 

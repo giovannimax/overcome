@@ -51,19 +51,17 @@
             <div class='addbooktc tablecell'>
               {{Form::label('bookingduration', 'Booking Duration')}}
   </div>
-       <div class='addbooktc tablecell'>{{Form::number('session_length','', ['class' => 'form-control', 'placeholder' => '01','id' => 'session_length'])}} hr</div>
+       <div class='addbooktc tablecell' id="session_dur">
+         
+       </div>
      </div>      
           
           <div class='patapptr tablerow'>
-            <div class='addbooktc tablecell'>
-              {{Form::label('bookingtype', 'Booking Type')}}
-  </div>
-       <div class='addbooktc tablecell'>{{Form::select('counsel_type', ['BT' => 'Type', 'offsite' => 'On-Site', 'ecounseling' => 'E-Counseling'], 'T',['class' => 'form-control', 'id' => 'counsel_type'])}}</div>
      </div> 
 
      <div class='patapptr tablerow'>
             
-       <div class='addbooktc tablecell'>{{Form::checkbox('repeat'), 'yes'}}  {{Form::label('bookingtype', 'Repeat every week')}} </div>
+    </div>
      </div>   
             <a class="addappbtn btn btn-info text-light">Add</a> 
             <a class="canceledit btn btn-info text-light">Cancel</a>                            
@@ -72,7 +70,6 @@
 </form>
             <li class="legend">
                	<i class="material-icons text-info">people_outline</i> e-Counseling
-               	<i class="material-icons text-info">person_pin_circle</i> Off-site
             </li>
 
         @if(count($appoints)>0)
@@ -157,6 +154,8 @@
 $(document).ready(function(){ 
   getavail($("#counseldate"));
   $('#addapp').hide();
+
+  durcheck();
  })
    function getavail(date){
      $.ajaxSetup({
@@ -189,12 +188,23 @@ $('.addappbtn').click(function(e) {
     var counsel_date = $('#counseldate').val();
     var counsel_time = $('#counsel_time').val();
     var session_length = $('#session_length').val();
-    var counsel_type = $('#counsel_type').find(":selected").text();
-    var repeat = $('input:checked').val();
+    var counsel_type = "ecounseling";
+    var psych_id = {{Auth::user()->id}};
   
-    $.get('./AddAppointment',{counsel_status:counsel_status,pat_id:pat_id,counsel_date:counsel_date,counsel_time:counsel_time,session_length:session_length,counsel_type:counsel_type},function(data){
+    $.get('./AddAppointment',{counsel_status:counsel_status,pat_id:pat_id,counsel_date:counsel_date,counsel_time:counsel_time,session_length:session_length,counsel_type:counsel_type,psych_id:psych_id},function(data){
             //$('#appntcont').html(data);
+           window.location = "calendar";
         });
-    alert(counsel_status + " "+ pat_id+ " " + counsel_date+ " "+counsel_time+ " "+session_length+ " "+counsel_type+ " "+repeat);
+    //alert(counsel_status + " "+ pat_id+ " " + counsel_date+ " "+counsel_time+ " "+session_length+ " "+counsel_type+ " "+repeat);
 });
+
+
+function durcheck(){
+  
+  var counsel_time = $('#counsel_time').find(":selected").val();
+  var counsel_date = $("#counseldate").val();
+  $.get('./durationchecker',{date:counsel_date,selected:counsel_time},function(data){
+        $('#session_dur').html(data);
+    });
+}
 </script>

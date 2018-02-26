@@ -4,8 +4,9 @@
      use App\Http\Controllers\PatientsController;
      
      $id = Input::get('id');
-     $ress = MessagesController::retconvo($id);
-     $resultt = MessagesController::loadmsg($id);
+     $pat="";
+     $ress = MessagesController::retconvo($id,$pat);
+     $resultt = MessagesController::loadmsg($id,$pat);
      $patient="";
 ?>
 <html>

@@ -14,7 +14,6 @@
    See More <i class="material-icons">arrow_drop_down</i>
   </a></h5>
   
-
 <div class="divdiary collapse" id="collapseDiary{{$i}}">
     
     @if(empty($res->psych_comment)) 
@@ -29,7 +28,8 @@
 
     @else
     
-    <div class="form-group">  
+    <div class="form-group"> 
+      {{$res->dia_content}}<br>
     {{Form::label('npass', $res->psych_comment,['style' => 'color:#f58c37'])}}
     </div>
     

@@ -4,27 +4,17 @@
      
      $id = Input::get('id');
      $resultt = EcounselingsController::getnotes($id);
+     $i=1;
 ?>
 
 @foreach($resultt as $res)
-
-<button class="accordion">Session 1 Feb 1, 2018 10:30-12:00 PM</button>
+@if(!empty($res->session_notes))
+<button class="accordion">Session {{$i++." ".date("F d, Y",strtotime($res->notes_date))." ".date("h:m A",strtotime($res->notes_time))}}</button>
+<a href="google.com" onclick="window.open('sessioneditor?id={{$res->notes_id}}', 'newwindow', 'width=50%, height=400'); return false;">Edit</a>
 <div class="panell">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+ {!! $res->session_notes !!}
 </div>
-
-<button class="accordion">Section 2</button>
-<div class="panell">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<button class="accordion">Section 3</button>
-<div class="panell">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-  
-</div> <!-- End of Session tab -->
-
+@endif
 @endforeach
 
 <script>
@@ -32,4 +22,20 @@ var $myGroup = $('#diarycont');
 $myGroup.on('show.bs.collapse','.collapse', function() {
 $myGroup.find('.collapse.show').collapse('hide');
 });
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active2");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+
 </script>
