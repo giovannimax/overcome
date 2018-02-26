@@ -173,18 +173,22 @@ class Calendar {
             }
 
         }
-
-
-
-                    $daystrip.='</div>';
+            if(strtotime($this->currentDate) >= strtotime(date('Y-m-d'))){
+             $daystrip.='</div>';
             return '<a href="#" class="calday"><div '.$dayclass.' onclick=toggleleftsidebar("'.$this->currentDate.'",this);>&nbsp;&nbsp;'.$cellContent.$pps.$daystrip.'</div></a>';
+            } else {
+                $daystrip.='</div>';
+                return '<div href="#" class="calday"><div '.$dayclass.'"); id="li-'.$this->currentDate.$hdr.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+                ($cellContent==null?'mask':'').'">&nbsp;&nbsp;'.$cellContent.$daystrip.'</div></div>';
+            }
          }
 
         else {
             $daystrip.='</div>';
             return '<div href="#" class="calday"><div '.$dayclass.'"); id="li-'.$this->currentDate.$hdr.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
                 ($cellContent==null?'mask':'').'">&nbsp;&nbsp;'.$cellContent.$daystrip.'</div></div>';
-        }
+        }       
+        
 
 }
      

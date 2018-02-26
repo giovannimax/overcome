@@ -305,16 +305,17 @@ by listening to and understanding your symptoms.</p>
                     <h3>Get in Touch</h3>
                     <p>For some quick answers, <a href="#faq" class="faq">visit our frequent asked questions</a>.If you still need assistance,
                 please fill-up the form below. Happy to serve you :)</p>
-                    <form class="signup-form" action="#" method="POST" role="form">
+                    <form class="signup-form" action="addinquiry" method="GET" role="form">
                     <div class="form-input-group">
-                            <i class="fa fa-user"></i><input type="text" class="" placeholder="Enter your name" required>
+                            <i class="fa fa-user"></i><input type="text" class="" name="name" placeholder="Enter your name" required>
                         </div>
                         <div class="form-input-group">
-                            <i class="fa fa-envelope"></i><input type="text" class="" placeholder="Enter your email" required>
+                            <i class="fa fa-envelope"></i><input type="text" class="" name="email" placeholder="Enter your email" required>
                         </div>
                         <div class="form-input-textarea"> 
-                            <textarea class="textarea" rows="5" placeholder="Enter message inquiry" required></textarea>
+                            <textarea class="textarea" name="msgcontent" rows="5" placeholder="Enter message inquiry" required></textarea>
                         </div> 
+                        <input type="hidden" name="created_at" value="{{ date("Y-m-d")}}">
                         <button type="submit" class="btn-fill sign-up-btn">Submit Inquiry</button>
                     </form>
                 </div>

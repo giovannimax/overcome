@@ -13,9 +13,11 @@
 
 Route::get('/', function () {
     return view('index');
+})->name('index');
+
+Route::get('/inquiries', function () {
+    return view('inquiries');
 });
-
-
 
 Route::get('/about', function () {
     return view('about');
@@ -31,7 +33,7 @@ Route::get('/calendar', function () {
 
 Route::get('/accountsettings', function () {
     return view('accountsettings');
-});
+})->name('accountsettings');
 
 Route::get('/patients', function () {
     return view('patients');
@@ -55,9 +57,12 @@ Route::get('/mywallet', function () {
 });
 
 Route::get('/ecounseling', function () {
+    if(Auth::user()->usertype=="pat")
+    return view('patientecounseling');
+    else
     return view('psychcounseling');
     
-});
+})->name('ecounseling');
 
 Route::get('/notice', function () {
     return view('notice');
@@ -90,6 +95,7 @@ Route::get('/checkavail', function () {
 });
 
 
+
 Route::get('/conversation', function () {
     return view('psychnewmessage');
 });
@@ -113,12 +119,23 @@ Route::get('/user_diary', function () {
     return view('wew');
 });
 
+Route::get('/reports', function () {
+    return view('reports');
+});
+
 Route::get('/user_ecounseling', function () {
     return view('patientecounseling');
 });
 
-Route::get('/user_startecounseling', function () {
-    return view('patientecounseling');
+Route::get('/convomenu', function () {
+    return view('comp.convomenu');
+});
+
+Route::get('/convoloader', function () {
+    return view('comp.convoloader');
+});
+Route::get('/convoloaderpat', function () {
+    return view('comp.convoloaderpat');
 });
 
 Route::get('/user_wallet', function () {
@@ -127,11 +144,11 @@ Route::get('/user_wallet', function () {
 
 Route::get('/pat_accountsettings', function () {
     return view('accountsettingspatient');
-});
+})->name('pat_accountsettings');
 
 Route::get('/findpsychologist', function () {
     return view('registerquestion');
-})->name('findpsychologist');
+})->name('registerquestion');
 
 Route::get('/adminlogin', function () {
     return view('auth.adminlogin');
@@ -163,7 +180,7 @@ Route::get('/availcal', function () {
 
 Route::get('/adminset', function () {
     return view('adminset');
-});
+})->name('adminset');
 Route::get('/adminpatient', function () {
     return view('adminpatient');
 });
@@ -202,6 +219,14 @@ Route::get('/viewadminpsych', function () {
 
 Route::get('/patient', function () {
     return view('auth.patregister');
+});
+
+Route::get('/diaryloader', function () {
+    return view('comp.diaryloader');
+});
+
+Route::get('/sessionloader', function () {
+    return view('comp.sessionloader');
 });
 
 Route::get('/appointments', function () {
@@ -246,3 +271,12 @@ Route::post('addpostappointment','EcounselingsController@addpostapp');
 Route::post('updatepsych','Auth\RegisterController@updatepsych');
 Route::get('approvepsych','PsychologistsController@approvepsych');
 Route::get('declinepsych','PsychologistsController@declinepsych');
+Route::get('sendmsg','MessagesController@sendmsg');
+Route::get('createadmin','AdminsController@createadmin');
+Route::get('deactadmin','AdminsController@deactadmin');
+Route::get('addinquiry','AdminsController@addinquiry');
+Route::get('approvepat','EcounselingsController@approvepat');
+Route::get('addcomment','DiariesController@addcomment');
+Route::get('updatenotes','EcounselingsController@updatenotes');
+Route::get('updatepsych','DiariesController@updatepsych');
+Route::get('updatepat','DiariesController@updatepat');

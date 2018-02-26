@@ -35,6 +35,7 @@
     }
 
     function loadAppointmentModal(id){
+    $('#psych_id').val(id);
     var bookModal = document.getElementById('bookModal');
     bookModal.style.display='block';
 }

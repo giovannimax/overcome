@@ -11202,7 +11202,6 @@ div.clear {
   height: 150px;
   width: 150px;
   margin-top: 25px;
-  margin-bottom: 25px;
   cursor: pointer;
 }
 
@@ -12431,4 +12430,24 @@ css */
 }
 
 /* End Mixed Css */
+
+.containerforreports {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.report1 {
+  border: 1px solid #cecece;
+  width: 50%;
+  text-align: center;
+}
+
+.report2 {
+  border: 1px solid #01acbe;
+  width: 50%;
+  text-align: center;
+}
+
+/* End Admin Css */
 

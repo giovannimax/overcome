@@ -30,7 +30,7 @@
        <div class='addbooktc tablecell' id="addbooktec">
        <select id="pat_id" class="form-control">
        <?php
-           $resultt = EcounselingsController::getpatients($reqdate);
+           $resultt = EcounselingsController::getpatients(Auth::user()->id);
            foreach($resultt as $ress){
              echo "<option value=".$ress->pat_id.">".$ress->pat_fname." ".$ress->pat_lname."</option>";
            }
@@ -165,7 +165,7 @@ $(document).ready(function(){
       }
    });
    var date = $(date).val();
-   $.post('./availcal',{date:date},function(data){
+   $.get('./availcal',{date:date},function(data){
         $('#addbooktc').html(data);
          });
    }

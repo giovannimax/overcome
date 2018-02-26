@@ -37,10 +37,7 @@
              <div class="col-md-4">{{ Form::radio('psych_gndr', 'female') }} Female </div>
         </div>
     </div>
-    <div class="form-group"> 
-            {{Form::label('email', 'Email Address')}} 
-            {{Form::text('email', '',['class' => 'form-control', 'placeholder' => 'Email Address'])}} 
-        </div>
+
         
     <div class="form-group">
     {{ Form::label('Birthday') }}
@@ -94,6 +91,13 @@
         {{ Form::label('Clinic Phone Number') }}
         {{ Form::text('clinic_phone','', ['class' => 'form-control'])}}
     </div>
+
+    <div class="form-group">
+        {{ Form::label('Clinic Hours') }}
+        {{ Form::text('clinic_hours','', ['class' => 'form-control'])}}
+    </div>
+
+
 {{Form::submit('Submit', ['class' => 'btn btn-primary btn-lg btnsub'])}}
     {!! Form::close() !!}
 Psychologist
