@@ -22,6 +22,11 @@ class AdminsController extends Controller
     return $row;
  }
 
+ static function retmsg(){
+    $row = DB::select("SELECT * FROM inquiries Order By id DESC ");
+    return $row;
+ }
+
  function deactadmin(Request $request){
     DB::table('admins')->where('id', $request->adminid)->update(array(
         'status'=>'deactivated',
