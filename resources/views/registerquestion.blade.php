@@ -1,6 +1,7 @@
 @extends ('layouts.anothernavbar')
 @section ('content')
 <?php
+    date_default_timezone_set("Asia/Hong_Kong");
     use App\Http\Controllers\Auth\RegisterController;
     $availl = RegisterController::getprovinces();
 ?>
@@ -131,7 +132,7 @@
 </div>   <!-- End of form-group textarea -->  
 
 <div class="modal-footer text-right">
-<button type="submit" class="btn btn-md btn-info btnapp">Book Appointment</button>
+<button type="submit" class="btn btn-md btn-info btnapp" id="btnbookapp">Book Appointment</button>
 </div>
 </form>
 
@@ -222,21 +223,23 @@ function radioclicked(){
 
 <script>
 
-$(document).ready(function(){ 
- getavail($("#counseldate"));
+// $(document).ready(function(){ 
+//  getavail($("#counseldate"));
 
-})
-    $.ajaxSetup({
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-     }
-  });
-  function getavail(date){
-  var date = $(date).val();
-  $.get('./availcal',{date:date},function(data){
-       $('#addbooktc').html(data);
-        });
-    }
+// })
+//     $.ajaxSetup({
+//     headers: {
+//       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//      }
+//   });
+//   function getavail(date){
+//   var date = $(date).val();
+//   var id = $("#psych_id").val();
+//   alert(id);
+//   $.get('./availcal',{date:date,psych:id},function(data){
+//        $('#addbooktc').html(data);
+//         });
+//     }
 </script>
 
 @endsection

@@ -79,7 +79,7 @@
 </svg>
 </div>
 <div class="text-center" style="color: #cecece;margin-top: 50px;">
-<h3>Please wait for the verification of your details before using our e-counseling.<br> We'll get back at you within the day. Thank You :)</h3>
+<h3 class="text-danger">Please wait for the verification of your details before using our e-counseling.<br> We'll get back at you within the day. Thank You :)</h3>
 </div>
 
 

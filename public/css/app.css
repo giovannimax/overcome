@@ -11224,7 +11224,7 @@ css */
 }
 
 .txtprof {
-  color: #f58c37;
+  color: #313131;
   text-indent: 50px;
 }
 
@@ -11257,7 +11257,7 @@ css */
 }
 
 .licenseul {
-  color: #f58c37;
+  color: #313131;
 }
 
 .addlicense {
@@ -11288,7 +11288,7 @@ css */
 }
 
 .specialtytd {
-  color: #f58c37;
+  color: #313131;
 }
 
 .addservice {
@@ -12163,7 +12163,7 @@ css */
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .newtxtmsg {
@@ -12263,9 +12263,45 @@ css */
 
 /* End of new psychounseling */
 
-/* Start Admin Css*/
+/* Start Mixed Css*/
 
-/* End Admin Css */
+.trpat > td {
+  padding-bottom: .8em;
+  padding-right: 1em;
+}
+
+.propicdisplay {
+  height: 150px;
+  width: 150px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.containerforpatdetails {
+  margin-bottom: 50px;
+}
+
+.patcounsel {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-top: 50px;
+}
+
+.patcounsel1 {
+  margin-left: 25px;
+  width: 850px;
+}
+
+.patcounsel2 {
+  margin-right: 25px;
+  width: 500px;
+}
+
+.cardpatcounsel2 {
+  height: 564px;
+  margin-top: 69px;
+}
 
 /*EMOJI THREE*/
 
@@ -12381,6 +12417,92 @@ css */
   50% {
     opacity: 1;
   }
+}
+
+@keyframes laser {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* End Mixed Css */
+
+/* End Admin Css */
+
+/*EMOJI THREE*/
+
+/*ANIMATION 1 EMOJI 3*/
+
+.alien {
+  -webkit-animation: alien 7s linear infinite;
+          animation: alien 7s linear infinite;
+  -webkit-transform: translateY(140px);
+          transform: translateY(140px);
+}
+
+@keyframes alien {
+  30% {
+    -webkit-transform: translateY(140px);
+            transform: translateY(140px);
+  }
+
+  50%, 70% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+/*ANIMATION 2 EMOJI 3*/
+
+.spaceship {
+  -webkit-animation: fly 3s linear infinite;
+          animation: fly 3s linear infinite;
+}
+
+@keyframes fly {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+
+  25% {
+    -webkit-transform: translate(20px, 20px);
+            transform: translate(20px, 20px);
+  }
+
+  50% {
+    -webkit-transform: translate(30px, -10px);
+            transform: translate(30px, -10px);
+  }
+
+  75% {
+    -webkit-transform: translate(10px, 10px);
+            transform: translate(10px, 10px);
+  }
+}
+
+/*ANIMATION 3 EMOJI 3*/
+
+.laser1 {
+  opacity: 0;
+  -webkit-animation: laser 1.5s linear infinite;
+          animation: laser 1.5s linear infinite;
+}
+
+.laser2 {
+  opacity: 0;
+  -webkit-animation: laser 1.5s 1s linear infinite;
+          animation: laser 1.5s 1s linear infinite;
+}
+
+.laser3 {
+  opacity: 0;
+  -webkit-animation: laser 1.5s 2s linear infinite;
+          animation: laser 1.5s 2s linear infinite;
 }
 
 @keyframes laser {

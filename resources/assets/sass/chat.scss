@@ -73,7 +73,7 @@ css */
     display: none;
 }
 .txtprof{
-    color: #f58c37;
+    color: #313131;
     text-indent: 50px;
 }
 #about{
@@ -106,7 +106,7 @@ css */
 }
 
 .licenseul{
-    color: #f58c37;
+    color: #313131;
     
 }
 
@@ -139,7 +139,7 @@ css */
 }
 
 .specialtytd{
-    color:#f58c37;
+    color: #313131;
 }
 
 .addservice{
@@ -1078,7 +1078,7 @@ margin-top:50px;
 
 .forpsychcounsel{
     display: inline-flex;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .newtxtmsg{
@@ -1113,6 +1113,7 @@ margin-top:50px;
   width: 850px;
   
 }
+
 
 .divforsearch{
     border-bottom: 1px solid rgb(221, 221, 221);
@@ -1181,7 +1182,105 @@ margin-top:50px;
 /* End of new psychounseling */
 
 
-/* Start Admin Css*/
+/* Start Mixed Css*/
+.trpat>td{
+    padding-bottom: .8em;
+    padding-right: 1em;
+
+}
+
+.propicdisplay{
+    height: 150px;
+    width: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.containerforpatdetails{
+    margin-bottom: 50px;
+
+ 
+}
+
+.patcounsel{
+    display: inline-flex;
+    margin-top: 50px;
+}
+
+.patcounsel1{
+    margin-left: 25px;
+    width: 850px;
+  }
+  
+  .patcounsel2{
+    margin-right: 25px;
+    width:500px;
+  }
+
+  .cardpatcounsel2{
+      height: 564px;
+      margin-top: 69px;
+  }
+
+  /*EMOJI THREE*/
+
+/*ANIMATION 1 EMOJI 3*/   
+.alien {
+	animation: alien 7s linear infinite;
+	transform: translateY(140px);
+}                          
+@keyframes alien {
+	30% {
+		transform: translateY(140px);
+	}
+	50%, 70% {
+		transform: translateY(0px);
+	}
+}
+
+/*ANIMATION 2 EMOJI 3*/
+.spaceship {
+	animation: fly 3s linear infinite;
+}
+@keyframes fly {
+	0%{
+		transform: translate(0);
+	}
+	25% {
+		transform: translate(20px, 20px);
+	}
+	50% {
+		transform: translate(30px, -10px);
+	}
+	75% {
+		transform: translate(10px, 10px);
+	}
+}
+
+/*ANIMATION 3 EMOJI 3*/
+.laser1 {
+	opacity: 0;
+	animation: laser 1.5s linear infinite;
+}
+.laser2 {
+	opacity: 0;
+	animation: laser 1.5s 1s linear infinite;
+}
+.laser3 {
+	opacity: 0;
+	animation: laser 1.5s 2s linear infinite;
+}
+@keyframes laser {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+  
+/* End Mixed Css */
+
 
 /* End Admin Css */
 

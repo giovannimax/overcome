@@ -4,8 +4,8 @@
 
 @section('content')
 <a class="availreset text-info pointer hide">Clear Selection</a>
-<a class="material-icons text-info float-right pointer hide" id="btncancel">cancel</a>
-<a class="material-icons text-info float-right pointer hide" id="btndone">check</a>
+<a class="material-icons text-info float-right pointer hide" id="btncancel" style="margin-top:15px;margin-right:10px;">cancel</a>
+<a class="material-icons text-info float-right pointer hide" id="btndone" style="margin-top:15px;">check</a>
 <button class="btn btn-info btnavail float-right">Block Dates (Availability)</button>
 	<?php
  

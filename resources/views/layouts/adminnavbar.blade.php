@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+y<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -55,8 +55,8 @@
                     <font class="sidetext">Settings</font>
                   </a>
                 </li>
-                <li>
-                    <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
+                <li class="{{ Request::is('reports') ? 'active' : '' }}">
+                    <a href="reports" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
                     <i class="material-icons">assessment</i>
                     <font class="sidetext">Reports</font>
                   </a>
@@ -96,13 +96,7 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">face</i></a>
             <div class="dropdown-menu dropdown-menu-right" style="left: auto !important;right: 20px;">
               <span class="dropdown-header" href="#">Hanna Kris Ko</span>
-              <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Account Settings</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Logout</a>
-            </div>
-          </li>
-        </ul>
+              <a class="dropdown-item" href="adminlogin">Logout</a>
       </div>
     </nav>
              @yield('content')
@@ -111,6 +105,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/Chart.min.js"></script>
     <script type="text/javascript">
 
      var ind=0;

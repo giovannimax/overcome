@@ -30,6 +30,15 @@ class EcounselingsController extends Controller
     	$result=$appoints->getspefapp($date);
     	return $result;    	
 	}
+	
+	public static function viewspefecounnn($datee,$id){
+    	$date = Array();
+    	array_push($date, $datee);
+    	array_push($date, $id);
+    	$appoints = new Ecounseling();
+    	$result=$appoints->getspefapp($date);
+    	return $result;    	
+	}
 
 	public static function givepeople($givendate){
 		$date = Array();

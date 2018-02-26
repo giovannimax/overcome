@@ -5,7 +5,7 @@
    
     $unresult=array();
     if(empty($_GET['psych'])){
-       $unresult = EcounselingsController::viewspefecounn($date);
+        $unresult = EcounselingsController::viewspefecounn($date);
     }else{
         $id = $_GET['psych'];
         $unresult = EcounselingsController::viewspefecounnn($date,$id);

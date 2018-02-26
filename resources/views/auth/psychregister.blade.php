@@ -38,6 +38,7 @@
         </div>
     </div>
 
+        
     <div class="form-group">
     {{ Form::label('Birthday') }}
     {!! Form::date('psych_dob', \Carbon\Carbon::now(), ['class' => 'form-control']) ; !!}
@@ -90,6 +91,13 @@
         {{ Form::label('Clinic Phone Number') }}
         {{ Form::text('clinic_phone','', ['class' => 'form-control'])}}
     </div>
+
+    <div class="form-group">
+        {{ Form::label('Clinic Hours') }}
+        {{ Form::text('clinic_hours','', ['class' => 'form-control'])}}
+    </div>
+
+
 {{Form::submit('Submit', ['class' => 'btn btn-primary btn-lg btnsub'])}}
     {!! Form::close() !!}
 Psychologist

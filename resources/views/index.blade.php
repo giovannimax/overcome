@@ -73,14 +73,9 @@ by listening to and understanding your symptoms.</p>
     </section>
     <section class="intro section-padding" id="about">
         <div class="container">
-            <h2  class="text-center" style="margin-bottom:20px;">Insert About Overcome</h2>
+            <h2  class="text-center" style="margin-bottom:20px;">About Overcome</h2>
             
-            <p style="margin-bottom:30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-             Vestibulum tincidunt ultricies pulvinar. 
-             Donec dapibus quam elit, posuere venenatis ex
-              congue eu. Duis interdum metus ac orci mattis,
-               ut hendrerit nibh tempor. Mauris convallis sem risus, 
-               sit amet pharetra turpis tempus vitae. Vestibulum et nunc at orci volutpat dictum. In id magna eu mi dapibus hendrerit. Nunc at neque condimentum, porta lacus quis, tincidunt enim. Mauris in vulputate enim. Donec odio turpis, volutpat scelerisque arcu vel, suscipit placerat sem. Ut vitae est fermentum, aliquet purus ac, malesuada orci. Quisque a dapibus arcu, ac pharetra erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis ornare est in felis congue semper. Cras sed dolor sed dui semper cursus.</p>
+            <p style="margin-bottom:30px;">Overcome is a web-based mental health e-counseling platform. This will allow the psychologist and the patient to meet online using the video platform and have counseling. The psychologist can also use the session notes during the counseling to evaluate the patient’s condition.  The aim of the system is not to replace the traditional face to face therapy but to give another medium for the underserved population and to give professional psychologist the tools needed to execute their services efficiently. </p>
              <h5 class="text-center">Mission</h5> 
              <p class="text-center">To remove stigma of mental illness that hindering people on seeking help <br> and give an accessible place that is convenient for everyone.</p>  
             

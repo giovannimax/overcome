@@ -116,12 +116,7 @@
    <section class="forlistofpsych">
    <div class="listofpsychologist" id="listofpsych">
 
-<h4> (insert char2 about psychologist)
-Lorem ipsum dolor sit amet, munere eligendi 
-percipit in ius, vim dolore
-m probatus ex. No debet impedi
-t conclusionemque has, ne minim ornatus nec
-Ei toll it postulant </h4>
+<h4>All Psychologists are licensed. They are verified before doing e-counseling </h4>
     <div class="row rowsearch">
         
         <div class="col-md-3 colmd3" data-id="" onclick="getspecificpsychologist(this)">

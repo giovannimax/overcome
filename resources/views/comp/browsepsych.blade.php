@@ -35,10 +35,37 @@
     }
 
     function loadAppointmentModal(id){
-    $('#psych_id').val(id);
     var bookModal = document.getElementById('bookModal');
     bookModal.style.display='block';
+    $('#psych_id').val(id);
+    getavail($("#counseldate"));
 }
+
+    $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+     }
+  });
+
+  function getavail(date){
+  var date = $(date).val();
+  var idd = $('#psych_id').val();
+  //alert(id);
+  $.get('./checkdate',{date:date},function(data){
+       //$('#addbooktc').html(data);
+       if(data=="oops"){
+        $("#counseldate").addClass("oops");
+        $("#btnbookapp").prop('disabled', true);
+       }else{
+        $("#counseldate").removeClass("oops");
+        $("#btnbookapp").prop('disabled', false);
+       }
+        });
+    
+  $.get('./availcal',{date:date,psych:idd},function(data){
+       $('#addbooktc').html(data);
+        });
+    }
 
 function loadViewDetailsModal(id){
     $.get('./viewpsych',{psychid:id},function(data){

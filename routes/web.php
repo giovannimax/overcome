@@ -35,7 +35,7 @@ Route::get('/calendar', function () {
 
 Route::get('/accountsettings', function () {
     return view('accountsettings');
-});
+})->name('accountsettings');
 
 Route::get('/patients', function () {
     return view('patients');
@@ -75,6 +75,11 @@ Route::get('/ecounseling', function () {
 }
     
 })->name('ecounseling');
+
+Route::get('/notice', function () {
+    return view('notice');
+    
+});
 
 Route::get('/diary', function () {
     return view('patientdiary');
@@ -137,8 +142,12 @@ Route::get('/user_diary', function () {
     return view('wew');
 });
 
+Route::get('/reports', function () {
+    return view('reports');
+});
+
 Route::get('/user_ecounseling', function () {
-    return view('patientdoctors');
+    return view('patientecounseling');
 });
 
 Route::get('/convomenu', function () {
@@ -158,7 +167,7 @@ Route::get('/user_wallet', function () {
 
 Route::get('/pat_accountsettings', function () {
     return view('accountsettingspatient');
-});
+})->name('accountsettingspatient');
 
 Route::get('/findpsychologist', function () {
     return view('registerquestion');
@@ -172,7 +181,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/trytry', function () {
+Route::get('/searchpsychologist', function () {
     return view('trytry');
 });
 
@@ -250,6 +259,10 @@ Route::get('/availabilities', function () {
     return view('availabilities');
 });
 
+Route::get('/checkdate', function () {
+    return view('comp.checkdate');
+});
+
 Route::get('/notice', function () {
     return view('notice');
 });
@@ -306,3 +319,6 @@ Route::get('updatenotes','EcounselingsController@updatenotes');
 Route::get('addvideoid','EcounselingsController@addvideoid');
 Route::get('addpsychavaila','AvailabilityController@addpsychavaila');
 Route::get('deleteavaila','AvailabilityController@deleteavaila');
+Route::get('updatepsych','DiariesController@updatepsych');
+Route::get('updatepat','DiariesController@updatepat');
+Route::get('statpsych','DiariesController@statpsych');

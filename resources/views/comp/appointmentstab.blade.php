@@ -105,7 +105,7 @@
             <li class="sidebar-brand text-info">
               <br>
               <br>
-                   Availability <a class="close" id="edittime">Edit</a>
+                   Availability <a class="close btn btn-info btn-sm" id="edittime"style="color:#fff;"" >Edit</a>
                    <br>
                 <div id="editret"> 
                    <?php
