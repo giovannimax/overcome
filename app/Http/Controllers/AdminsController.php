@@ -12,6 +12,16 @@ class AdminsController extends Controller
       return redirect()->route('adminset');
    }
 
+   function loginadmin(Request $request){
+    $row = DB::select("SELECT * FROM admins WHERE email = '$request->email'");
+    foreach($row as $r){
+        if($r->pass==$request->password){
+             return redirect()->route('admin');
+        }
+    }
+    return "bad password";
+ }
+
    static function retactadmin(){
     $row = DB::select("SELECT * FROM admins WHERE status = 'active' ");
     return $row;

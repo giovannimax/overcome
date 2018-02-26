@@ -12,4 +12,8 @@ class PatientsController extends Controller
         $row = DB::select("SELECT CONCAT(pat_fname,' ',pat_lname) as name FROM patients WHERE pat_id = $id");
         return $row;
     }
+    static function getspefpatt($id){
+        $row = DB::select("SELECT * FROM patients WHERE pat_id = $id");
+        return $row;
+    }
 }

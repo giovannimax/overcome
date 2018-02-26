@@ -57,4 +57,9 @@ class PsychologistsController extends Controller
         $row = DB::select("SELECT * FROM psychologists WHERE psych_status = 'declined'");
         return $row;
     }
+
+    static function getspefpsych($id){
+        $row = DB::select("SELECT * FROM psychologists WHERE psych_id = $id");
+        return $row;
+    }
 }

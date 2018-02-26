@@ -2,6 +2,7 @@
      use Illuminate\Support\Facades\Input;
      use App\Http\Controllers\MessagesController;
      use App\Http\Controllers\PatientsController;
+    use App\Http\Controllers\PsychologistsController;
      
      $id = Input::get('id');
      $pat="";
@@ -14,7 +15,7 @@
 <body>
 
 
-<?php $patient = PatientsController::getspefpat(Auth::user()->id); ?>
+<?php $patient = PatientsController::getspefpatt(Auth::user()->id); ?>
 
             <div class="card-header">
                 <div class="row">
@@ -23,7 +24,11 @@
                 <tr>
                     <td><img class="sendernewimg rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture" align="left"></td>
                     <td><strong>@foreach($patient as $pat)
-                    {{$pat->name}}
+                    <?php  $psych = PsychologistsController::getspefpsych($pat->psych_id); 
+                        foreach($psych as $ps){
+                            echo $ps->psych_fname." ".$ps->psych_mname." ".$ps->psych_lname;
+                        }
+                    ?>
                 @endforeach</strong></td>
                </tr> </table>
                </div>

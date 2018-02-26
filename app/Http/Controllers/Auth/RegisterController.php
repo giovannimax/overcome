@@ -79,7 +79,7 @@ class RegisterController extends Controller
         $userreg = new User();
         $userreg->addpsych($request->except('_token'));
         Session::put('usertype', 'psych');
-        return redirect()->route('calendar');
+        return redirect()->route('availabilities');
     }
     protected function registerpat(Request $request){
         $userreg = new User();

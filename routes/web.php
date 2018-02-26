@@ -26,6 +26,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/profile', function () {
+    if(Auth::user()->usertype=="pat")
+    return view('patientprofile');
+    else
     return view('profile');
 })->name('profile');
 
@@ -115,9 +118,6 @@ Route::get('/durationchecker', function () {
     return view('comp.durationchecker');
     
 });
-
-
-
 
 Route::get('/conversation', function () {
     return view('psychnewmessage');
@@ -257,7 +257,7 @@ Route::get('/sessionloader', function () {
 
 Route::get('/availabilities', function () {
     return view('availabilities');
-});
+})->name('availabilities');
 
 Route::get('/checkdate', function () {
     return view('comp.checkdate');
@@ -321,5 +321,5 @@ Route::get('addpsychavaila','AvailabilityController@addpsychavaila');
 Route::get('deleteavaila','AvailabilityController@deleteavaila');
 Route::get('updatepsych','DiariesController@updatepsych');
 Route::get('updatepat','DiariesController@updatepat');
-
 Route::get('statpsych','DiariesController@statpsych');
+Route::post('loginadmin','AdminsController@loginadmin');

@@ -43,7 +43,7 @@
                 <div class="text-center">
                  <img class="overcomelogo" src="img/overcome.png" alt="Overcome logo">
                 </div>  
-            <form class="form-horizontal register-form" method="POST" action="{{ route('login') }}">
+            <form class="form-horizontal register-form" method="POST" action="/loginadmin">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}" style="margin-top:50px;margin-bottom:25px;">
