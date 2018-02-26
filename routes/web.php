@@ -144,7 +144,7 @@ Route::get('/user_wallet', function () {
 
 Route::get('/pat_accountsettings', function () {
     return view('accountsettingspatient');
-})->name('pat_accountsettings');
+})->name('accountsettingspatient');
 
 Route::get('/findpsychologist', function () {
     return view('registerquestion');
@@ -280,3 +280,4 @@ Route::get('addcomment','DiariesController@addcomment');
 Route::get('updatenotes','EcounselingsController@updatenotes');
 Route::get('updatepsych','DiariesController@updatepsych');
 Route::get('updatepat','DiariesController@updatepat');
+Route::get('statpsych','DiariesController@statpsych');

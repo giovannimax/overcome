@@ -69,7 +69,30 @@ class DiariesController extends Controller
         return DB::select("SELECT * FROM users WHERE id =?", [$id]); 
     }
 
+    static function countpsych(){
+        return DB::table('psychologists')->count();
+    }
 
+    static function countpat(){
+        return DB::table('patients')->count();
+    }
+
+    // static function statpsych($mnth){
+    //     $getter = DB::select("SELECT * FROM users WHERE usertype = 'psych'");
+    //     $ctr = 0;
+    //     $datee = date("m",strtotime($mnth)).'-'.date('Y');
+    //     echo $datee."asdf";
+    //     foreach($getter as $get){
+    //         echo date('m-Y',strtotime($get->created_at))."<br>";
+    //         if(date('m-Y',strtotime($get->created_at))==$datee){
+    //             $ctr="";
+    //         }
+    //     }
+    //     return $ctr;
+    // }
+
+
+    
     function updatediary(Request $request){
         $appoints = new Diary();
         $data=Array();

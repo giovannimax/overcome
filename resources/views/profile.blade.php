@@ -68,11 +68,7 @@
             <td>PRC</td>
             </tr>
 
-            <tr class="trpat">
-            <td class="text-info">License Picture</td>
-            <td><img src="images/pp.jpg" width="200px" height="100px"></td>
-            </tr>
- 
+    
 </table>
 <table>
             <tr class="trpat">

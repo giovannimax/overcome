@@ -16,7 +16,10 @@
     @stack('css')
 </head>
 <body>
-
+<?php
+     use App\Http\Controllers\DiariesController;
+     $result = DiariesController::retpat(Auth::user()->id);
+?>
  <div class="wrapper">
             <!-- Sidebar Holder -->
             <nav id="sidebar">
@@ -87,11 +90,15 @@
           <li class="nav-item">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">face</i></a>
             <div class="dropdown-menu dropdown-menu-right" style="left: auto !important;right: 20px;">
-              <span class="dropdown-header" href="#">Hanna Kris Ko</span>
+              <span class="dropdown-header" href="#">
+              @foreach($result as $res)
+                <?php echo($res->pat_fname.' ' .$res->pat_mname. ' '.$res->pat_lname) ?>
+              @endforeach
+              </span>
               <a class="dropdown-item {{ Request::is('patientprofile') ? 'active' : '' }}" href="user_profile">Profile</a>
               <a class="dropdown-item {{ Request::is('pataccountsettings') ? 'active' : '' }}" href="pat_accountsettings">Account Settings</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="/">Logout</a>
             </div>
           </li>
         </ul>

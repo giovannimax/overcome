@@ -27,17 +27,17 @@
      <h3 style="color:#f58c37;">Personal Information</h3>
         <div class="form-group">
             {{Form::label('fname', 'First Name')}} 
-            {{Form::text('pat_fname', $res->pat_fname,['class' => 'form-control', 'disabled', 'placeholder' => 'First Name'])}} 
+            {{Form::text('pat_fname', $res->pat_fname,['class' => 'form-control','readonly', 'placeholder' => 'First Name'])}} 
             </div>
         
         <div class="form-group"> 
             {{Form::label('mname', 'Middle Name')}} 
-            {{Form::text('pat_mname', $res->pat_mname,['class' => 'form-control', 'disabled', 'placeholder' => 'Middle Name'])}} 
+            {{Form::text('pat_mname', $res->pat_mname,['class' => 'form-control','readonly', 'placeholder' => 'Middle Name'])}} 
         </div>
     
         <div class="form-group"> 
             {{Form::label('lname', 'Last Name')}} 
-            {{Form::text('pat_lname', $res->pat_lname,['class' => 'form-control', 'disabled','placeholder' => 'Last Name'])}} 
+            {{Form::text('pat_lname', $res->pat_lname,['class' => 'form-control','readonly','placeholder' => 'Last Name'])}} 
         </div>
             <p style="color:red;font-size:12px;">Note:To change your name please <a href="/" style="color:blue;text-decoration:underline;">Contact Us</a></p>
        
