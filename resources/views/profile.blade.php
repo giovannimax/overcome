@@ -8,6 +8,13 @@
     if(Session::get('usertype')=='psych'||Auth::user()->usertype=='psych')
         $navbar='layouts.navbar';
 
+   
+?>
+
+
+<?php
+use App\Http\Controllers\DiariesController;
+ $result = DiariesController::retpsychprof(Auth::user()->id);
 ?>
 
 
@@ -18,42 +25,38 @@
 
      <div class="containerforpatdetails d-flex justify-content-center">
          <table>
+         @foreach($result as $res)
              <table  style="margin-right: 50px;">
             <tr class="trpat">
             <td class="text-info">First Name</td>
-            <td>Lizl</td>
+            <td>{{$res->psych_fname}}</td>
             </tr>
 
             <tr class="trpat">
             <td class="text-info">Middle Name</td>
-            <td>Canson</td>
+            <td>{{$res->psych_mname}}</td>
             </tr>
 
             <tr class="trpat">
             <td class="text-info">Last Name</td>
-            <td>Marquez</td>
+            <td>{{$res->psych_lname}}</td>
             </tr>
 
              
             <tr class="trpat">
             <td class="text-info">Gender</td>
-            <td>Female</td>
-            </tr>
-
-            <tr class="trpat">
-            <td class="text-info">Email Address</td>
-            <td>lizl@gmail.com</td>
+            <td>{{$res->psych_gndr}}</td>
             </tr>
          
           
             <tr class="trpat">
             <td class="text-info">Birthday</td>
-            <td>July 5, 1994</td>
+            <td>{{$res->psych_dob}}</td>
             </tr>
  
             <tr class="trpat">
             <td class="text-info">Mobile Number</td>
-            <td>09164646465</td>
+            <td>{{$res->psych_telphone}}</td>
             </tr>
 </table>
             <table style="margin-right: 50px;">
@@ -73,30 +76,30 @@
 <table>
             <tr class="trpat">
             <td class="text-info">Clinic Name</td>
-            <td>Mental Health Clinic</td>
+            <td>{{$res->clinic_name}}</td>
             </tr>
 
             <tr class="trpat">
             <td class="text-info">Clinic Address</td>
-            <td>1234 Jagubao Basak Pardo</td>
+            <td>{{$res->clinic_address}}</td>
             </tr>
 
             <tr class="trpat">
             <td class="text-info">Province/City</td>
-            <td>Cebu</td>
+            <td>{{$res->clinic_province}}</td>
             </tr>
 
             <tr class="trpat">
             <td class="text-info">Clinic Email Address</td>
-            <td>lmhc@gmail.com</td>
+            <td>{{$res->clinic_email}}</td>
             </tr>
 
             <tr class="trpat">
             <td class="text-info">Clinic Number</td>
-            <td>555-1234</td>
+            <td>{{$res->clinic_phone}}</td>
             </tr>
 </table>
-
+@endforeach
 
         </table>
      

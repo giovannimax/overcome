@@ -28,6 +28,11 @@ class DiariesController extends Controller
         return   DB::select("SELECT * FROM psychologists WHERE psych_id =?", [$id]); 
     }
 
+    static function retpsychprof($id){
+       $row = DB::select("SELECT * FROM psychologists WHERE psych_id =?", [$id]); 
+        return  $row;
+    }
+
     function updatepsych(Request $request){
         DB::table('psychologists')->where('psych_id',$request->psych_id)->update(array(
             'psych_fname'=>$request->psych_fname,
@@ -45,6 +50,7 @@ class DiariesController extends Controller
             'clinic_phone'=>$request->clinic_phone));
             return redirect()->route('accountsettings');
     }
+
 
     function updatepat(Request $request){
         DB::table('patients')->where('pat_id',$request->pat_id)->update(array(
@@ -65,6 +71,7 @@ class DiariesController extends Controller
         return DB::select("SELECT * FROM patients WHERE pat_id =?", [$id]); 
     }
 
+    
     static function retdetails($id){
         return DB::select("SELECT * FROM users WHERE id =?", [$id]); 
     }

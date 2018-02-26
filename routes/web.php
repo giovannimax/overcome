@@ -27,7 +27,7 @@ Route::get('/about', function () {
 
 Route::get('/profile', function () {
     return view('profile');
-});
+})->name('profile');
 
 Route::get('/calendar', function () {
     return view('calendar');
@@ -321,4 +321,5 @@ Route::get('addpsychavaila','AvailabilityController@addpsychavaila');
 Route::get('deleteavaila','AvailabilityController@deleteavaila');
 Route::get('updatepsych','DiariesController@updatepsych');
 Route::get('updatepat','DiariesController@updatepat');
+
 Route::get('statpsych','DiariesController@statpsych');
