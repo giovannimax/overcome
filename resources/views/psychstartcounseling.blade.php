@@ -164,7 +164,7 @@ a:active .aicons{
         CKEDITOR.replace( 'txtsnote',{
             removePlugins : 'resize',
             extraPlugins : 'uicolor',
-            extraPlugins : 'emojione',
+            extraPlugins: 'emojione',
             height: 510,
         });
 
