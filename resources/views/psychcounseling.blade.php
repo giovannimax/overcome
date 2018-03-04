@@ -30,12 +30,9 @@
     <div class="card">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs justify-content-end" id="nav-tab" role="tablist"> 
-    <li class="nav-item">
-        <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Profile</a>
-      </li>
 
       <li class="nav-item">
-        <a class="nav-item nav-link" id="nav-messages-tab" data-toggle="tab" href="#nav-messages" role="tab" aria-controls="nav-messages" aria-selected="false">Messages</a>
+        <a class="nav-item nav-link active" id="nav-messages-tab" data-toggle="tab" href="#nav-messages" role="tab" aria-controls="nav-messages" aria-selected="false">Messages</a>
       </li>
       <li class="nav-item">
       <a class="margdiary nav-item nav-link" id="nav-diary-tab" data-toggle="tab" href="#nav-diary" role="tab" aria-controls="nav-diary" aria-selected="false">Diary</a>
@@ -49,118 +46,10 @@
   <div class="card-block insidecontent2">
   
 <div class="tab-content" id="nav-tabContent">
-<div class="tabprofile tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">  <!-- Start of Appointment Tab -->
+
+
+  <div class="tabmessages tab-pane fade show active" id="nav-messages" role="tabpanel" aria-labelledby="nav-messages-tab">  <!-- Start of Appointment Tab -->
    
-
-    
-           <img class="propicdisplay rounded-circle mx-auto d-block " src="{{ asset('images/pic.png') }}" alt="profile picture">
-   
-     <div class="d-flex justify-content-center" style="margin-right: -100px;margin-left: -50px;">
-
-   
-
-         <table>
-            <tr class="trpat">
-            <td class="text-info">First Name</td>
-            <td>Owen</td>
-            </tr>
-
-            <tr class="trpat">
-            <td class="text-info">Middle Name</td>
-            <td>Rama</td>
-            </tr>
-
-            <tr class="trpat">
-            <td class="text-info">Last Name</td>
-            <td>Saberon</td>
-            </tr>
-
-            <tr class="trpat">
-            <td class="text-info">Gender</td>
-            <td>Male</td>
-            </tr>
-
-            <tr class="trpat">
-            <td class="text-info">Birthday</td>
-            <td>October 1, 1992</td>
-            </tr>
- 
-            <tr class="trpat">
-            <td class="text-info">Birth Place</td>
-            <td>Cebu</td>
-            </tr>
-
-            <tr class="trpat">
-            <td class="text-info">Citizenship</td>
-            <td>Filipino</td>
-            </tr>
-
-            <tr class="trpat">
-            <td class="text-info">Religion</td>
-            <td>Roman Catholic</td>
-            </tr>
-
-            <tr class="trpat">
-            <td class="text-info">Educational Attainment</td>
-            <td>College</td>
-            </tr>
-
-            <tr class="trpat">
-            <td class="text-info">Occupation</td>
-            <td>Student</td>
-            </tr>
-
-
-
-        </table>
-     
-    </div>
- </div> <!-- End of profile tab-content --> 
-
-<div class="tabmessages tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">  <!-- Start of Appointment Tab -->
-   
-   <img class="rounded-circle mx-auto d-block" src="{{ asset('images/pic.png') }}" alt="profile picture" style="width: 100px; height: 100px;margin-top: 50px;margin-bottom:25px;">
-     <div class="">
-        <table class="d-flex justify-content-center">
-        <tr class="trspace">
-            <td class="text-info" style="padding-right: 25px;padding-bottom: 25px;">First Name</td>
-            <td style="padding-bottom: 25px;">John</td>
-        </tr>
-
-         <tr class="trspace">
-            <td class="text-info" style="padding-right: 25px;padding-bottom: 25px;">Middle Name</td>
-            <td style="padding-bottom: 25px;">Wow</td>
-        </tr>
-
-         <tr>
-            <td class="text-info" style="padding-right: 25px; padding-bottom: 25px;">Last Name</td>
-            <td style="padding-bottom: 25px;">Snow</td>
-        </tr>
-
-         <tr>
-            <td class="text-info" style="padding-right: 25px; padding-bottom: 25px;">Address</td>
-            <td style="padding-bottom: 25px;">sfsfsfs</td>
-        </tr>
-
-         <tr>
-            <td class="text-info" style="padding-right: 25px; padding-bottom: 25px;">Email Address</td>
-            <td style="padding-bottom: 25px;">asdad@gmail.com</td>
-        </tr>
-
-         <tr>
-            <td class="text-info" style="padding-right: 25px; padding-bottom: 25px;">Mobile No.</td>
-            <td style="padding-bottom: 25px;">123456</td>
-        </tr>
-
-        </table>
-     
- </div>
- </div> <!-- End of profile tab-content -->
-
-
-  <div class="tabmessages tab-pane fade" id="nav-messages" role="tabpanel" aria-labelledby="nav-messages-tab">  <!-- Start of Appointment Tab -->
-   
-  <p id="duration">Duration: 58mins left</p>
     <div class="row">
     <div class="col-md-12">
         <div class="card card-primary mb3 cardmsg">

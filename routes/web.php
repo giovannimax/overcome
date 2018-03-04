@@ -267,6 +267,10 @@ Route::get('/notice', function () {
     return view('notice');
 });
 
+Route::get('/terms', function () {
+    return view('terms');
+}); 
+
 Route::get('/appointments', function () {
     return view('appointments');
 })->name('appointments');
@@ -313,7 +317,7 @@ Route::get('sendmsg','MessagesController@sendmsg');
 Route::get('createadmin','AdminsController@createadmin');
 Route::get('deactadmin','AdminsController@deactadmin');
 Route::get('addinquiry','AdminsController@addinquiry');
-Route::get('approvepat','EcounselingsController@approvepat');
+Route::get('approvebook','EcounselingsController@approvepat');
 Route::get('addcomment','DiariesController@addcomment');
 Route::get('updatenotes','EcounselingsController@updatenotes');
 Route::get('addvideoid','EcounselingsController@addvideoid');

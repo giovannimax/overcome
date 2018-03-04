@@ -83,7 +83,7 @@ class EcounselingsController extends Controller
 
 		$id = DB::table('conversations')->insertgetId(
 			['psych_id' => $request->psych_id, 'pat_id' => $request->pat_id]);
-			$msg = "Patient blahblah wants you to be his psychologist <br><br> Patient:".$request->patmsg;
+			$msg = "Patient wants you to be his psychologist <br><br> Patient:".$request->patmsg;
 			DB::table('messages')->insert(
 				['msg_content' => $msg, 
 				'sender' => 0,
@@ -108,6 +108,7 @@ class EcounselingsController extends Controller
             ->where('pat_id', $request->pat_id)
 			->update(["psych_id" => $request->psych_id,
 			]);
+			return redirect()->route('ecounseling');
 	}
 
 	static function addnotes($idd){

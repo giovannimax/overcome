@@ -59,10 +59,6 @@
         {{ Form::label('License Title') }}
         {{ Form::text('license_title','', ['class' => 'form-control','required'])}}
     </div>
-    <div class="form-group">
- <label for="image">Upload Card License</label>
- <input type="file" class="form-control" id="image">
-  </div>
     <hr>
     <h5>Clinic Details</h5><br>
     <div class="form-group">
@@ -93,10 +89,8 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('Clinic Hours') }}
-        {{ Form::text('clinic_hours','', ['class' => 'form-control'])}}
+       <input type="checkbox" required>I agree with the <a href="terms" target="_blank">terms and condition</a>
     </div>
-
 
 {{Form::submit('Submit', ['class' => 'btn btn-primary btn-lg btnsub'])}}
     {!! Form::close() !!}

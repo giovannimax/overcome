@@ -4,6 +4,7 @@
   use Illuminate\Support\Facades\Input;
   use App\Http\Controllers\AvailabilityController;
   use App\Http\Controllers\EcounselingsController;
+  use App\Http\Controllers\PatientsController;
   $reqdate = Input::post('date');
 ?>
 
@@ -84,8 +85,11 @@
            <li>
                <div class="appwrapper">
                		<i class="material-icons text-info">{{$icon}}</i>
-               		<img class="appic" src="images/pp.jpg">
-               		<font>John Doe</font><br>
+                   <img class="appic" src="images/pp.jpg">
+                   <?php $pat= PatientsController::getspefpat($appoints->pat_id); ?>
+                  @foreach($pat as $p)
+                   <font>{{$p->name}}</font><br>
+                   @endforeach
                		{{ date('h:i A', strtotime($appoints->counsel_time)) }} 
                   - 
                   {{ date('h:i A', strtotime($appoints->counsel_time)+ 60*60*$appoints->session_length) }}

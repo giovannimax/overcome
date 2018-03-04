@@ -50,12 +50,13 @@
             
             
         </div>
+        @if(!empty($res->psych_comment))
           <div class="doccomment card bg-light mb-3">
               <div class="chead card-header">Psychologist's Comment</div>
                   <div class="cbody card-body">
                           <p class="card-text text-info">{{$res->psych_comment}}</p>
                   </div>
-  
+          @endif
   </div>
 
   </div>
@@ -106,6 +107,7 @@
 				</div>
                    <div class='diarycontent tablecell'>
                    {{Form::textarea('dia_content', '',['class' => 'form-control'])}}
+                   {{Form::hidden('psych_comment',"")}}
                    {{Form::hidden('pat_id', Auth::user()->id)}}
 				</div>
            </div>  

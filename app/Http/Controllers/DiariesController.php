@@ -71,6 +71,10 @@ class DiariesController extends Controller
         return DB::select("SELECT * FROM patients WHERE pat_id =?", [$id]); 
     }
 
+    static function retpatprof($id){
+        $row = DB::select("SELECT * FROM patients WHERE pat_id =?", [$id]); 
+        return $row;
+    }
     
     static function retdetails($id){
         return DB::select("SELECT * FROM users WHERE id =?", [$id]); 
@@ -113,10 +117,10 @@ class DiariesController extends Controller
     }
     
     function addcomment(Request $request){
-        $data=Array();
-        array_push($data, $request->comment);
-        array_push($data, $request->dia_id);
-        DB::select("UPDATE diaries SET psych_comment = ? WHERE dia_id = ?", $data);
+        DB::table('diaries')
+            ->where('dia_id',  $request->dia_id)
+			->update(['psych_comment' =>  $request->comment,
+			]);
         return redirect()->route('ecounseling');
     }
 }

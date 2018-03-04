@@ -160,9 +160,11 @@ a:active .aicons{
 
 <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
  <script>
+        
         CKEDITOR.replace( 'txtsnote',{
             removePlugins : 'resize',
             extraPlugins : 'uicolor',
+            extraPlugins : 'emojione',
             height: 510,
         });
 
@@ -216,7 +218,6 @@ for (var i in CKEDITOR.instances) {
     }
 
     function endcall(){
-        call.close();
         $(".callender").css({"display":"block"});
         setTimeout(function(){
             window.close();

@@ -14,7 +14,7 @@ class CreateVideoidsTable extends Migration
     public function up()
     {
         Schema::create('videoids', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('videoid');
             $table->string('address', 50);
             $table->integer('id')->unsigned()->nullable();
             $table->foreign('id')->references('id')->on('users');
