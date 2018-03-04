@@ -35,8 +35,6 @@ class CreatePatientsTable extends Migration
             $table->string('sec_code',100)->nullable();
             $table->date('exp_date')->nullable();
             $table->mediumtext('diagnosis',100)->nullable();
-            $table->integer('psych_id')->unsigned()->nullable();
-            $table->foreign('psych_id')->references('psych_id')->on('psychologists');
         });
     }
 
