@@ -1,7 +1,7 @@
 @extends ('layouts.navbar')
 @section ('content')
 <div class="forpsychcounsel">
-
+    
     <div class="containercounseling1">
     <div class="card text-center">
   <div class="card-header" style="padding-bottom:10px;padding-top:7px;">

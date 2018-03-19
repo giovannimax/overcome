@@ -104,10 +104,6 @@ class EcounselingsController extends Controller
             ->where('counsel_id', $request->counsel_id)
 			->update(['counsel_status' => "active",
 			]);
-		DB::table('patients')
-            ->where('pat_id', $request->pat_id)
-			->update(["psych_id" => $request->psych_id,
-			]);
 			return redirect()->route('ecounseling');
 	}
 

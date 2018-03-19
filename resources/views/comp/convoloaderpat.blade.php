@@ -23,7 +23,7 @@
                 <table>
                 <tr>
                     <td><img class="sendernewimg rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture" align="left"></td>
-                    <td><strong>@foreach($patient as $pat)
+                    <td><strong>@foreach($ress as $pat)
                     <?php  $psych = PsychologistsController::getspefpsych($pat->psych_id); 
                         foreach($psych as $ps){
                             echo $ps->psych_fname." ".$ps->psych_mname." ".$ps->psych_lname;
