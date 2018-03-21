@@ -176,7 +176,7 @@
 </div> <!-- End of modal fade -->
   {!! Form::close() !!}
         
-        
+    
         
         
 </div>

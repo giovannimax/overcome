@@ -11,6 +11,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery-ui.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui-smooth.css') }}">
+    @stack('css')
 </head>
 <body>
 
@@ -26,38 +29,33 @@
 
                       </a>
                     </li>
-                    <li class="{{ Request::is('profile') ? 'active' : '' }}">
-                        <a href="profile" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Profile">
+                    <li class="{{ Request::is('patientprofile') ? 'active' : '' }}">
+                        <a href="user_profile" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Profile">
                         <i class="material-icons">person</i>
                         <font class="sidetext">Profile</font>
                       </a>
                     </li>
-                    <li class="{{ Request::is('appointments') ? 'active' : '' }}">
-                        <a href="appointments" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
+                    <li class="{{ Request::is('patientappointment') ? 'active' : '' }}">
+                        <a href="user_appointments" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Appointments">
                           <i class="material-icons">date_range</i>
                         <font class="sidetext">Appointments</font>
                       </a>
                     </li>
-                    <li class="{{ Request::is('calendar') ? 'active' : '' }}">
-                        <a href="calendar" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Diary">
+                    <li class="{{ Request::is('patientdiary') ? 'active' : '' }}">
+                        <a href="user_diary" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Diary">
                           <i class="material-icons">content_paste</i>
                         <font class="sidetext">Diary</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Patients">
-                        <i class="material-icons">person_outline</i>
-                        <font class="sidetext">Patients</font>
-                      </a>
-                    </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
+                
+                    <li  class="{{ Request::is('usermessage') ? 'active' : '' }}">
+                        <a href="user_messages" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="Messages">
                         <i class="material-icons">mail_outline</i>
                         <font class="sidetext">Messages</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="e-Counseling">
+                    <li  class="{{ Request::is('patientdoctors') ? 'active' : '' }}">
+                        <a href="user_ecounseling" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="e-Counseling">
                         <i class="material-icons">people_outline</i>
                         <font class="sidetext">e-Counseling</font>
                       </a>
@@ -68,8 +66,8 @@
                         <font class="sidetext">Podcast</font>
                       </a>
                     </li>
-                    <li>
-                        <a href="#homeSubmenu" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="My Wallet">
+                    <li  class="{{ Request::is('patientwallet') ? 'active' : '' }}">
+                        <a href="user_wallet" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="My Wallet">
                         <i class="material-icons">account_balance_wallet</i>
                         <font class="sidetext">My Wallet</font>
                       </a>
@@ -117,6 +115,7 @@
         @yield('leftsidebar')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.js') }}"></script>
     <script type="text/javascript">
 
      var ind=0;
@@ -172,14 +171,7 @@
     });
      
   
-
-var doc = new jsPDF();
-var specialElementHandlers = {
-    '#editor': function (element, renderer) {
-        return true;
-    }
-};
-        
+ 
 
 
          
@@ -190,6 +182,5 @@ var specialElementHandlers = {
 </html>
         </script>
 
-      @yield('scripts')
 </body>
 </html>

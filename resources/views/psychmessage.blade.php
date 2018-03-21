@@ -4,7 +4,7 @@
 
     <div class="nt card text-white bg-secondary mb-3 w-75 h-75 " >
         <div class="newtext2 card">
-        <a href="messages_openmessage">
+        <a href="conversation">
         <div class="cont1">
             <img class="sender rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
             
@@ -16,12 +16,13 @@
              </div>
           
     </div> <!-- end of cont1 -->
+    </a>
         </div>
-</a>
+
 
 <hr>
  <div class="newtext2 card">
- <a href="messages_openmessage">
+ <a href="conversation">
         <div class="cont1">
             <img class="sender rounded-circle d-block" src="{{ asset('images/pic.png') }}" alt="profile picture">
             

@@ -1,23 +1,44 @@
 @extends ('layouts.pnavbar')
 @section ('content')
+<div class="containerdiary">
+    
+    <div class="diary1">
 
-<span class="float-left"><button class="diarybtn btn btn-info btn-lg" data-toggle="modal" data-target="#adddiaryModal" >Add Note<i class="material-icons">note_add</i></button>
+    <div class="card w-100 border-info">
+    <div class="card-header">
+    <span class="float-left"><button class="diarybtn btn btn-info" data-toggle="modal" data-target="#adddiaryModal" >Add Note<i class="material-icons">note_add</i></button>
+        </button>
+       </div> <!-- End of card-header -->
 
-<nav class="anothernavdiary">
+       <div class="card-block">
+              <nav class="anothernavdiary">
   <div class="navdiary nav nav-tabs justify-content-end" id="nav-tab" role="tablist">
+
+  <div class="input-group">
+  <input type="text" id="datepicker" placeholder="Search Date" class="form-control  border-right-0" />
+        <span class="input-group-addon bg-info border-left-0"><i class="material-icons text-white" style="margin-top:8px;padding-left:5px;padding-right:5px;">date_range</i></span>
+    </div>
+  
+    <a class="nav-item nav-link active" id="nav-appointments-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">January 4, 2018</a>
       
-    <a class="nav-item nav-link active" id="nav-appointments-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">January 4, 2018<br>9:30 PM</a>
+    <a class="nav-item nav-link" id="nav-sesnotes-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">January 3, 2018</a>
       
-    <a class="nav-item nav-link" id="nav-sesnotes-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">January 3, 2018<br>9:30 PM</a>
+    <a class="nav-item nav-link" id="nav-diary-tab" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">January 2, 2018</a>
       
-    <a class="nav-item nav-link" id="nav-diary-tab" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">January 2, 2018<br>9:30 PM</a>
-      
-    <a class="nav-item nav-link" id="nav-history-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-4" aria-selected="false">January 1, 2018<br>9:30 PM</a>
+    <a class="nav-item nav-link" id="nav-history-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-4" aria-selected="false">January 1, 2018</a>
 
   </div>
 </nav>
     
- <div class="tab-content">
+       </div> <!-- End of card-block -->
+
+    </div> <!-- End of Card -->
+    </div> <!-- End of Diary1 -->
+
+    <div class="diary2">
+    <div class="card w-100 border-info">
+    <div class="card-body">
+    <div class="tab-content">
          <div class="tab-pane fade show active" id="nav-1">
              <h4>January 4, 2018</h4>
              <h6>9:30 PM</h6>
@@ -78,8 +99,11 @@
 </div> <!-- End of Tab Content -->
      
 
-    
+    </div><!-- End of card-body diary2 -->
+   </div> <!-- End of card diary2 -->
+    </div> <!-- End of Diary2 -->
 
+</div> <!-- End of Container -->
 
 <!-- Modal for Add Diary -->
     
@@ -99,14 +123,14 @@
                   <div class='diarytc tablecell'>
                     {{Form::label('notesdate', 'Note Date')}}
 				</div>
-             <div class='diarytc tablecell'>{{Form::date('name')}}</div>
+             <div class='diarytc tablecell'>{{Form::date('name', '',['class' => 'form-control'])}}</div>
            </div>      
                 
                 <div class='diarytr tablerow'>
                   <div class='diarytc tablecell'>
                     {{Form::label('notestime', 'Note Time')}}
 				</div>
-             <div class='diarytc tablecell'>{{Form::time('name')}}</div>
+             <div class='diarytc tablecell'>{{Form::time('name', '', ['class' => 'form-control'])}}</div>
            </div>      
                 
 
@@ -136,5 +160,20 @@
  </div> <!-- End of modal-dialog -->
 </div> <!-- End of modal fade -->
 
+@endsection
 
+@section ('scripts')
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>  -->
+<!-- <script src="/js/core.js" type="text/javascript"></script>  -->
+<!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+<!-- <script src="//code.jquery.com/jquery-1.12.4.js"></script> -->
+ <!-- <script src="{{ asset('js/jquery-ui.js') }}"></script> -->
+<script>
+  $(document).ready(function(){
+    $('#datepicker').datepicker();
+
+  })
+ 
+
+</script>
 @endsection

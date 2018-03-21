@@ -72,7 +72,7 @@ Route::get('/usermessages_openmessage', function () {
 });
 
 
-Route::get('/messages_openmessage', function () {
+Route::get('/conversation', function () {
     return view('psychnewmessage');
 });
 
@@ -100,6 +100,13 @@ Route::get('/user_startecounseling', function () {
 Route::get('/user_wallet', function () {
     return view('patientwallet');
 });
+
+Route::get('/regcontent', function () {
+    return view('registerquestion');
+});
+
+
+
 
 
 

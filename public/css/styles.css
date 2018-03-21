@@ -77,10 +77,10 @@ h5 {
 .btn-margin-right {
   margin-right: 20px; }
 
-section.intro, section.features-extra, section.sign-up {
+section.intro, section.features-extra, section.blog,section.faq {
   background: #fff; }
 
-section.features, section.blog-intro, section.blog {
+section.features, section.blog-intro, section.sign-up {
   background: #F3F4F8; }
 
 /* ==========================================================================
@@ -124,7 +124,7 @@ ul li {
   list-style: none; }
 
 .section-padding {
-  padding: 120px 0; }
+  padding: 80px 0; }
 
 .tooltip {
   position: absolute;
@@ -492,14 +492,14 @@ Features-stack
     padding-bottom: 0px;
     border-bottom: none; }
   .features .ipad-wrap {
-    width: 706px;
-    height: 1002px;
-    background: url("../img/ipad-device.png") no-repeat center center;
+    width: 700px;
+    height: 1200px;
+    background: url("../img/ipad.png") no-repeat center center;
     z-index: 1; }
   .features .iphone-wrap {
-    width: 304px;
-    height: 620px;
-    background: url("../img/iphone6.png") no-repeat center center;
+    width: 320px;
+    height: 720px;
+    background: url("../img/iphone6edit.png") no-repeat center center;
     position: absolute;
     left: 530px;
     bottom: 129px;
@@ -526,8 +526,8 @@ Features-stack
   .features-extra .macbook-wrap {
     position: absolute;
     width: 916px;
-    height: 540px;
-    background: url("../img/macbook-pro.png") no-repeat center center;
+    height: 480px;
+    background: url("../img/doctors.png") no-repeat center center;
     top: 114px;
     z-index: 4;
     left: 50%; }
@@ -537,7 +537,7 @@ Features-stack
 ========================================================================== */
 .hero-strip {
   margin-top: 120px;
-  background: #333844 url("../img/polygonal-bg.jpg") no-repeat center center;
+  background: #fff url("../img/polygonal-bg.jpg") no-repeat center center;
   padding-bottom: 190px;
   position: relative; }
   .hero-strip i {
@@ -568,15 +568,56 @@ Features-stack
 /* ==========================================================================
 .blog-intro
 ========================================================================== */
-.blog-intro {
-  padding-top: 160px; }
+.blog-intro{
+  padding-top: 100px; 
+}
   .blog-intro h3 {
-    margin-bottom: 70px; }
+    margin-bottom: 10px; 
+  }
   .blog-intro .leftcol {
     padding-right: 100px;
-    border-right: solid 1px #E6E9EA; }
-  .blog-intro .rightcol {
-    padding-left: 100px; }
+    border-right: solid 1px #E6E9EA;
+
+   }
+  
+  .blog-intro .rightcol
+   {
+    padding-left: 100px;
+   }
+
+
+.faq:hover{
+  color:#17a2b8;
+  text-decoration:underline;
+}
+
+.signupp {
+  font-size: 14px;
+  line-height: 18px;
+  color: #000;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  
+ }
+
+
+ .btn-signup {
+  font-size: 13px;
+  border: solid 2px;
+  border-radius: 40px;
+  display: inline-block;
+  border-color: #17a2b8;
+}
+  
+
+.btn-signup:hover, .btn-signup:focus {
+  color: #fff;
+  border-color: #1dc9e4; 
+  background: #1dc9e4;
+}
+
+
+ 
 
 /* ==========================================================================
 .blog
@@ -637,7 +678,7 @@ Features-stack
 /* ==========================================================================
 .testimonial-slider
 ========================================================================== */
-.testimonial-slider {
+  .testimonial-slider {
   background: url("../img/testimonials-bg.jpg") no-repeat center center;
   background-size: cover; }
   .testimonial-slider .avatar {
@@ -679,8 +720,21 @@ Sign up form
   border: solid 1px #E6E9EA;
   text-align: left;
   position: relative; }
+
+  .textarea {
+    width: 80%;
+    height: 80px;
+    margin: 0 auto 10px;
+    border-radius: 5px;
+    border: solid 1px #E6E9EA;
+    text-align: left;
+    position: relative; 
+  }
+
+ 
+
   .sign-up .signup-form .form-input-group i {
-    color: #FF5274;
+    color: #17a2b8;
     font-size: 14px; }
   .sign-up .signup-form .form-input-group i:after {
     content: "";
@@ -693,14 +747,16 @@ Sign up form
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%); }
-  .sign-up .signup-form .form-input-group i.fa-lock {
-    font-size: 18px;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    margin-left: 20px; }
+ 
+    .sign-up .signup-form .form-input-group i.fa-user {
+      font-size: 18px;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      margin-left: 20px; }
+
   .sign-up .signup-form .form-input-group i.fa-envelope {
     font-size: 14px;
     position: absolute;
@@ -709,6 +765,7 @@ Sign up form
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     margin-left: 20px; }
+
   .sign-up .signup-form .form-input-group input {
     padding-left: 68px;
     width: 100%;
@@ -723,7 +780,12 @@ Sign up form
     color: #BCC1C3; }
   .sign-up .signup-form .form-input-group input:-ms-input-placeholder {
     color: #BCC1C3; }
-
+   
+    .rowforpatient{
+      margin-top: -25px;
+    }
+    
+    
 /* ==========================================================================
 To top
 ========================================================================== */
@@ -1175,3 +1237,67 @@ you can use the generic selector below, but it's slower:
 .overcomelogo{
   height:   35px;
 }
+
+.containerforsignup{
+  display: inline-flex;
+  background: #f3f4f8;
+}
+
+.signup1{
+  background: url("../img/counselling.png") no-repeat center center;
+  margin-left:15px;
+  width:50%;
+
+ 
+}
+
+
+
+.signup11{
+  margin: 30px;
+  background-color: #f3f4f8;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  margin-top: -20px;
+
+ 
+}
+
+
+.signup2{
+
+  margin-right:15px;
+  width:50%;
+  background: url("../img/signupdoc.png") no-repeat center center;
+}
+
+.signup11:hover{
+  background: #cecece;
+  -moz-transition: all 1s ease-in;
+  /* WebKit */
+  -webkit-transition: all 1s ease-in;
+  /* Opera */
+  -o-transition: all 1s ease-in;
+  /* Standard */
+  transition: all 1s ease-in;
+  
+}
+.signupcontent{
+  padding: 20px;
+
+}
+
+.blogh{
+  color:#0293a3;
+  text-decoration: underline;
+  font-size: 18px;
+
+}
+
+.spann{
+    display:inline-block;
+    border-bottom:2px solid #0293a3;
+    padding-bottom:10px;
+    align-items: center;
+}
+

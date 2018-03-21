@@ -53,7 +53,7 @@
                     <li class="{{ Request::is('psychcounseling') ? 'active' : '' }}">
                         <a href="ecounseling" class="sidebaritem" data-toggle="tooltip" data-placement="right" title="E-Counseling">
                         <i class="material-icons">people_outline</i>
-                        <font class="sidetext hidetext">E-Counseling</font>
+                        <font class="sidetext">E-Counseling</font>
                       </a>
                     </li>
                     <li>
